@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pylab as plt
+
+y=np.loadtxt('my-first-data.txt')
+z=np.loadtxt('my-second-data.txt')
+w=np.loadtxt('my-third-data.txt')
+t=np.loadtxt('my-fourth-data.txt')
+
+#first data set plot
+a=plt.plot(y,'r',lw=3)
+plt.legend(('1'),loc='upper center')
+plt.figure()
+#second data set plot
+b=plt.plot(z,'b',lw=3)
+plt.legend(('2'),loc='upper center')
+plt.figure()
+#third data set plot
+c=plt.plot(w,'g',lw=3)
+plt.legend(('3'),loc='upper center')
+plt.figure()
+#fourth data set plot
+d=plt.plot(t,'y',lw=3)
+plt.legend(('4'),loc='upper center')
+
+plt.title('Photon counts per sample vs. Time(ms)')
+plt.xlabel('Time(ms)')
+plt.ylabel('Counts per sample')
+#plt.legend(('first data set: (0.001,10)','second data set: (0.001,100)','third data set: (0.01,100)','fourth data set: (0.1,100)'),bbox_to_anchor=(0.77, 0.5))
+plt.show()
