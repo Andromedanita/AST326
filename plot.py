@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pylab as plt
 
-y=np.loadtxt('my-first-data.txt')
-z=np.loadtxt('my-second-data.txt')
-w=np.loadtxt('my-third-data.txt')
-t=np.loadtxt('my-fourth-data.txt')
+y=np.loadtxt('lab1_data1.txt')
+z=np.loadtxt('lab1_data2.txt')
+w=np.loadtxt('lab1_data3.txt')
+t=np.loadtxt('lab1_data4.txt')
 
 #first data set plot
 a=plt.plot(y,'r',lw=3)
@@ -19,7 +19,7 @@ c=plt.plot(w,'g',lw=3)
 plt.legend(('3'),loc='upper center')
 plt.figure()
 #fourth data set plot
-d=plt.plot(t,'y',lw=3)
+d=plt.plot(t,'m',lw=3)
 plt.legend(('4'),loc='upper center')
 
 plt.title('Photon counts per sample vs. Time(ms)')
@@ -28,7 +28,7 @@ plt.ylabel('Counts per sample')
 plt.figure()
 
 hmin=0
-hmax=20
+hmax=12
 hr=np.arange(hmin,hmax+1,1)
 
 hist=np.zeros(hmax-hmin+1,dtype=np.int)
@@ -46,7 +46,7 @@ plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='green')
 plt.figure()
 for i in hr:
     hist[i]=np.where(t==i)[0].size
-plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='yellow')
+plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='magenta')
     
 
 #hist=np.array([np.where(y==i)[0].size for i in hr])
