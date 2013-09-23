@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pylab as plt
 import math
+import scipy.misc as sc
 
 #Two empty lists 
 poisson=[]
@@ -16,22 +17,31 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
+hmin=0
+hmax=40
+hr=np.arange(hmin,hmax+1,1)
+#Histogram plots in subplots
+hist=np.zeros(hmax-hmin+1,dtype=np.int)
 
 #a for loop in order to open the file and calculate the mean and standard deviation
 for i in runs:
     file='/Users/anita/Desktop/University_Third_Year/AST326/Data/SMALLRATEtask8pmtrunno_'+str(i)+'count0.001.dat'
     x=np.loadtxt(file)
+    x_max=max(x)
+    x_min=min(x)
+    y=np.arange(x_min,x_max,0.1)
     mean=np.sum(x)/np.size(x)                    #the mean
     sd=np.sqrt(sum((x-mean)**2)/(np.size(x)-1))  #standard deviation
-    poisson_distribution=((mean**x)*(np.exp((-1)*mean)))/(factorial(x.all()))   #poisson distribution
-    gaussian_distribution=(1.0/(sd*(np.sqrt(2*np.pi))))*(np.exp(-0.5*(((x-mean)/sd)**2)))   #gaussian distribution
+    poisson_distribution=((mean**y)*(np.exp((-1)*mean)))/(sc.factorial(y))   #poisson distribution
+    gaussian_distribution=(1.0/(sd*(np.sqrt(2*np.pi))))*(np.exp(-0.5*(((y-mean)/sd)**2)))   #gaussian distribution
     poisson.append(poisson_distribution)         #appending the poisson distribution points to the poisson list
     gaussian.append(gaussian_distribution)       #appending the gaussian distribution points to the gaussian list
-    poisson1=np.array(poisson)
-    gaussian1=np.array(gaussian)
     #plotting poisson and gaussian distribution points vs. x(counts)
-    plt.plot(x,poisson1,'*')
-    plt.plot(x,gaussian1,'-o')
-    plt.legend(('poisson distribution','gaussian distribution'),loc='best')
+    plt.plot(y,poisson_distribution*1000,'*m')
+    plt.plot(y,gaussian_distribution*1000,'-o')
+    for i in hr:
+        hist[i]=np.where(x==i)[0].size
+        plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='green')
+    plt.legend(('poisson distribution','gaussian distribution','histogram'),loc='best')
     plt.title('poisson and gaussian distribution')
     plt.show()    
