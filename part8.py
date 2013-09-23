@@ -21,7 +21,9 @@ hmin=0
 hmax=40
 hr=np.arange(hmin,hmax+1,1)
 #Histogram plots in subplots
-hist=np.zeros(hmax-hmin+1,dtype=np.int)
+#hist=np.zeros(hmax-hmin+1,dtype=np.int)
+
+plt.figure(1)
 
 #a for loop in order to open the file and calculate the mean and standard deviation
 for i in runs:
@@ -37,11 +39,14 @@ for i in runs:
     poisson.append(poisson_distribution)         #appending the poisson distribution points to the poisson list
     gaussian.append(gaussian_distribution)       #appending the gaussian distribution points to the gaussian list
     #plotting poisson and gaussian distribution points vs. x(counts)
-    plt.plot(y,poisson_distribution*1000,'*m')
-    plt.plot(y,gaussian_distribution*1000,'-o')
-    for i in hr:
-        hist[i]=np.where(x==i)[0].size
-        plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='green')
-    plt.legend(('poisson distribution','gaussian distribution','histogram'),loc='best')
+   # plt.subplot(3,2,i)
+    for j in hr:
+        hist=np.array([np.where(x==j)[0].size for j in hr])
+    plt.subplot(3,2,i)
+    plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='green')
+    plt.plot(y,poisson_distribution*1000,'-m')
+    plt.plot(y,gaussian_distribution*1000,'-b')
+    plt.legend(('histogram','poisson distribution','gaussian distribution'),loc='best',prop={'size':10})
+    plt.xlim(0,15)
     plt.title('poisson and gaussian distribution')
-    plt.show()    
+plt.show()    

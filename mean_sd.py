@@ -3,7 +3,7 @@ import matplotlib.pylab as plt
 
 m=[]    #empty list for mean
 s=[]    #empty list for variance
-x=np.arange(0,50)        #range for plotting x
+x=np.arange(0,100)        #range for plotting x
 lst=[0.01,0.0125,0.025,0.0375,0.05]   #the list of the end of the names of the files (the counts)
 for j in lst:
     for i in range(1,7,1):
@@ -14,16 +14,16 @@ for j in lst:
         m.append(mean)                                #list of mean values
         s.append(sd**2)                               #list of variance values
         print "The mean value is:", mean,". The standard deviation is:", sd,"\n"
-    plt.plot(m,s, '-o')
+    plt.plot(m,s, 'om')
     plt.title('Variance vs. number of counts')
     #plotting on a log-log scale
-    plt.yscale('log')
-    plt.xscale('log')
+    #plt.yscale('log')
+    #plt.xscale('log')
     #y=x line plotting
-    plt.plot(x,x)
+    plt.plot(x,x,'k-')
     plt.xlabel('Mean Values')
     plt.ylabel('Variance')
     #legend of the plots
     plt.legend(('Mean vs. Variance','x=y'), loc='best')
-    plt.show()
+plt.show()
 
