@@ -32,9 +32,10 @@ for i in runs:
     x_max=max(x)
     x_min=min(x)
     y=np.arange(x_min,x_max,0.1)
+    g=np.arange(x_min,x_max)
     mean=np.sum(x)/np.size(x)                    #the mean
     sd=np.sqrt(sum((x-mean)**2)/(np.size(x)-1))  #standard deviation
-    poisson_distribution=((mean**y)*(np.exp((-1)*mean)))/(sc.factorial(y))   #poisson distribution
+    poisson_distribution=((mean**g)*(np.exp((-1)*mean)))/(sc.factorial(g))   #poisson distribution
     gaussian_distribution=(1.0/(sd*(np.sqrt(2*np.pi))))*(np.exp(-0.5*(((y-mean)/sd)**2)))   #gaussian distribution
     poisson.append(poisson_distribution)         #appending the poisson distribution points to the poisson list
     gaussian.append(gaussian_distribution)       #appending the gaussian distribution points to the gaussian list
@@ -44,7 +45,7 @@ for i in runs:
         hist=np.array([np.where(x==j)[0].size for j in hr])
     plt.subplot(3,2,i)
     plt.plot(hr,hist,drawstyle='steps-mid',lw=2,color='green')
-    plt.plot(y,poisson_distribution*1000,'-m')
+    plt.plot(g,poisson_distribution*1000,'-m')
     plt.plot(y,gaussian_distribution*1000,'-b')
     plt.legend(('histogram','poisson distribution','gaussian distribution'),loc='best',prop={'size':10})
     plt.xlim(0,15)
