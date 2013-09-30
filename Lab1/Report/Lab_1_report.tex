@@ -20,7 +20,7 @@
 \maketitle
 \begin{abstract}
 \label{abstract}
-Randomness is a phenomena that occurs often in the nature. Counting the number of photons would be one example of it.  
+Randomness is a phenomena that occurs often in the nature. Counting the number of photons would be one example of it. 
 \end{abstract}
 
 %Introduction
@@ -153,7 +153,14 @@ Poisson distribution is a better approximation for small data sets as is shown i
 \centering
 \includegraphics[scale=0.9]{poisson-gaussian-histograms-8-long.png}
 \caption{Poissoon, Gaussian and Histograms of long count limit data sets}
-Poisson and gaussian distribution are almost the same for long count limit as is seen in these plots. Therefore, it is more convenient to use gaussian distribution function for long limits rather than small count limit.
+Poisson and gaussian distribution are almost the same for long count limit as is seen in these plots. Therefore, it is more convenient to use gaussian distribution function for long limits rather than small count limit. The poisson distribution is still discrete but it is not visible here since the range of numbers on x-axis is large and it is too small to be seen, but if we zoom in, it will be visible as seen in Figure 9.
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{part8-long-zoomedin.png}
+\caption{Part of Figure 8 zoomed in in order to see poisson distribution is still discrete}
+This Figure shows that poisson distribution is still discrete but cannot be seen due to small intervals between numbers and the large range of x-axis values.
 \end{figure}
  
  
@@ -163,7 +170,21 @@ Poisson and gaussian distribution are almost the same for long count limit as is
  
  
  %Figure 9, MOM and SDOM, part 9 
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{part9.png}
+\caption{MOM and SDOM }
+\end{figure}
+ 
+\newpage Figure 10 shows that as the sample time increases, the mean of mean also increase whereas the standard deviation of the mean decreases, meaning as we try longer sample rates, we obtain more accuracy in our data since it is more precise. Theoretical poisson did predict the standard deviation of the mean correctly as is seen in figure 10(the dashed line). Moreover, mean value does not really change as the sample rise increases.
 
+%Conclusion
+\section{Conclusion}
+\label{sec:conclusion}
+Counting and collecting photons is a useful task in astronomy since we gather our data from photons and it is useful to know how photons act and what the effect of statistical analysis is on them. Therefore, we would be able to predict how precise our measurements are. Knowing all these information allows us to analyze light.
+We also concluded in this experiment that as the sample size increases, the standard deviation decreases, meaning our measurements are more precise. Same is true for sample rate, as sample rate increases, the standard deviation decreases. We also found out that variance and mean have a linear relationship as seen in Figure 5.
+Also, we saw that poisson distribution is better for small count limit, whereas gaussian distribution would be easier to calculate for long count limit. In addition, poisson would agree with gaussian distribution in large limits. 
+Finally, we would still get some photons when the light is off. The reason is that the machine might not be completely in darkness or might be due to internal energy heat which is releasing energy.
 
 
 \end{document}
