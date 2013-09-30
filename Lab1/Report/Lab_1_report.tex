@@ -67,40 +67,19 @@ This figure shows that even when the light is off, we will get some photons comi
 \label{sec:analysis}
 The next step would be to do some statistical analysis and to calculate the mean and the standard deviation of the data set. Therefore, we would know what the average value of our photon counts would be and we would also figure out how precise our measurements were.
 The mean formula is given by equation 1, where n is the number of counts in total.
-\begin{equation} \label{E:mean}
-\bar{x} = \frac{\sum_{i=1}^{n}x_{i}} {n}
-\end{equation}
+\begin{equation} \label{E:mean}\bar{x} = \frac{\sum_{i=1}^{n}x_{i}} {n}\end{equation}
 
 
-And the standard deviation formula is given by equation 2:, where\begin{math} x_i \end{math} is each photon count and \begin{math} bar{x} \end{math}is the mean value calculated by equation 1. 
+And the standard deviation formula is given by equation 2:, where \begin{math}x_i \end{math} is each photon count and \begin{math} \bar{x} \end{math} is the mean value calculated by equation 1. 
 %Mean equation
-\begin{equation} \label{E:sd}
-\sigma = \sqrt{\frac{\sum\limits_{i=1}^{n}
-\left(x_{i} - \bar{x}\right)^{2}}
-{n-1}}
-\end{equation}
+\begin{equation} \label{E:sd}\sigma = \sqrt{\frac{\sum\limits_{i=1}^{n}\left(x_{i} - \bar{x}\right)^{2}}{n-1}}\end{equation}
 
 The smaller the value of the standard deviation, the more precise our measurements are. Table 1 shows the values of mean and standard deviation for data sets with similar sample rate and counts, repeated 6 times. Variance is the standard deviation squared. The plot of Variance vs. Number of Counts for Table 1 data set is shown in figure 4.
 
 %Table 1
-\begin{table}[ht]
-\caption{Mean and Standard Deviation for 6 data sets with similar sample rate and time} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c c} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-Data Set \# & Sample Rate & Counts(per s) & Mean of Counts & Standard Deviation \\ [0.5ex] % inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 1000 & 400 & 16.507 & 4.14\\ % inserting body of the table
-2 & 1000 & 400& 16.69  & 3.93\\
-3 & 1000 & 400& 16.405  & 4.08\\
-4 & 1000 & 400 & 16.622 & 4.17\\
-5 & 1000 & 400 & 16.922 & 4.10\\ 
+\begin{table}[ht]\caption{Mean and Standard Deviation for 6 data sets with similar sample rate and time} % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample Rate & Counts(per s) & Mean of Counts & Standard Deviation \\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 1000 & 400 & 16.507 & 4.14\\ % inserting body of the table2 & 1000 & 400& 16.69  & 3.93\\3 & 1000 & 400& 16.405  & 4.08\\4 & 1000 & 400 & 16.622 & 4.17\\5 & 1000 & 400 & 16.922 & 4.10\\ 
 6 & 1000 & 400 & 16.732 & 4.21 \\ [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+\hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
 
 %Figure 4, variance vs. count numbers for 400
 \begin{figure}
@@ -121,42 +100,13 @@ Figure 4 shows that the relation between variance and mean is almost linear.
 
 
 %Table of mean vs. variance for 5 different data sets each with 6 data sets
-\begin{table}[ht]
-\caption{Mean and Standard Deviation for 5 data sets each consisting of 6 data sets} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c c} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-Data Set \# & Sample Rate & Counts(per s) & Mean of Counts & Standard Deviation \\ [0.5ex] % inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 100 & 400 & 16.939 & 4.242\\ % inserting body of the table
-2 & 80 & 400& 20.962  & 4.657 \\
-3 & 40 & 400& 41.814 &  6.666 \\
-4 & 26.67 & 400 & 63.558 & 8.085   \\
-5 & 20 & 400 & 84.192 &  9.385 \\  [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+\begin{table}[ht]\caption{Mean and Standard Deviation for 5 data sets each consisting of 6 data sets} % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample Rate & Counts(per s) & Mean of Counts & Standard Deviation \\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 100 & 400 & 16.939 & 4.242\\ % inserting body of the table2 & 80 & 400& 20.962  & 4.657 \\3 & 40 & 400& 41.814 &  6.666 \\4 & 26.67 & 400 & 63.558 & 8.085   \\5 & 20 & 400 & 84.192 &  9.385 \\  [1ex] % [1ex] adds vertical space
+\hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
 
 
 %Table 3, of dark counts and their mean values
-\begin{table}[t]
-\caption{Mean and Standard Deviation for 4 dark data sets each consisting of 6 data sets } % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c c} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-Data Set \# & Sample Rate & Dark Counts(per s) & Mean of Dark Counts & Standard Deviation \\ [0.5ex] % inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 1000 & 1000 &  0.506 &  0.732   \\ % inserting body of the table
-2 & 1000 & 100&   0.543   & 0.759 \\
-3 & 100 & 100&    5.28  &  2.448      \\
-4 & 100 & 400 &   5.153   &   2.326   \\  [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+\begin{table}[t]\caption{Mean and Standard Deviation for 4 dark data sets each consisting of 6 data sets } % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample Rate & Dark Counts(per s) & Mean of Dark Counts & Standard Deviation \\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 1000 & 1000 &  0.506 &  0.732   \\ % inserting body of the table2 & 1000 & 100&   0.543   & 0.759 \\3 & 100 & 100&    5.28  &  2.448      \\4 & 100 & 400 &   5.153   &   2.326   \\  [1ex] % [1ex] adds vertical space
+\hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
 
 
 %Figure 6, Collage photo of mean vs. variance of dark counts
@@ -217,18 +167,7 @@ This Figure shows that poisson distribution is still discrete but cannot be seen
  
  
  %Table 4, part 9, small to large counts and its effect on mean of mean and standard deviation of mean
- \begin{table}
-\caption{Mean of mean and Standard Deviation of mean for small to lang counts} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c c} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-Data Set \# & Sample size & Sample Rate(counts/s) & Mean of mean & Standard Deviation of mean\\ [0.5ex] % inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 2 & 1000  &  1.350 &   0.944281   \\ % inserting body of the table
-2 & 4 & 1000  &  1.275   &  0.532942    \\
-3 & 8 & 1000  &   1.5   &     0.288675 \\
-4 & 16 &1000 &   1.844   &    0.378743  \\  
+ \begin{table}\caption{Mean of mean and Standard Deviation of mean for small to lang counts} % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample size & Sample Rate(counts/s) & Mean of mean & Standard Deviation of mean\\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 2 & 1000  &  1.350 &   0.944281   \\ % inserting body of the table2 & 4 & 1000  &  1.275   &  0.532942    \\3 & 8 & 1000  &   1.5   &     0.288675 \\4 & 16 &1000 &   1.844   &    0.378743  \\  
 5 & 32 & 1000 &    1.516  &  0.139171 \\
 6 & 64  & 1000 &    1.686 &   0.219795\\
 7 & 128  & 1000 &   1.670 &   0.114571 \\
@@ -236,10 +175,7 @@ Data Set \# & Sample size & Sample Rate(counts/s) & Mean of mean & Standard Devi
 9 & 512 & 1000 &    1.717 &    0.059777\\
 10  & 1024 & 1000 &  1.738   & 0.034313   \\  
 11 & 2048 & 1000 &    1.717  &    0.038742\\ [1ex]
- \hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+ \hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
  
  
  
@@ -258,7 +194,6 @@ Figure 10 shows that as the sample time increases, the mean of mean also increas
 \end{equation}
 Equation 5 is the theoretical prediction for the standard deviation of the mean, which agrees with the experimental data. This is shown in Figure 10 as the dashed line.
 
-
 %Conclusion
 \newpage
 \section{Conclusion}
@@ -271,9 +206,8 @@ Finally, we would still get some photons when the light is off. The reason is th
 %Reference
 \section{Reference}
 \label{sec:reference}
+
 AST326Y Lab 1 Instruction
 \newline
 http://www.upscale.utoronto.ca/PVB/Harrison/ErrorAnalysis/
-
-
 \end{document}
