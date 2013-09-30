@@ -20,7 +20,8 @@
 \maketitle
 \begin{abstract}
 \label{abstract}
-Randomness is a phenomena that occurs often in the nature. Counting the number of photons would be one example of it. 
+Randomness is a phenomena that occurs often in the nature. Counting the number of photons would be one example of it. We would need to know how photons act in nature and what are the statistical features of photons as they are used to understand light coming from far away sources so that we would be able to predict the behaviour of the photons coming from the sources and to know how much accuracy we have in our measurements.
+ 
 \end{abstract}
 
 %Introduction
@@ -42,7 +43,7 @@ The plots of number of counts versus time for sampling time of 0.001 and 100 pho
 \end{figure}
 
 %Figure 2, histograms of photon counts
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[scale=0.7]{histograms.png}
 \caption{Histograms of Photon Counts}
@@ -54,7 +55,7 @@ As we progressed, we wrote python codes to make life much easier for collecting 
 Other than collecting data when the light is on, we managed to collect data when the light was off to see what the difference would be. Then we plotted the same histogram plots for the dark count and the result is shown in figure 3. By looking at the picture we conclude that even when the light was off, the photomultiplier tube counted some photons and the reasons are explained in figure 3 caption.
 
 %Figure 3, histograms of dark counts
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[scale=0.7]{Darkcounts1.png}
 \caption{Histograms of dark counts}
@@ -103,8 +104,8 @@ Figure 4 shows that the relation between variance and mean is almost linear.
 \hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
 
 
-%Table of dark counts and their mean values
-\begin{table}[ht]\caption{Mean and Standard Deviation for 4 dark data sets each consisting of 6 data sets } % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample Rate & Dark Counts(per s) & Mean of Dark Counts & Standard Deviation \\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 1000 & 1000 &  0.506 &  0.732   \\ % inserting body of the table2 & 1000 & 100&   0.543   & 0.759 \\3 & 100 & 100&    5.28  &  2.448      \\4 & 100 & 400 &   5.153   &   2.326   \\  [1ex] % [1ex] adds vertical space
+%Table 3, of dark counts and their mean values
+\begin{table}[t]\caption{Mean and Standard Deviation for 4 dark data sets each consisting of 6 data sets } % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample Rate & Dark Counts(per s) & Mean of Dark Counts & Standard Deviation \\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 1000 & 1000 &  0.506 &  0.732   \\ % inserting body of the table2 & 1000 & 100&   0.543   & 0.759 \\3 & 100 & 100&    5.28  &  2.448      \\4 & 100 & 400 &   5.153   &   2.326   \\  [1ex] % [1ex] adds vertical space
 \hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
 
 
@@ -122,10 +123,9 @@ As it is visible in Table 3, as the sample rate and number of counts per second 
 %poisson
 \subsection{Poisson Distribution}
 \label{sec:poisson distribution}
-Poisson distribution predicts the probability of getting count rate for specific set of values which are descrete. Poisson distribution only depends on one variable, which is mean. It is independent of standard deviation and this is why it is easier to use rather than gaussian distribution. Poisson distribution is given by equation 3:
+Poisson distribution predicts the probability of getting count rate for specific set of values which are descrete. Poisson distribution only depends on one variable, which is mean. It is independent of standard deviation and this is why it is easier to use rather than gaussian distribution. Poisson distribution is given by equation 3, Where \begin{math}\mu \end{math} is the mean.:
 
 \begin{equation} \label{poisson} P\left( x \right) = \frac{{e^{ - \mu } \mu ^x }}{{x!}} \end{equation}
-Where \begin{math}\mu \end{math} is the mean. 
 
 %gaussian 
 \subsection{Gaussian Distribution}
@@ -156,6 +156,7 @@ Poisson distribution is a better approximation for small data sets as is shown i
 Poisson and gaussian distribution are almost the same for long count limit as is seen in these plots. Therefore, it is more convenient to use gaussian distribution function for long limits rather than small count limit. The poisson distribution is still discrete but it is not visible here since the range of numbers on x-axis is large and it is too small to be seen, but if we zoom in, it will be visible as seen in Figure 9.
 \end{figure}
 
+%Figure 9,zoomed in part of poisson and histograms
 \begin{figure}
 \centering
 \includegraphics[scale=0.9]{part8-long-zoomedin.png}
@@ -166,25 +167,40 @@ This Figure shows that poisson distribution is still discrete but cannot be seen
  
  
  %Table 4, part 9, small to large counts and its effect on mean of mean and standard deviation of mean
+ \begin{table}\caption{Mean of mean and Standard Deviation of mean for small to lang counts} % title of Table\centering % used for centering table\begin{tabular}{c c c c c} % centered columns (4 columns)\hline\hline %inserts double horizontal linesData Set \# & Sample size & Sample Rate(counts/s) & Mean of mean & Standard Deviation of mean\\ [0.5ex] % inserts table%heading\hline % inserts single horizontal line1 & 2 & 1000  &  1.350 &   0.944281   \\ % inserting body of the table2 & 4 & 1000  &  1.275   &  0.532942    \\3 & 8 & 1000  &   1.5   &     0.288675 \\4 & 16 &1000 &   1.844   &    0.378743  \\  
+5 & 32 & 1000 &    1.516  &  0.139171 \\
+6 & 64  & 1000 &    1.686 &   0.219795\\
+7 & 128  & 1000 &   1.670 &   0.114571 \\
+8 & 256 & 1000 &   1.769  &   0.087851\\
+9 & 512 & 1000 &    1.717 &    0.059777\\
+10  & 1024 & 1000 &  1.738   & 0.034313   \\  
+11 & 2048 & 1000 &    1.717  &    0.038742\\ [1ex]
+ \hline %inserts single line\end{tabular}\label{table:nonlin} % is used to refer this table in the text\end{table}
  
  
  
- %Figure 9, MOM and SDOM, part 9 
+ %Figure 10, MOM and SDOM, part 9 
 \begin{figure}
 \centering
-\includegraphics[scale=0.6]{part9.png}
+\includegraphics[scale=0.7]{part9.png}
 \caption{MOM and SDOM }
 \end{figure}
  
-\newpage Figure 10 shows that as the sample time increases, the mean of mean also increase whereas the standard deviation of the mean decreases, meaning as we try longer sample rates, we obtain more accuracy in our data since it is more precise. Theoretical poisson did predict the standard deviation of the mean correctly as is seen in figure 10(the dashed line). Moreover, mean value does not really change as the sample rise increases.
+\newpage
+Figure 10 shows that as the sample time increases, the mean of mean also increase whereas the standard deviation of the mean decreases, meaning as we try longer sample rates, we obtain more accuracy in our data since it is more precise. Theoretical poisson did predict the standard deviation of the mean correctly as is seen in figure 10(the dashed line). Moreover, mean value does not really change as the sample rise increases.
 
 %Conclusion
+\newpage
 \section{Conclusion}
 \label{sec:conclusion}
 Counting and collecting photons is a useful task in astronomy since we gather our data from photons and it is useful to know how photons act and what the effect of statistical analysis is on them. Therefore, we would be able to predict how precise our measurements are. Knowing all these information allows us to analyze light.
 We also concluded in this experiment that as the sample size increases, the standard deviation decreases, meaning our measurements are more precise. Same is true for sample rate, as sample rate increases, the standard deviation decreases. We also found out that variance and mean have a linear relationship as seen in Figure 5.
-Also, we saw that poisson distribution is better for small count limit, whereas gaussian distribution would be easier to calculate for long count limit. In addition, poisson would agree with gaussian distribution in large limits. 
+Also, we saw that poisson distribution is better for small count limit, whereas gaussian distribution would be easier to calculate for long count limit. In addition, poisson would  with gaussian distribution in large limits. 
 Finally, we would still get some photons when the light is off. The reason is that the machine might not be completely in darkness or might be due to internal energy heat which is releasing energy.
 
+%Reference
+\section{Reference}
+\label{sec:reference}
+AST326Y Lab 1 Instruction
 
 \end{document}
