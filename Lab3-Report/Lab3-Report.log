@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 DEC 2013 18:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 DEC 2013 04:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -634,6 +634,15 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 
 LaTeX Warning: Label `fig:vismap' multiply defined.
 
+
+LaTeX Warning: Label `fig:vismap' multiply defined.
+
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
 )
 \openout1 = `Lab3-Report.aux'.
 
@@ -740,121 +749,441 @@ LaTeX Info: Redefining \nameref on input line 26.
 
  [1
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 <maxima_points.png, id=56, 578.16pt x 433.62pt>
 File: maxima_points.png Graphic file (type png)
  <use maxima_points.png>
-Package pdftex.def Info: maxima_points.png used on input line 68.
+Package pdftex.def Info: maxima_points.png used on input line 67.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 <maximas_20.png, id=58, 578.16pt x 433.62pt>
 File: maximas_20.png Graphic file (type png)
  <use maximas_20.png>
-Package pdftex.def Info: maximas_20.png used on input line 69.
+Package pdftex.def Info: maximas_20.png used on input line 68.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 67--71
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 66--70
  [][] 
  []
 
-[2] <usno.png, id=63, 578.16pt x 433.62pt>
-File: usno.png Graphic file (type png)
- <use usno.png>
-Package pdftex.def Info: usno.png used on input line 80.
-(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
- [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+<centroid.png, id=59, 854.2314pt x 578.8827pt>
+File: centroid.png Graphic file (type png)
+ <use centroid.png>
+Package pdftex.def Info: centroid.png used on input line 79.
+(pdftex.def)             Requested size: 427.11465pt x 289.44064pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.101 
-       <./maxima_points.png> <./maximas_20.png>]
-<asteroid_19.png, id=76, 717.68124pt x 500.87125pt>
-File: asteroid_19.png Graphic file (type png)
- <use asteroid_19.png>
-Package pdftex.def Info: asteroid_19.png used on input line 107.
-(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+l.82 \FloatBarrier
+                   <./maxima_points.png> <./maximas_20.png>]
+<usno.png, id=67, 578.16pt x 433.62pt>
+File: usno.png Graphic file (type png)
+ <use usno.png>
+Package pdftex.def Info: usno.png used on input line 97.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
-<asteroid_20.png, id=77, 717.68124pt x 500.87125pt>
-File: asteroid_20.png Graphic file (type png)
- <use asteroid_20.png>
-Package pdftex.def Info: asteroid_20.png used on input line 108.
-(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+<star_catalogue.png, id=68, 578.16pt x 433.62pt>
+File: star_catalogue.png Graphic file (type png)
+ <use star_catalogue.png>
+Package pdftex.def Info: star_catalogue.png used on input line 98.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
-<asteroid_22.png, id=78, 717.68124pt x 500.87125pt>
-File: asteroid_22.png Graphic file (type png)
- <use asteroid_22.png>
-Package pdftex.def Info: asteroid_22.png used on input line 110.
-(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
-
-<asteroid_23.png, id=79, 717.68124pt x 500.87125pt>
-File: asteroid_23.png Graphic file (type png)
- <use asteroid_23.png>
-Package pdftex.def Info: asteroid_23.png used on input line 111.
-(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 106--113
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 96--100
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+./Lab3-Report.tex:100: Argument of \@tempf has an extra }.
+<inserted text> 
+                \par 
+l.100 ...ition of catalog stars in x and y pixels}
+                                                  
+? 
+Runaway argument?
+\@captype {\def \@currenvir {math}\edef \@currenvline {\on@line }\csname \ETC.
+./Lab3-Report.tex:100: Paragraph ended before \@tempf was complete.
+<to be read again> 
+                   \par 
+l.100 ...ition of catalog stars in x and y pixels}
+                                                  
+? 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.123 \end{document}
-                     <./usno.png>] [5pdfTeX warning (ext4): destination with th
-e same identifier (name{figure.3}) has been already used, duplicate ignored
+l.108 \end{equation}
+                     <./centroid.png>] [5pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.3}) has been already used, duplicate ignored
+
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.123 \end{document}
+l.125 
+       <./usno.png> <./star_catalogue.png>]
+./Lab3-Report.tex:129: Missing $ inserted.
+<inserted text> 
+                $
+l.129 
+      
+? 
+./Lab3-Report.tex:129: Display math should end with $$.
+<to be read again> 
+                   \par 
+l.129 
+      
+? 
+
+./Lab3-Report.tex:130: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130 \end{equation}
+                    
+? 
+./Lab3-Report.tex:130: You can't use `\eqno' in vertical mode.
+\endmathdisplay@a ...\df@tag \@empty \else \veqno 
+                                                  \alt@tag \df@tag \fi \ifx ...
+l.130 \end{equation}
+                    
+? 
+./Lab3-Report.tex:130: Missing $ inserted.
+<inserted text> 
+                $
+l.130 \end{equation}
+                    
+? 
+./Lab3-Report.tex:130: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.130 \end{equation}
+                    
+? 
+./Lab3-Report.tex:134: Missing $ inserted.
+<inserted text> 
+                $
+l.134 
+      
+? 
+./Lab3-Report.tex:134: Display math should end with $$.
+<to be read again> 
+                   \par 
+l.134 
+      
+? 
+
+./Lab3-Report.tex:135: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 \end{equation}
+                    
+? 
+./Lab3-Report.tex:135: You can't use `\eqno' in vertical mode.
+\endmathdisplay@a ...\df@tag \@empty \else \veqno 
+                                                  \alt@tag \df@tag \fi \ifx ...
+l.135 \end{equation}
+                    
+? 
+./Lab3-Report.tex:135: Missing $ inserted.
+<inserted text> 
+                $
+l.135 \end{equation}
+                    
+? 
+./Lab3-Report.tex:135: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.135 \end{equation}
+                    
+? 
+[6] <stars_match_1.png, id=99, 803.0pt x 602.25pt>
+File: stars_match_1.png Graphic file (type png)
+ <use stars_match_1.png>
+Package pdftex.def Info: stars_match_1.png used on input line 188.
+(pdftex.def)             Requested size: 401.49902pt x 301.12425pt.
+
+<stars_match_2.png, id=100, 803.0pt x 602.25pt>
+File: stars_match_2.png Graphic file (type png)
+ <use stars_match_2.png>
+Package pdftex.def Info: stars_match_2.png used on input line 197.
+(pdftex.def)             Requested size: 401.49902pt x 301.12425pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.200 \FloatBarrier
+                    <./stars_match_1.png>]
+<centroids_catalog_together.png, id=109, 578.16pt x 433.62pt>
+File: centroids_catalog_together.png Graphic file (type png)
+
+<use centroids_catalog_together.png>
+Package pdftex.def Info: centroids_catalog_together.png used on input line 217.
+
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 \FloatBarrier
+                    <./stars_match_2.png>]
+./Lab3-Report.tex:236: Missing $ inserted.
+<inserted text> 
+                $
+l.236 a_
+        {1} &   0.9902040  & 0.006890  \\
+? 
+./Lab3-Report.tex:236: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.236 a_{1} &
+                0.9902040  & 0.006890  \\
+? 
+./Lab3-Report.tex:236: Missing $ inserted.
+<inserted text> 
+                $
+l.236 a_{1} &
+                0.9902040  & 0.006890  \\
+? 
+./Lab3-Report.tex:236: Missing } inserted.
+<inserted text> 
+                }
+l.236 a_{1} &
+                0.9902040  & 0.006890  \\
+? 
+./Lab3-Report.tex:237: Missing $ inserted.
+<inserted text> 
+                $
+l.237 a_
+        {2} &  -0.0067157  & 0.9901437 \\
+? 
+./Lab3-Report.tex:237: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.237 a_{2} &
+               -0.0067157  & 0.9901437 \\
+? 
+./Lab3-Report.tex:237: Missing $ inserted.
+<inserted text> 
+                $
+l.237 a_{2} &
+               -0.0067157  & 0.9901437 \\
+? 
+./Lab3-Report.tex:237: Missing } inserted.
+<inserted text> 
+                }
+l.237 a_{2} &
+               -0.0067157  & 0.9901437 \\
+? 
+./Lab3-Report.tex:238: Missing $ inserted.
+<inserted text> 
+                $
+l.238 a_
+        {3} &  1027.717     & 1031.749\\[1ex] % [1ex] adds vertical space
+? 
+./Lab3-Report.tex:238: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.238 a_{3} &
+               1027.717     & 1031.749\\[1ex] % [1ex] adds vertical space
+? 
+./Lab3-Report.tex:238: Missing $ inserted.
+<inserted text> 
+                $
+l.238 a_{3} &
+               1027.717     & 1031.749\\[1ex] % [1ex] adds vertical space
+? 
+./Lab3-Report.tex:238: Missing } inserted.
+<inserted text> 
+                }
+l.238 a_{3} &
+               1027.717     & 1031.749\\[1ex] % [1ex] adds vertical space
+? 
+<asteroid_19.png, id=117, 717.68124pt x 500.87125pt>
+File: asteroid_19.png Graphic file (type png)
+ <use asteroid_19.png>
+Package pdftex.def Info: asteroid_19.png used on input line 259.
+(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+
+<asteroid_20.png, id=118, 717.68124pt x 500.87125pt>
+File: asteroid_20.png Graphic file (type png)
+ <use asteroid_20.png>
+Package pdftex.def Info: asteroid_20.png used on input line 260.
+(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+
+<asteroid_22.png, id=119, 717.68124pt x 500.87125pt>
+File: asteroid_22.png Graphic file (type png)
+ <use asteroid_22.png>
+Package pdftex.def Info: asteroid_22.png used on input line 262.
+(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+
+<asteroid_23.png, id=120, 717.68124pt x 500.87125pt>
+File: asteroid_23.png Graphic file (type png)
+ <use asteroid_23.png>
+Package pdftex.def Info: asteroid_23.png used on input line 263.
+(pdftex.def)             Requested size: 234.8775pt x 163.91997pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 258--265
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.279 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.279 
+       <./centroids_catalog_together.png>] [10pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.7}) has been already used, duplicate ig
+nored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.286 \end{equation}
                      <./asteroid_19.png> <./asteroid_20.png> <./asteroid_22.png
-> <./asteroid_23.png>] [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
+> <./asteroid_23.png>]
+./Lab3-Report.tex:322: Missing $ inserted.
+<inserted text> 
+                $
+l.322 ...deg) & Delta RA(deg) & Delta time(h) & V_
+                                                  dec (deg/h)& V_ra (deg/h) ...
+
+? 
+./Lab3-Report.tex:322: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.322 ... RA(deg) & Delta time(h) & V_dec (deg/h)&
+                                                   V_ra (deg/h) & Proper Mot...
+
+? 
+./Lab3-Report.tex:322: Missing $ inserted.
+<inserted text> 
+                $
+l.322 ... RA(deg) & Delta time(h) & V_dec (deg/h)&
+                                                   V_ra (deg/h) & Proper Mot...
+
+? 
+./Lab3-Report.tex:322: Missing } inserted.
+<inserted text> 
+                }
+l.322 ... RA(deg) & Delta time(h) & V_dec (deg/h)&
+                                                   V_ra (deg/h) & Proper Mot...
+
+? 
+./Lab3-Report.tex:322: Missing $ inserted.
+<inserted text> 
+                $
+l.322 ...(deg) & Delta time(h) & V_dec (deg/h)& V_
+                                                  ra (deg/h) & Proper Motion...
+
+? 
+./Lab3-Report.tex:322: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.322 ...a time(h) & V_dec (deg/h)& V_ra (deg/h) &
+                                                   Proper Motion(deg/h)\\ [0...
+
+? 
+./Lab3-Report.tex:322: Missing $ inserted.
+<inserted text> 
+                $
+l.322 ...a time(h) & V_dec (deg/h)& V_ra (deg/h) &
+                                                   Proper Motion(deg/h)\\ [0...
+
+? 
+./Lab3-Report.tex:322: Missing } inserted.
+<inserted text> 
+                }
+l.322 ...a time(h) & V_dec (deg/h)& V_ra (deg/h) &
+                                                   Proper Motion(deg/h)\\ [0...
+
+? 
+
+Overfull \hbox (67.24864pt too wide) in paragraph at lines 320--331
+ [][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 340.
+[11pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.340 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{table.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.340 \end{document}
+                    ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
  (./Lab3-Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 340.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
+Package rerunfilecheck Info: File `Lab3-Report.out' has not changed.
+(rerunfilecheck)             Checksum: C63ECD6BE475575B1AC92EB6314B7F64;525.
 
-
-Package rerunfilecheck Warning: File `Lab3-Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Lab3-Report.out':
-(rerunfilecheck)             Before: 709FC17671F3ABF95DECE2FEA4971332;591
-(rerunfilecheck)             After:  C63ECD6BE475575B1AC92EB6314B7F64;525.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 340.
  ) 
 Here is how much of TeX's memory you used:
- 8057 strings out of 493315
- 115866 string characters out of 6137904
- 215618 words of memory out of 5000000
- 11370 multiletter control sequences out of 15000+600000
+ 8105 strings out of 493315
+ 116643 string characters out of 6137904
+ 215958 words of memory out of 5000000
+ 11392 multiletter control sequences out of 15000+600000
  10017 words of font info for 36 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,12n,28p,8994b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb>
-Output written on Lab3-Report.pdf (6 pages, 926084 bytes).
+ 34i,12n,28p,8994b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb>
+Output written on Lab3-Report.pdf (11 pages, 1107416 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
