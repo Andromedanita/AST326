@@ -1,0 +1,42 @@
+import numpy as np
+import matplotlib.pylab as plt
+
+a=2.766 #semimajor axis(Au)
+tau=2454868 #epoch of perihelion(Julian Date)
+t=2456667 #current epoch(Julian Date)
+#v= #True anomaly(rad)
+w_deg=73.12 #Arguement of perihelion(deg)
+w=(w_deg*np.pi)/180 #w in rad
+#theta=v+w #Polar angle from the x-axis(rad)
+omega_deg=80.72 #Longitude of ascending node(deg)
+omega=(omega_deg*np.pi)/180
+i_deg=10.61 #inclination(deg)
+i=(i_deg*np.pi)/180 #i in rad
+e=0.079 #eccentricity
+#M= #Mean anomaly(rad)
+M_sun=2*(10**30) #mass of the Sun (kg)
+G=6.67*(10**(-11)) #gravitational constant (SI units)
+
+k=np.sqrt(G*M_sun)
+n=k*(a**(-1.5))
+
+M=n*(t-tau)
+
+E=[] #Eccentric anomaly(rad)
+E[0]=M
+
+#E[0]=M
+
+
+q=0
+while q<100:
+    M[q+1]=E[q]-(e*np.sin(E[q]))
+    E[q+1]=E[q]+((M-M[q])/(1-e*np.cos(E[q])))
+    print E
+
+
+#plt.plot(,)
+plt.title('position of the asteroid')
+plt.xlabel('time(Julian Day)')
+plt.ylabel('r(Au)')
+plt.show()
