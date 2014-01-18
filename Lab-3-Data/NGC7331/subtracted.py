@@ -39,26 +39,7 @@ for i in range(1,2047):
 
 
                 
-#finding centroids of the stars
-for i in range(47):
-    for j in range(47):
-        multi_x=i*corrected_value[i][j]
-        multi_x_list.append(multi_x)
-        multi_y=j*corrected_value[i][j]
-        centroid_x=np.sum(multi_x_list)/np.sum(corrected_value)
-        centroid_y=np.sum(multi_y_list)/np.sum(corrected_value)
-        centroids_x.append(centroid_x)
-        centroids_y.append(centroid_y)
 
-#an array of zeros 
-centroids = np.zeros([48,48])
-q = 0
-while q < np.sqrt(len(centroids_x)):
-    if centroids_x !=0 and centroids_y !=0:
-        e = centroids_x[q]
-        r = centroids_y[q]
-        centroids[e][r] = 10000
-    q+=1
 
 plt.imshow(corrected_value,cmap=cm.gray_r,vmin=0,origin= 'lower',interpolation='nearest') #plotting 2-D , vmin=0 sets the lowest value of color bar to zero
 #plt.imshow(maxima,cmap='gray',vmin=0,origin= 'lower',interpolation='nearest')

@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import pyfits as pf
 import matplotlib.cm as cm
 from USNO import *
-import math
 
 maxima=[]
 
@@ -51,8 +50,6 @@ while m < len(max_x):
     centroid_y_list.append(centroids_y)
    
     m+=1
-
-'''
 #plt.plot(centroid_x_list, centroid_y_list,'or')
 
 delta=ded[w]*np.pi/180
@@ -82,53 +79,14 @@ y_0=1024   # y center
 ################## Pixel positions ################
 pos_x=f*position_x/p+x_0   # x values
 pos_y=f*position_y/p+y_0   # y values
-
-
-
-########## matching the stars ###########
-def finding_match (x_catalog,y_catalog,centrox, centroy):
-    
-    detectedx = np.array([])
-    detectedy = np.array([])
-    catalogx = np.array([])
-    catalogy = np.array([])
-    differncex = np.array([])
-    differncey = np.array([])
-    x = x_catalog
-    y = y_catalog
-    for a in centroid_x_list : 
-        for b in centroid_y_list:
-            if math.isnan(centroid_x_list) == 'True':
-                centroid_x_list.pop(a)
-                for q in range(len(centrox)):
-                    x_max = centrox[q]
-                    y_max = centroy[q]
-                    for i in range(len(x)):
-                        dx = (x[i]- x_max)
-                        dy = (y[i] - y_max)
-                        R = np.sqrt(abs(dx**2)+abs(dy**2))
-                    
-                        if R < 18:
-                            differncex = np.append(differncex,dx)
-                            differncey = np.append(differncey,dy)
-                            detectedx = np.append(detectedx,x_max)
-                            detectedy = np.append(detectedy,y_max)
-                            catalogx = np.append(catalogx,x[i])
-                            catalogy = np.append(catalogy,y[i])
-    return detectedx,detectedy, catalogx, catalogy, differncex, differncey
-
-
-'''
 plt.figure()
-#plt.plot(pos_x,pos_y,'r+')
-plt.plot(centroid_x_list, centroid_y_list,'g.')
+plt.plot(pos_x,pos_y,'r+')
+plt.plot(centroid_x_list, centroid_y_list,'*b')
 #plt.xlim(0,2020)
 #plt.ylim(0,2020)
 plt.title('small x and small y and centroids')    
 
-
-
-plt.imshow(corrected_value,cmap=cm.gray,vmin=0,vmax=24000,origin= 'lower',interpolation='nearest')
+plt.imshow(corrected_value,cmap=cm.gray_r,vmin=0,vmax=24000,origin= 'lower',interpolation='nearest')
 
 #plt.plot(max_x,max_y,'g.')
 #plt.xlim(0,2020)
