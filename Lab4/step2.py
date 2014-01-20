@@ -155,13 +155,14 @@ denom2=(s_dotdot_R_s)/(s_dotdot_s_dot_s)
 
 rho_dot=0.5*((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom2
 
-
-
 ########## dr/dt ########
 
 dr_dt_x=R2_dot_x+(rho*s2[0])+(rho_dot*s2[0])
 dr_dt_y=R2_dot_y+(rho*s2[1])+(rho_dot*s2[1])
 dr_dt_z=R2_dot_z+(rho*s2[2])+(rho_dot*s2[2])
+dr_dt=[dr_dt_x,dr_dt_y,dr_dt_z]
+
+########## r vector from equation 41 ###########
 
 r_vector_x=R2[0]+(rho*s2[0])
 r_vector_y=R2[1]+(rho*s2[1])

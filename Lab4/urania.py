@@ -172,6 +172,35 @@ R_dot_s=(R2[0]*s2[0])+(R2[1]*s2[1])+(R2[2]*s2[2])
 ### equation 48
 r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
 
+
+######### rho dot ###########
+
+#### rho_dot #####
+
+s_dot_s=[s2_dot[1]*s2[2]-s2_dot[2]*s2[1],s2_dot[2]*s2[0]-s2_dot[0]*s2[2],s2_dot[0]*s2[1]-s2_dot[1]*s2[0]]
+s_dotdot_R_s=(R_s[0]*s2_dotdot[0])+(R_s[1]*s2_dotdot[1])+(R_s[2]*s2_dotdot[2])
+s_dotdot_s_dot_s=(s2_dotdot[0]*s_dot_s[0])+(s2_dotdot[1]*s_dot_s[1])+(s2_dotdot[2]*s_dot_s[2])
+
+denom2=(s_dotdot_R_s)/(s_dotdot_s_dot_s)
+
+rho_dot=0.5*((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom2
+
+
+
+########## dr/dt ########
+
+dr_dt_x=R2_dot_x+(rho*s2[0])+(rho_dot*s2[0])
+dr_dt_y=R2_dot_y+(rho*s2[1])+(rho_dot*s2[1])
+dr_dt_z=R2_dot_z+(rho*s2[2])+(rho_dot*s2[2])
+dr_dt=[dr_dt_x,dr_dt_y,dr_dt_z]
+
+############## r vector from equation 41 #########
+
+r_vector_x=R2[0]+(rho*s2[0])
+r_vector_y=R2[1]+(rho*s2[1])
+r_vector_z=R2[2]+(rho*s2[2])
+r_vector=[r_vector_x,r_vector_y,r_vector_z]
+
 ################## plots ######################
 plt.plot(t,mu,'-b',t,E,'r')
 plt.title('Mean Anomaly, M and Eccentric Anomaly E for the asteroid Ceres')
