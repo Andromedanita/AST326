@@ -21,7 +21,7 @@ G=6.67*(10**(-11)) #gravitational constant (SI units)
 k=0.017202098950
 n=k*(a**(-3./2))
 p=(2*(np.pi))/n
-t=np.arange(2454702,(2454702+1.3*p))
+t=np.arange(tau,(tau+p))
 
 mu=n*(t-tau)
 
@@ -44,10 +44,11 @@ theta=v+w #Polar angle from the x-axis(rad)
 r=a*(1-(e*np.cos(E)))
 
 ##################### r vector values ########################
-r_0=2.766 #Au
-r_x=r*((np.cos(omega))*(np.cos(theta))-((np.sin(omega))*(np.cos(i))*(np.sin(theta))))
-r_y=r*((np.sin(omega))*(np.cos(theta))+((np.cos(omega))*(np.cos(i))*(np.sin(theta))))
-r_z=r*(np.sin(i))*(np.sin(theta))
+
+r_x=r*(np.cos(theta))
+r_y=r*(np.sin(theta))
+r_z=0
+
 
 circle_x=a*(np.cos(theta))
 circle_y=a*(np.sin(theta))
@@ -78,7 +79,7 @@ s3=[x3,y3,z3]
 
 
 ################## s derivatives, equation 50 #############
-t1=2452702.5
+t1=2454702.5
 t2=2454703.5
 t3=2454704.5
 tau1=t2-t1
@@ -93,25 +94,38 @@ s2_dot=[s2_dot_x,s2_dot_y,s2_dot_z]  # s2 array
 #### s2 dotdot components
 
 
-#s2_dotdot_x=((2*(s3[0]-s2[0]))/(tau3*(tau1+tau3)))-((2*(s2[0]-s1[0]))/(tau1*(tau1+tau3)))
-#s2_dotdot_y=((2*(s3[1]-s2[1]))/(tau3*(tau1+tau3)))-((2*(s2[1]-s1[1]))/(tau1*(tau1+tau3)))
-#s2_dotdot_z=((2*(s3[2]-s2[2]))/(tau3*(tau1+tau3)))-((2*(s2[2]-s1[2]))/(tau1*(tau1+tau3)))
-#s2_dotdot=[s2_dotdot_x,s2_dotdot_y,s2_dotdot_z] # s2 dotdot array
+s2_dotdot_x=((2*(s3[0]-s2[0]))/(tau3*(tau1+tau3)))-((2*(s2[0]-s1[0]))/(tau1*(tau1+tau3)))
+s2_dotdot_y=((2*(s3[1]-s2[1]))/(tau3*(tau1+tau3)))-((2*(s2[1]-s1[1]))/(tau1*(tau1+tau3)))
+s2_dotdot_z=((2*(s3[2]-s2[2]))/(tau3*(tau1+tau3)))-((2*(s2[2]-s1[2]))/(tau1*(tau1+tau3)))
+s2_dotdot=[s2_dotdot_x,s2_dotdot_y,s2_dotdot_z] # s2 dotdot array
 
-s2_dotdot=[3.6914851e-05,-4.3035117e-05,3.5967350e-06]
+#s2_dotdot=[3.6914851e-05,-4.3035117e-05,3.5967350e-06]
+
+
 
 ##### R components of the second date(s2)
-X=0.8928865393
-Y=-0.4737871683
-Z=4.402701086*(10**(-6))
-R=[X,Y,Z]
-R_length=np.sqrt((X**2)+(Y**2)+(Z**2))
+X2=0.8928865393
+Y2=-0.4737871683
+Z2=4.402701086*(10**(-6))
+R2=[X2,Y2,Z2]
+R_length=np.sqrt((X2**2)+(Y2**2)+(Z2**2))
+
+R1=[0.8849686471,-0.4888489729,4.466373306e-06]
+R3=[0.9005490495,-0.4585878955,4.483801584e-06]
+
+
+
+
+R2_dot_x=((tau3*(R2[0]-R1[0]))/(tau1*(tau1+tau3)))+((tau1*(R3[0]-R2[0]))/(tau3*(tau1+tau3)))
+R2_dot_y=((tau3*(R2[1]-R1[1]))/(tau1*(tau1+tau3)))+((tau1*(R3[1]-R2[1]))/(tau3*(tau1+tau3)))
+R2_dot_z=((tau3*(R2[2]-R1[2]))/(tau1*(tau1+tau3)))+((tau1*(R3[2]-R2[2]))/(tau3*(tau1+tau3)))
+R2_dot=[R2_dot_x,R2_dot_y,R2_dot_z]  # s2 array
 
 
 ########### R*s2
 
 
-R_s=[R[1]*s2[2]-R[2]*s2[1],R[2]*s2[0]-R[0]*s2[2],R[0]*s2[1]-R[1]*s2[0]]
+R_s=[R2[1]*s2[2]-R2[2]*s2[1],R2[2]*s2[0]-R2[0]*s2[2],R2[0]*s2[1]-R2[1]*s2[0]]
 s_dotdot_s=[s2_dotdot[1]*s2[2]-s2_dotdot[2]*s2[1],s2_dotdot[2]*s2[0]-s2_dotdot[0]*s2[2],s2_dotdot[0]*s2[1]-s2_dotdot[1]*s2[0]]
 
 sdot_R_s=(R_s[0]*s2_dot[0])+(R_s[1]*s2_dot[1])+(R_s[2]*s2_dot[2])
@@ -119,12 +133,40 @@ sdot_s_dotdot_s=(s2_dot[0]*s_dotdot_s[0])+(s2_dot[1]*s_dotdot_s[1])+(s2_dot[2]*s
 
 ################ computing rho and r (step 6) ####################
 
+r_0=2.766 # Au
+
+#while (np.abs(r_0-r_original)>0.001):
+    
 denom=(sdot_R_s)/(sdot_s_dotdot_s)
 rho=((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom
-R_dot_s=(R[0]*s2[0])+(R[1]*s2[1])+(R[2]*s2[2])
+R_dot_s=(R2[0]*s2[0])+(R2[1]*s2[1])+(R2[2]*s2[2])
 
 ### equation 48
-r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
+r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au (This is the r value in equation 48)
+
+
+#### rho_dot #####
+
+s_dot_s=[s2_dot[1]*s2[2]-s2_dot[2]*s2[1],s2_dot[2]*s2[0]-s2_dot[0]*s2[2],s2_dot[0]*s2[1]-s2_dot[1]*s2[0]]
+s_dotdot_R_s=(R_s[0]*s2_dotdot[0])+(R_s[1]*s2_dotdot[1])+(R_s[2]*s2_dotdot[2])
+s_dotdot_s_dot_s=(s2_dotdot[0]*s_dot_s[0])+(s2_dotdot[1]*s_dot_s[1])+(s2_dotdot[2]*s_dot_s[2])
+
+denom2=(s_dotdot_R_s)/(s_dotdot_s_dot_s)
+
+rho_dot=0.5*((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom2
+
+
+
+########## dr/dt ########
+
+dr_dt_x=R2_dot_x+(rho*s2[0])+(rho_dot*s2[0])
+dr_dt_y=R2_dot_y+(rho*s2[1])+(rho_dot*s2[1])
+dr_dt_z=R2_dot_z+(rho*s2[2])+(rho_dot*s2[2])
+
+r_vector_x=R2[0]+(rho*s2[0])
+r_vector_y=R2[1]+(rho*s2[1])
+r_vector_z=R2[2]+(rho*s2[2])
+r_vector=[r_vector_x,r_vector_y,r_vector_z]
 
 ################## plots ######################
 plt.plot(t,mu,'-b',t,E,'r')
@@ -152,6 +194,7 @@ plt.title('The position of Ceres in the plane of the orbit')
 plt.xlabel('x [Au]')
 plt.ylabel('y [Au]')
 plt.plot(circle_x,circle_y,'--m')
+plt.plot(r_x[0],r_y[0],'o')
 plt.legend(('position of Ceres','circle with radius a'),loc='best')
 plt.plot(0,0,'+g')
 

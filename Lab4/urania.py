@@ -44,6 +44,11 @@ theta=v+w #Polar angle from the x-axis(rad)
 r=a*(1-(e*np.cos(E)))
 
 ##################### r vector values ########################
+r_0=3 #Au
+
+#r_x=r*((np.cos(omega))*(np.cos(theta))-((np.sin(omega))*(np.cos(i))*(np.sin(theta))))
+#r_y=r*((np.sin(omega))*(np.cos(theta))+((np.cos(omega))*(np.cos(i))*(np.sin(theta))))
+#r_z=r*(np.sin(i))*(np.sin(theta))
 
 r_x=r*(np.cos(theta))
 r_y=r*(np.sin(theta))
@@ -62,15 +67,41 @@ beta1=(4.0625653*np.pi)/180 #radians
 beta2=(4.0992581*np.pi)/180 #radians
 beta3=(4.1361592*np.pi)/180 #radians
 
-x1=(np.cos(lambda1))*(np.cos(beta1))
-x2=(np.cos(lambda2))*(np.cos(beta2))
-x3=(np.cos(lambda3))*(np.cos(beta3))
-y1=(np.sin(lambda1))*(np.cos(beta1))
-y2=(np.sin(lambda2))*(np.cos(beta2))
-y3=(np.sin(lambda3))*(np.cos(beta3))
-z1=np.sin(beta1)
-z2=np.sin(beta2)
-z3=np.sin(beta3)
+
+
+###### right ascension and declination values #############
+
+alpha=[ 0.77589496, 0.77991461,0.78825718,0.79249126]
+delta=[ 0.33553406,0.33640024, 0.33765579, 0.33851884]
+
+
+
+
+######## equation 61, equatorial coordinates #########
+
+x1_eqt=(np.cos(alpha[0]))*(np.cos(delta[0]))
+y1_eqt=(np.sin(alpha[0]))*(np.cos(delta[0]))
+z1_eqt=(np.sin(delta[0]))
+x2_eqt=(np.cos(alpha[1]))*(np.cos(delta[1]))
+y2_eqt=(np.sin(alpha[1]))*(np.cos(delta[1]))
+z2_eqt=(np.sin(delta[1]))
+x3_eqt=(np.cos(alpha[2]))*(np.cos(delta[2]))
+y3_eqt=(np.sin(alpha[2]))*(np.cos(delta[2]))
+z3_eqt=(np.sin(delta[2]))
+
+epsilon=(23.43929111*(np.pi))/180  # epsilon value in radians
+
+
+
+x1=x1_eqt
+x2=x2_eqt
+x3=x3_eqt
+y1=((np.cos(epsilon))*y1_eqt)+((np.sin(epsilon))*z1_eqt)
+y2=((np.cos(epsilon))*y2_eqt)+((np.sin(epsilon))*z2_eqt)
+y3=((np.cos(epsilon))*y3_eqt)+((np.sin(epsilon))*z3_eqt)
+z1=((-np.sin(epsilon))*y1_eqt)+((np.cos(epsilon))*z1_eqt)
+z2=((-np.sin(epsilon))*y2_eqt)+((np.cos(epsilon))*z2_eqt)
+z3=((-np.sin(epsilon))*y3_eqt)+((np.cos(epsilon))*z3_eqt)
 
 # s vectors (equation 60)
 s1=[x1,y1,z1]
@@ -79,9 +110,9 @@ s3=[x3,y3,z3]
 
 
 ################## s derivatives, equation 50 #############
-t1=2454702.5
-t2=2454703.5
-t3=2454704.5
+t1=2455946.68646
+t2=2455947.69476
+t3=2455949.73866
 tau1=t2-t1
 tau3=t3-t2
 
@@ -104,15 +135,16 @@ s2_dotdot=[s2_dotdot_x,s2_dotdot_y,s2_dotdot_z] # s2 dotdot array
 
 
 ##### R components of the second date(s2)
-X2=0.8928865393
-Y2=-0.4737871683
-Z2=4.402701086*(10**(-6))
+X2=-0.4974148410812385
+Y2= 0.8490994851434150
+Z2=-2.462584044959891*(10**(-05))
+
 R2=[X2,Y2,Z2]
 R_length=np.sqrt((X2**2)+(Y2**2)+(Z2**2))
 
-R1=[0.8849686471,-0.4888489729,4.466373306e-06]
-R3=[0.9005490495,-0.4585878955,4.483801584e-06]
-
+R1 = [-0.4820742567460204,  0.8578010618775774, -2.425231096584922*(10**(-05))]
+R3 = [-0.5280130493076013,  0.8306420761670466, -2.515673232526080*(10**(-05))]
+R4 = [-0.5419538025371889,  0.8217251214639645, -2.524538626668697*(10**(-05))]
 
 
 
@@ -133,37 +165,12 @@ sdot_s_dotdot_s=(s2_dot[0]*s_dotdot_s[0])+(s2_dot[1]*s_dotdot_s[1])+(s2_dot[2]*s
 
 ################ computing rho and r (step 6) ####################
 
-r_0=2.66 # Au
-
-#while (np.abs(r_0-r_original)>0.001):
-    
 denom=(sdot_R_s)/(sdot_s_dotdot_s)
 rho=((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom
 R_dot_s=(R2[0]*s2[0])+(R2[1]*s2[1])+(R2[2]*s2[2])
 
 ### equation 48
 r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
-
-
-#### rho_dot #####
-
-s_dot_s=[s2_dot[1]*s2[2]-s2_dot[2]*s2[1],s2_dot[2]*s2[0]-s2_dot[0]*s2[2],s2_dot[0]*s2[1]-s2_dot[1]*s2[0]]
-s_dotdot_R_s=(R_s[0]*s2_dotdot[0])+(R_s[1]*s2_dotdot[1])+(R_s[2]*s2_dotdot[2])
-s_dotdot_s_dot_s=(s2_dotdot[0]*s_dot_s[0])+(s2_dotdot[1]*s_dot_s[1])+(s2_dotdot[2]*s_dot_s[2])
-
-denom2=(s_dotdot_R_s)/(s_dotdot_s_dot_s)
-
-rho_dot=0.5*((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom2
-
-
-
-########## dr/dt ########
-
-dr_dt_x=R2_dot_x+(rho*s2[0])+(rho_dot*s2[0])
-dr_dt_y=R2_dot_y+(rho*s2[1])+(rho_dot*s2[1])
-dr_dt_z=R2_dot_z+(rho*s2[2])+(rho_dot*s2[2])
-
-
 
 ################## plots ######################
 plt.plot(t,mu,'-b',t,E,'r')
