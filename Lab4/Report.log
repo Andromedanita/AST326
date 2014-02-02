@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  25 JAN 2014 20:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 FEB 2014 12:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -633,6 +633,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 
 LaTeX Warning: Label `table:nonlin' multiply defined.
 
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
 )
 \openout1 = `Report.aux'.
 
@@ -740,201 +743,217 @@ LaTeX Info: Redefining \nameref on input line 28.
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-./Report.tex:106: Missing $ inserted.
+./Report.tex:144: Missing $ inserted.
 <inserted text> 
                 $
-l.106 
-      
+l.144 ...8010618775774  &  -2.425231096584922*(10^
+                                                  {(-05)})  \\
 ? 
-./Report.tex:106: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.106 
-      
-? 
+./Report.tex:145: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.145 -
+       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
 
-./Report.tex:107: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.107 \end{equation}
-                    
-? 
-./Report.tex:107: You can't use `\eqno' in vertical mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.107 \end{equation}
-                    
-? 
-./Report.tex:107: Missing $ inserted.
-<inserted text> 
-                $
-l.107 \end{equation}
-                    
-? 
-./Report.tex:107: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.107 \end{equation}
-                    
 ? 
 ./Report.tex:145: Missing $ inserted.
 <inserted text> 
                 $
-l.145 ...8010618775774  &  -2.425231096584922*(10^
-                                                  {(-05)})  \\
+l.145 -
+       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
+
+? 
+./Report.tex:145: Missing } inserted.
+<inserted text> 
+                }
+l.145 -
+       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
+
+? 
+./Report.tex:145: Missing $ inserted.
+<inserted text> 
+                $
+l.145 ...0994851434150  &  -2.462584044959891*(10^
+                                                  {(-05)}) \\
 ? 
 ./Report.tex:146: Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
 l.146 -
-       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
+       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
 
 ? 
 ./Report.tex:146: Missing $ inserted.
 <inserted text> 
                 $
 l.146 -
-       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
+       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
 
 ? 
 ./Report.tex:146: Missing } inserted.
 <inserted text> 
                 }
 l.146 -
-       0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{...
+       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
 
 ? 
 ./Report.tex:146: Missing $ inserted.
 <inserted text> 
                 $
-l.146 ...0994851434150  &  -2.462584044959891*(10^
+l.146 ...6420761670466  &  -2.515673232526080*(10^
                                                   {(-05)}) \\
 ? 
 ./Report.tex:147: Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
 l.147 -
-       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
+       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
 
 ? 
 ./Report.tex:147: Missing $ inserted.
 <inserted text> 
                 $
 l.147 -
-       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
+       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
 
 ? 
 ./Report.tex:147: Missing } inserted.
 <inserted text> 
                 }
 l.147 -
-       0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{...
+       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
 
 ? 
 ./Report.tex:147: Missing $ inserted.
 <inserted text> 
                 $
-l.147 ...6420761670466  &  -2.515673232526080*(10^
-                                                  {(-05)}) \\
-? 
-./Report.tex:148: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.148 -
-       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
-
-? 
-./Report.tex:148: Missing $ inserted.
-<inserted text> 
-                $
-l.148 -
-       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
-
-? 
-./Report.tex:148: Missing } inserted.
-<inserted text> 
-                }
-l.148 -
-       0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{...
-
-? 
-./Report.tex:148: Missing $ inserted.
-<inserted text> 
-                $
-l.148 ...7251214639645  &  -2.524538626668697*(10^
+l.147 ...7251214639645  &  -2.524538626668697*(10^
                                                   {(-05)})  \\ [1ex] % [1ex]...
 
 ? 
-./Report.tex:148: Extra }, or forgotten $.
+./Report.tex:147: Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
-l.148 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
+l.147 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
                                                    % [1ex] adds vertical space
 ? 
-./Report.tex:148: Missing $ inserted.
+./Report.tex:147: Missing $ inserted.
 <inserted text> 
                 $
-l.148 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
+l.147 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
                                                    % [1ex] adds vertical space
 ? 
-./Report.tex:148: Missing } inserted.
+./Report.tex:147: Missing } inserted.
 <inserted text> 
                 }
-l.148 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
+l.147 ...-2.524538626668697*(10^{(-05)})  \\ [1ex]
                                                    % [1ex] adds vertical space
 ? 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [3pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 \FloatBarrier
-                   ] [4pdfTeX warning (ext4): destination with the same identif
-ier (name{table.2}) has been already used, duplicate ignored
+l.158 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.2
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.195 \end{equation}
-                    ]
+l.158 
+      ] [4]
 
-./Report.tex:211: Package amsmath Error: \dot allowed only in math mode.
+./Report.tex:210: Package amsmath Error: \dot allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.211 ...s product of the {\bf r} and {\bf \dot{r}
+l.210 ...s product of the {\bf r} and {\bf \dot{r}
                                                   } vectors:
 ? 
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+[5] [6pdfTeX warning (ext4): destination with the same identifier (name{table.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.291 
+      ] <figure3.png, id=117, 578.16pt x 433.62pt>
+File: figure3.png Graphic file (type png)
+ <use figure3.png>
+Package pdftex.def Info: figure3.png used on input line 295.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+<figure4.png, id=119, 578.16pt x 216.81pt>
+File: figure4.png Graphic file (type png)
+ <use figure4.png>
+Package pdftex.def Info: figure4.png used on input line 322.
+(pdftex.def)             Requested size: 404.70924pt x 151.76596pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.325 \FloatBarrier
+                    <./figure3.png>]
+./Report.tex:330: Missing $ inserted.
+<inserted text> 
+                $
+l.330 ... sensitive to the precision in the \alpha
+                                                   \end{math} and \begin{mat...
+
+? 
+
+./Report.tex:330: LaTeX Error: \begin{document} ended by \end{math}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.330 ...to the precision in the \alpha \end{math}
+                                                   and \begin{math} \delta \...
+
+? 
+./Report.tex:330: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.330 ...to the precision in the \alpha \end{math}
+                                                   and \begin{math} \delta \...
+
+? 
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.332 \section
+              {Conclusion} <./figure4.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 352.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 352.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 352.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 352.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 36A9630AD1C39019ED313ED33D51BF03;473.
+(rerunfilecheck)             Checksum: E6AC1F59032DC2AEA2E4DA18E9B703FC;736.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 352.
  ) 
 Here is how much of TeX's memory you used:
- 8035 strings out of 493315
- 115327 string characters out of 6137904
- 217423 words of memory out of 5000000
- 11341 multiletter control sequences out of 15000+600000
+ 8073 strings out of 493315
+ 115778 string characters out of 6137904
+ 217553 words of memory out of 5000000
+ 11360 multiletter control sequences out of 15000+600000
  10945 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,10n,28p,898b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,10n,28p,2328b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -947,10 +966,10 @@ l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report.pdf (6 pages, 147495 bytes).
+Output written on Report.pdf (9 pages, 220223 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

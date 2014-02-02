@@ -32,7 +32,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-Astrometry is used to measure properties of celestial objects such as their position on the sky, their movement and their velocities. In this experiment, we used a charged coupled device(CCD). The CCD mapped the sky on a 2D plane. Observations were made using the Dunlap Institute Telescope located in New Mexico, United States. The object of interest for this experiment is asteroid named 30 Urania.We measured the plate constants of the CCD using a data from NGC7331 in order to correct for the CCD, since the CCD is not an ideal one. Then we applied these plate constants to the data from 30 Urania over the course of four nights in January 2012 and measured the right ascension and declination of 30 Urania in order to find the orbit of this asteroid. 
+Astrometry is used to measure properties of celestial objects such as their position on the sky, their movement, velocities and acceleration. In this experiment, we used a charged coupled device(CCD). The CCD mapped the sky on a 2D plane. Observations were made using the Dunlap Institute Telescope located in New Mexico, United States. The object of interest for this experiment is asteroid named 30 Urania.We measured the plate constants of the CCD in order to correct for the CCD, since the CCD is not an ideal one. Then we applied these plate constants to the data from 30 Urania over the course of four nights in January 2012 and measured the corresponding right ascension and declination of this asteroid in order to find the orbital elements and therefor, to predict its future positions of this asteroid. 
 
 
 
@@ -103,7 +103,6 @@ In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin
 % s2 dot dot equation
 \begin{equation}
 \ddot{s_{2}}=\frac{2(s_{3}-s_{2})}{\tau_{3}(\tau_{1}+\tau_{3})}+\frac{2(s_{2}-s_{1})}{\tau_{1}(\tau_{1}+\tau_{3})}
-
 \end{equation}
 
 The next step is to find the {\bf R} vector. We obtain the components of the {\bf R} vector from the JPL Horizons Ephemeris web interface for the desired date which is 24th, 25th and 26th of January 2012.
@@ -200,10 +199,11 @@ In order to calculate the velocity of the asteroid relative to the sun we need t
 {\bf \dot{r}}={\bf \dot{R}} +\rho{\dot{\bf s}} + \dot{\rho} {\bf s}
 \end{equation}
 
-
+% Orbital Elements Sub Section
 \subsection{Orbital Elements}
-We can now use the values we got from previous section to find the orbital elements of 30 Urania using Laplace's method. Since we know the magnitude of the radius vector, r, and the total velocity, V, we can compute the semimajor axis by eqaution (....):
+We can now use the values we got from previous section to find the orbital elements of 30 Urania using Laplace's method. Since we know the magnitude of the radius vector, r, the asteroid velocity, \begin{math}V=|\dot{r}| \end{math} and k=0.017202098950, we can compute the semimajor axis by equation (....):
 
+% Semi Major Axis Equation
 \begin{equation}
 a=\frac{k^2r}{2k^2-rV^2}
 \end{equation}
@@ -231,17 +231,127 @@ In order to find the eccentricity, we use equation (...) given below:
 e=\sqrt{1-(\frac{h^2}{ak^2})}
 \end{equation}
 
-In order to compute the last two Keplerian orbital elements,-the argument of perihelion,\begin{math} \omega \end{math}, and the epoch of perihelion, \begin{math} \tau \end{math}, we need to calculate the eccentric and true anomalies. Equation (....) and (...) give the eccentric and true anomalies, respectively.
+In order to compute the last two Keplerian orbital elements-the argument of perihelion,\begin{math} \omega \end{math}, and the epoch of perihelion, \begin{math} \tau \end{math}, we need to calculate the eccentric and true anomalies. Equation (....) and (...) give the eccentric and true anomalies, respectively.
 
 % eccentric anomaly orbital element
 \begin{equation}
 \cos E = \frac{a-r}{ae}
 \end{equation}
 
+The sign of E depends on the body's radial velocity; E>0 when the radial velocity is positive(between perihelion and aphelion) and E<0 when the radial velocity is negative(from aphelion to perihelion).
+
+% True Anomaly Equation
+\begin{equation}
+v = 2\arctan(\sqrt{\frac{1+e}{1-e}\tan E/2})
+\end{equation}
+
 % true anomaly orbital element
 \begin{equation}
 \cos (v+\omega) = \frac{x \cos \Omega + y \sin \Omega}{r} 
 \end{equation}
+
+
+For the true anomaly, \begin{math} \tau \end{math} we can use equation (....) :
+
+% Mean Anomaly Equation
+\begin{equation}
+M = n(t-\tau)
+\end{equation}
+where \begin{math} n=ka^-3/2 \end{math} is the mean motion and t is the epoch of the second observation. The calculated orbital elements are listed in table (...) along with their true values and the error in each. Since the error is small, we can be confident about our method and values. However, during this lab we found out that this method is very sensitive to the coordinates of the asteroid obtained via transformation by plate constants. At first, we were using values that were similar to the true values (JPL values) within two decimal places, but the values of {\bf r} and \begin{math} \rho \end{math} were converging to 0 and 1 respectively, which meant that the asteroid is somewhere on the surface of the Earth. After computing more accurate right ascension and declination of the asteroid using more precise plate constants with smaller \begin{math} \chi_{reduced}^2 \end{math}, the values of the RA and Dec of the asteroid matched with the JPL values within 4 decimal places and we were able to get good estimate of the position of the asteroid.
+In order to make sure that our method and equations are correct, we first applied the same method and equations to the asteroid Ceres and compared the orbital elements we got with the ones given in the lab handout and they matched with small residuals; therefore, we were confident about the method and the equations used to compute the orbital elements of 30 Urania.
+
+%Table showing the R vector components 
+\FloatBarrier
+\begin{table}[h!]
+\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c } % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+ & a & \begin{math} \Omega \end{math}  & i & e & \begin{math} \omega \end{math}  & \begin{math} \tau \end{math} \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+  & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\
+True & 2.766 &  80.72 &   10.61 & 0.179 & &2454785.970\\
+Estimated &3.186 &  80.68 & 10.50 &  0.079 & & 2454868\\ 
+Error & -0.42 &  0.04 &    0.11 &   0.09 & & 82.03\\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+% Orbital Motion of the Asteroid Ceres
+\subsection{Orbital Motion of Asteroid Ceres}
+In this sub section, we will be using Keplerian orbital elements provided in the lab handout to compute and plot some of the orbital elements such as true anomaly and the orbital separation, r, as a function of time. 
+We first need to compute the mean anomaly by equation (....). Then using Taylor series we are able to find the \begin{math} E_{n} \end{math} numerically by the following equation:
+
+% Eccentric Anomaly 
+\begin{equation}
+E_{n+1}=E_{n}+\frac{M-M(E_{n})}{1-e\cos(E_{n})}
+\end{equation}
+
+
+We can then plot the eccentric and true anomalies as a function of time in Julian Date. The result is shown in figure (...).
+
+% Figure 3 in lab handout
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{figure3.png}
+\caption{This figure shows the mean anomaly, M, and eccentric anomaly, E, for the asteroid Ceres using the orbital elements tabulated in table (...). The eccentricity of Ceres is small(e=0.079) and the difference between these two angles is small.}
+\end{figure}
+\FloatBarrier
+
+
+We can then compute the true anomaly by equation (...) and since we have both v and w, we are able to calculate the polar angle by:
+
+\begin{equation}
+\theta = v + \omega
+\end{equation}
+
+and the Cartesian components of the position of the asteroid are given by equation (...):
+
+\begin{equation}
+r=
+\begin{pmatrix}
+  r\cos \theta \\
+  r\sin \theta \\
+  0
+ \end{pmatrix} 
+\end{equation}
+
+The plot of the r as a function of time is shown in figure (...):
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{figure4.png}
+\caption{This figure shows the orbital separation and true anomaly of the asteroid Ceres respectively over one period.}
+\end{figure}
+\FloatBarrier
+
+% Discussion
+\section{Discussion}
+\label{sec:discussion}
+First of all, we tried to compute the geocentric position vector of the asteroid, \begin{math} \rho \end{math}s, and the relative position of the asteroid relative to the Sun,{\bf r}, using the equations (...) to (...). In computing the positions, we used the position vector of the Earth relative to the Sun, {\bf R}=\begin{math} (X_{eq},Y_{eq},Z_{eq})\end{math}, obtained from JPL HORIZONS ephemeris for the given date. Hence, we could determine the orbit of the asteroid using Laplace's method which is explained in section 4 in details. In order to determine the position of the asteroid relative to the Sun, we also needed the right ascension and declination of the asteroid in the course of the four epochs of the observations we had from the DIT files. As it has been mentioned in the report and has been mentioned in full details in my lab 3 report[...], we calculated the plate constants of the CCD used in order to correct for the non-ideal CCD and to obtain more accurate positions of the asteroid on the celestial sphere. However, we faced lots of problems and we were getting \begin{math} \rho \end{math} to be zero and {\bf r} to be almost 1, which meant that the asteroid is 1 Au away from the Sun and 0 Au away from the Earth which meant the asteroid is on the Earth! Therefore, we tried to fix the problem, so we used more accurate Julian dates (with more precision) and also used different epochs. For instance, we used the first, second and third epoch and then we used second, third and fourth epoch to compute \begin{math} \rho \end{math} and {\bf r}, but it did not solve the problem. The other thing we used was to use the coordinates (\begin{math} \alpha \end{math} and \begin{math} \delta \end{math})obtained from JPL to check if there is a problem with the code itself or with the coordinates we were using and we found out that the code works perfectly. The values we got for \begin{math} \rho \end{math} and {\bf r} were really close to the true values. The values we had from our conversion using the plate constants were very close to the true values obtained from JPL, they were the same to 4 decimal places; however, as we saw, the calculation of the position vectors is very sensitive to the precision in the \alpha \end{math} and \begin{math} \delta \end{math} values. 
+
+
+% Conclusion
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+% Reference
+\section{References}
+\label{sec:references}
+1- Lab # 4: Astrometric Orbit Determination handout
+2- Lab 3 Report written by Anita Bahmanyar
+3-JPL HORIZONS web interface ephemeris
+
+\section{Appendix}
+\label{sec:appendix}
+
+
+
 
 %\FloatBarrier
 %\begin{figure}[h!]
