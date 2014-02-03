@@ -48,7 +48,7 @@ Nowadays, with the advancements of technology, we are able to use computers to d
 \section{Observation and Data}
 \label{sec:observationanddata}
 \subsection{Equipment}
-We used the Dunlap Institute Telescope(DIT) which is a 50-cm robotic telescope dedicated to search for optical counterparts of gamma-ray bursts. The telescope was located at New Mexico on Mt. Joy(32:54:10 N +105:31:46 W). The telescope is equipped with a 4096 \begin{math}\times\end{math} 4096 pixel CCD array and the resultant field of view is approximately 36 \begin{math}\times\end{math} 36 arc minutes. Pixel size of this CCD is 9?. This CCD operated in binning mode to collect the data we will be using through this experiment. Binning is useful since it reduces the size of the resultant FITS file and reduces the effect of read-out noise. For 2 \begin{math}\times\end{math} 2 binning the resultant array is 2048 \begin{math}\times\end{math} 2048 pixels.
+We used the Dunlap Institute Telescope(DIT) which is a 50-cm robotic telescope dedicated to search for optical counterparts of gamma-ray bursts. The telescope was located at New Mexico on Mt. Joy(32:54:10 N +105:31:46 W). The telescope is equipped with a 4096 \begin{math}\times\end{math} 4096 pixel CCD array and the resultant field of view is approximately 36 \begin{math}\times\end{math} 36 arc minutes. Pixel size of this CCD is 9\begin{math} \mu \end{math}. This CCD operated in binning mode to collect the data we will be using through this experiment. Binning is useful since it reduces the size of the resultant FITS file and reduces the effect of read-out noise. For 2 \begin{math}\times\end{math} 2 binning the resultant array is 2048 \begin{math}\times\end{math} 2048 pixels.
 
 \subsection{CCD Calibration}
 In order to have good images from the CCD we need to calibrate them. A good image is one that is dark subtracted and divided by flat frames. Therefore, in order to use the data from the CCD, we subtracted the dark data from the actual data. Dark data was taken with the same exposure time as the actual data while the shutter was closed. Dark current is produced due to the noise in the CCD and it might come from the thermal energy of the electrons; therefore, CCDs are kept in cool places in order to reduce the noise. We also divided the dark subtracted data by the flat frames. Flats are morning and evening twilight sky images that are used to normalize the image. Another factor to consider are the bias frames, which are zero second exposures that provide a measure of digital offset when the signal is zero. Here, the bias is assumed to be zero for this long exposure with DIT.
@@ -103,7 +103,7 @@ In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin
 \ddot{s_{2}}=\frac{2(s_{3}-s_{2})}{\tau_{3}(\tau_{1}+\tau_{3})}+\frac{2(s_{2}-s_{1})}{\tau_{1}(\tau_{1}+\tau_{3})}
 \end{equation}
 
-The next step is to find the {\bf R} vector. We obtain the components of the {\bf R} vector from the JPL Horizons Ephemeris web interface for the desired date which is 24th, 25th and 26th of January 2012.
+The next step is to find the {\bf R} vector. We obtain the components of the {\bf R} vector from the JPL Horizons Ephemeris web interface for the desired date which is 19, 20, 22 and 23 of January 2012.
 The {\bf R} vector components are given in the table 1.
 
 
@@ -183,13 +183,13 @@ R=\sqrt{R_{x}^2+R_{y}^2+R_{z}^2}
 \end{equation}
 
 
-We now have all the values we need and should be able to calculate \begin{math} \rho \end{math} value by the equation 6:
+We now have all the values we need and should be able to calculate \begin{math} \rho \end{math} value by equation 6:
 
 \begin{equation}
 \rho=k^2(\frac{1}{R^3}-\frac{1}{r^3})\frac{\dot{{\bf s}}.({\bf R}\times{\bf s})}{\dot{{\bf s}}.(\ddot{{\bf s}}\times{\bf s})}
 \end{equation}
 
-We do not have the value or r explicitly yet; however, we can guess an initial r value and write a for loop to calculate \begin{math} \rho \end{math} until it converges using the new values for r. This part of the code I used can be found in the appendix.(....)
+We do not have the value or r explicitly yet; however, we can guess an initial r value and write a for loop to calculate \begin{math} \rho \end{math} until it converges using the new values for r. This part of the code I used can be found in the appendix.
 
 
 After finding the \begin{math} \rho \end{math} value, we can calculate the r value by equation 7:
@@ -243,6 +243,7 @@ Vector & x & y & z \\ [0.5ex] % inserts table
 \FloatBarrier
 
 Table 4 shows the r vector and its derivative Cartesian components in the heliocentric ecliptic system.
+Using these data and the method outlined above yields \begin{math} \rho \end{math}=3.4483 AU and \begin{math} r \end{math}=2.6234 Au at the midpoint. The JPL HORIZONS ephemeris gives \begin{math} \rho \end{math}=3.419 AU and \begin{math} r \end{math}=2.596 Au for asteroid Ceres. So the error introduced using Taylor series expansion for velocity and acceleration in this case is about 1 \%. The data and methods outlined above also yield \begin{math} \rho \end{math}=1.619 AU and \begin{math} r \end{math}=2.133 Au at the midpoint. The JPL HORIZONS ephemeris gives \begin{math} \rho \end{math}=1.605 AU and \begin{math} r \end{math}=2.119 Au for asteroid 30 Urania. The error here is also about 1 \%.
 
 % Orbital Elements Sub Section
 \subsection{Orbital Elements}
@@ -308,7 +309,7 @@ In order to make sure that our method and equations are correct, we first applie
 %Table showing the R vector components 
 \FloatBarrier
 \begin{table}[h!]
-\caption{Orbital Elements of Ceres obtained by our calculations and JPL along with their errors} % title of Table
+\caption{Orbital Elements of Ceres obtained by our calculations and JPL HORIZONS along with their errors} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
 \hline %inserts double horizontal lines
@@ -338,17 +339,17 @@ E_{n+1}=E_{n}+\frac{M-M(E_{n})}{1-e\cos(E_{n})}
 
 We can then plot the eccentric and true anomalies as a function of time in Julian Date. The result is shown in figure 1.
 
-% Figure 3 in lab handout
+% Figure 3 in lab handout (figure 1 here)
 \FloatBarrier
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{figure3.png}
-\caption{This figure shows the mean anomaly, M, and eccentric anomaly, E, for the asteroid Ceres using the orbital elements tabulated in table 5. The eccentricity of Ceres is small(e=0.079) and the difference between these two angles is small.}
+\caption{This figure shows the mean anomaly, M, and eccentric anomaly, E, for the asteroid Ceres using the orbital elements tabulated in table 5. The eccentricity of Ceres is small(e=0.079) so the difference between these two angles is small.}
 \end{figure}
 \FloatBarrier
 
 
-We can then compute the true anomaly by equation 18 and since we have both \begin{math} v \end{math} and \begin{math} w \end{math} , we are able to calculate the polar angle by equation 22
+We can then compute the true anomaly by equation 18 and since we have both \begin{math} v \end{math} and \begin{math} w \end{math} , we are able to calculate the polar angle by equation 22:
 
 \begin{equation}
 \theta = v + \omega
@@ -365,7 +366,7 @@ r=
  \end{pmatrix} 
 \end{equation}
 
-The plot of the orbital separation, r, and the true anomaly, \begin{math} v \end{math}, as a function of time are shown in figure 2:
+The plot of the orbital separation, \begin{math} r \end{math} , and the true anomaly, \begin{math} v \end{math}, as a function of time are shown in Figure 2.
 % figure 2
 \FloatBarrier
 \begin{figure}[h!]
@@ -382,7 +383,7 @@ The plot of the orbital separation, r, and the true anomaly, \begin{math} v \end
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{figure5.png}
-\caption{This figure shows the x and y components of r vector for asteroid Ceres. The pink dashed line is a circle with radius equal to the semi-major axis of Ceres and the blue solid line is the orbit of Ceres. The position of perihelion is also pointed with a dot.}
+\caption{This figure shows the x and y components of r vector for asteroid Ceres. The pink dashed line is a circle with radius equal to the semi-major axis of Ceres(2.766 Au) and the blue solid line is the orbit of Ceres. The position of perihelion is also pointed with a dot.}
 \end{figure}
 \FloatBarrier
 
@@ -396,7 +397,7 @@ The same way we predicted the position of Ceres for future time, we can determin
 %Table showing the orbital elements of 30 Urania 
 \FloatBarrier
 \begin{table}[h!]
-\caption{Orbital Elements of 30 Urania obtained by our calculations and JPL along with their errors.} % title of Table
+\caption{Orbital Elements of 30 Urania obtained by our calculations and JPL HORIZONS along with their errors.} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
 \hline %inserts double horizontal lines
@@ -473,6 +474,11 @@ We can then use the transpose of matrix 2 in order to transform the ecliptic coo
 \end{equation}
 
 
+% figures 6 and 7
+\begin{figure}[ht]\centering\begin{minipage}[b]{0.4\linewidth}  \includegraphics[scale=0.7]{ra_dec.png}  \caption{This figure shows the heliocentric equatorial coordinates of the asteroid 30 Urania. }  \label{fig:minipage1}\end{minipage}\quad\begin{minipage}[b]{0.4\linewidth}  \includegraphics[scale=0.62]{wiggles.png}  \caption{This figure shows the geocentric equatorial position of the astroid 30 Urania.}  \label{fig:minipage2}\end{minipage}\end{figure}
+
+
+
 % Discussion
 \section{Discussion}
 \label{sec:discussion}
@@ -482,14 +488,14 @@ First of all, we tried to compute the geocentric position vector of the asteroid
 % Conclusion
 \section{Conclusion}
 \label{sec:conclusion}
-We used 2D images of 30 Urania to compute its orbital elements in order to predict its orbit for future dates. We used the coordinates obtained by conversion from CCD pixels to right ascension and declination using plate constants of the CCD for each night;however, since our values differed from the true values in 4th decimal place, we used values obtained from JPL HORIZONS web interface. Therefore, we observed that we need very accurate positions of the asteroid since only this small difference can make a huge difference in the orbital elements and as a result, in the prediction of the asteroid's orbit.
+We used 2D images of 30 Urania to compute its orbital elements in order to predict its orbit for future dates. We used the coordinates obtained by conversion from CCD pixels to right ascension and declination using plate constants of the CCD for each night;however, since our values differed from the true values in 4th decimal place, we used values obtained from JPL HORIZONS web interface. Therefore, we observed that we need very accurate positions of the asteroid since only this small difference can make a huge difference in the orbital elements and as a result, in the prediction of the asteroid's orbit. We also observed that the mean and eccentric anomalies are relatively similar, which means that the eccentricity we calculated for both Ceres and 30 Urania are small. Moreover, the perturbation of Earth's orbit around the Sun is evident in figure 7 as an annual year ripple superimposed on the overall orbital motion of the asteroid in RA and DEC vs. time plots.
 
 % Reference
 \section{References}
 \label{sec:references}
 \\*1- Lab # 4: Astrometric Orbit Determination handout
 \\*2- Lab 3 Report written by Anita Bahmanyar
-\\*3-JPL HORIZONS web interface ephemeris
+\\*3-JPL HORIZONS web interface ephemeris--http://ssd.jpl.nasa.gov/horizons.cgi
 
 \section{Appendix}
 \label{sec:appendix}
@@ -503,12 +509,12 @@ for q in range(1,len(t)):
 This loops starts from one and continues until it is smaller than the number of elements in time array and calculates the mean anomaly for each time it goes into the loop and using that specific M value, it computes the E value. We should also note that the initial values of E[0]=mu[0] and M[0]=E[0], where mu=n*(t-tau) and t is the time array starting from tau=2454868; therefore, mu[0]=0.
     
 
-\\for plotting figure 3, I used the following code, where \begin{math} circle_x \end{math} and \begin{math} circle_y \end{math}are the components of a circle with radius equal to semi-major axis of Ceres and \begin{math} r_x \end{math} and \begin{math} r_y  \end{math} are the components of Ceres's orbit:
-\\circle_x=a*(np.cos(theta))
-\\circle_y=a*(np.sin(theta))
+\*For plotting figure 3, I used the following code, where circle-x and circle-y are the components of a circle with radius equal to semi-major axis of Ceres and r-x  and r-y are the components of Ceres's orbit:
+\\circle-x=a*(np.cos(theta))
+\\circle-y=a*(np.sin(theta))
  and 
-\\r_x=r*(np.cos(theta))
-\\r_y=r*(np.sin(theta))
+\\r-x=r*(np.cos(theta))
+\\r-y=r*(np.sin(theta))
 
 
 \\Then I used a for loop to run for 20 times in order to find the \begin{math} \rho \end{math} and r values close to the true values. This loop goes until the value of r and \begin{math} \rho \end{math} we have found, converge to their true values:
@@ -523,11 +529,11 @@ r1=np.sqrt((rho**2)+(R-length**2)+(2*rho*R-dot_-))
 
 Here are also calculation of some of the orbital elements:
 
-a-theory=((k**2)*r1)/((2*(k**2))-(r1*(V**2)))       ,        semi-major axis, a
+a-theory=((k**2)*r1)/((2*(k**2))-(r1*(V**2)))     ,   semi-major axis, a
 
-np.cross(r-vector,dr-dt)        ,       h vector which is the cross product of r vector and its derivative
+np.cross(r-vector,dr-dt)    ,   h vector which is the cross product of r vector and its derivative
 
-big-omega=((np.arctan(h[0]/h[1]))*180)/(np.pi)        ,     \begin{math} \Omega \end{math}
+big-omega=((np.arctan(h[0]/h[1]))*180)/(np.pi)    ,  \begin{math} \Omega \end{math}
 
 
  
