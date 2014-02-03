@@ -61,8 +61,8 @@ In order to have good images from the CCD we need to calibrate them. A good imag
 The coordinates of astronomical objects are usually measured by the angles right ascension,\begin{math}\alpha \end{math} and declination, \begin{math} \delta \end{math}, in the equatorial system defined by reference stars measured in International Celestial Reference System, taken at epoch 2000. Therefore, the cartesian coordinates are give by equation 1 below.
 
 \begin{equation}
-x_{eq}=\cos\alpha \cos\delta, \\ 
-y_{eq}=\sin\alpha \cos\delta , \\ 
+x_{eq}=\cos\alpha \cos\delta, 
+y_{eq}=\sin\alpha \cos\delta ,  
 z_{eq}=\sin\delta
 \end{equation}
 
@@ -242,8 +242,7 @@ Vector & x & y & z \\ [0.5ex] % inserts table
 \end{table}
 \FloatBarrier
 
-
-
+Table 4 shows the r vector and its derivative Cartesian components in the heliocentric ecliptic system.
 
 % Orbital Elements Sub Section
 \subsection{Orbital Elements}
@@ -297,7 +296,7 @@ v = 2\arctan(\sqrt{\frac{1+e}{1-e}\tan E/2})
 \end{equation}
 
 
-For the true anomaly, \begin{math} \tau \end{math} we can use equation (....) :
+For the epoch of perihelion, \begin{math} \tau \end{math} we can use equation 20 :
 
 % Mean Anomaly Equation
 \begin{equation}
@@ -312,7 +311,7 @@ In order to make sure that our method and equations are correct, we first applie
 \caption{Orbital Elements of Ceres obtained by our calculations and JPL along with their errors} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
+\hline %inserts double horizontal lines
  & a & \begin{math} \Omega \end{math}  & i & e & \begin{math} \omega \end{math}  & \begin{math} \tau \end{math} \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
@@ -367,24 +366,26 @@ r=
 \end{equation}
 
 The plot of the orbital separation, r, and the true anomaly, \begin{math} v \end{math}, as a function of time are shown in figure 2:
+% figure 2
 \FloatBarrier
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.7]{figure4.png}
+\includegraphics[scale=0.4]{figure4.png}
 \caption{This figure shows the orbital separation and true anomaly of the asteroid Ceres respectively over one period.}
 \end{figure}
 \FloatBarrier
 
 
 
-
+% figure 3
 \FloatBarrier
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{figure5.png}
+\includegraphics[scale=0.4]{figure5.png}
 \caption{This figure shows the x and y components of r vector for asteroid Ceres. The pink dashed line is a circle with radius equal to the semi-major axis of Ceres and the blue solid line is the orbit of Ceres. The position of perihelion is also pointed with a dot.}
 \end{figure}
 \FloatBarrier
+
 
 
 % Orbital Motion of the Asteroid 30 Urania
@@ -429,10 +430,47 @@ s=
 \end{pmatrix}
 \end{equation}
 
-We need the values of true and eccentric anomalies at different times, so we must iteratively solve for E using Newton?s method given in equation 21, where we used \begin{math} E_{0}=M \end{math}. We can also plot the mean and eccentric anomalies as a function of time for 30 Urania as it is shown in figure (....).
+We need the values of true and eccentric anomalies at different times, so we must iteratively solve for E using Newton?s method given in equation 21, where we used \begin{math} E_{0}=M \end{math}. We can also plot the mean and eccentric anomalies as a function of time for 30 Urania as it is shown in figure 4.
 
 
 
+% figures 4 and 5
+\begin{figure}[ht]\centering\begin{minipage}[b]{0.4\linewidth}  \includegraphics[scale=0.25]{mean_eccentric_urania.png}  \caption{This figure shows the mean and eccentric anomalies of asteroid 30 Urania. Even though the values fluctuate, the values are very close to each other. This is due to the small eccentricity we found for 30 Urania.}  \label{fig:minipage1}\end{minipage}\quad\begin{minipage}[b]{0.4\linewidth}  \includegraphics[scale=0.4]{orbit_urania.png}  \caption{This figure shows a circle with radius equal to semi-major axis of 30 Urania (green line)and its true orbit(blue line). This also shows the location of the perihelion of this asteroid pointed by a red triangle.}  \label{fig:minipage2}\end{minipage}\end{figure}
+
+
+
+
+
+We can then use the transpose of matrix 2 in order to transform the ecliptic coordinates to the equatorial coordinated by equation 25. We can then find the values of \begin{math} \alpha \end{math} and \begin{math} \delta \end{math} using equations 26 and 27, respectively.s
+% equatorial transformation
+\begin{equation}
+\begin{pmatrix}
+  x_{eq} \\
+  y_{eq} \\
+  z_{eq}
+ \end{pmatrix} 
+  =
+\begin{pmatrix}
+1 & 0 & 0 \\ 
+ 0 & cos\epsilon & -sin\epsilon\\ 
+ 0 & sin\epsilon & cos\epsilon
+\end{pmatrix}
+\begin{pmatrix}
+  x \\
+  y \\
+  z
+\end{pmatrix} 
+\end{equation}
+
+
+
+%  equations 66
+\begin{equation}
+\tan \alpha= \frac{y_{eq}}{x_{eq}}
+\end{equation}
+\begin{equation}
+\sin \delta= z_{eq}
+\end{equation}
 
 
 % Discussion
