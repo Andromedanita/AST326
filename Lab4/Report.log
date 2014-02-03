@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 FEB 2014 22:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 FEB 2014 00:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -642,6 +642,9 @@ LaTeX Warning: Label `table:nonlin' multiply defined.
 
 LaTeX Warning: Label `table:nonlin' multiply defined.
 
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
 )
 \openout1 = `Report.aux'.
 
@@ -749,6 +752,103 @@ LaTeX Info: Redefining \nameref on input line 28.
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+./Report.tex:124: Missing $ inserted.
+<inserted text> 
+                $
+l.124 ...6584922 \begin{math} \times \end{math}10^
+                                                  {-5} \\ \hline
+? 
+./Report.tex:124: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
+l.124 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:124: Missing $ inserted.
+<inserted text> 
+                $
+l.124 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:124: Missing } inserted.
+<inserted text> 
+                }
+l.124 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:125: Missing $ inserted.
+<inserted text> 
+                $
+l.125 ...4959891 \begin{math} \times \end{math}10^
+                                                  {-5} \\ \hline
+? 
+./Report.tex:125: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
+l.125 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:125: Missing $ inserted.
+<inserted text> 
+                $
+l.125 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:125: Missing } inserted.
+<inserted text> 
+                }
+l.125 ...{math} \times \end{math}10^{-5} \\ \hline
+                                                  
+? 
+./Report.tex:126: Missing $ inserted.
+<inserted text> 
+                $
+l.126 ...2526080 \begin{math} \times \end{math}10^
+                                                  {-5} \\  \hline
+? 
+./Report.tex:126: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
+l.126 ...math} \times \end{math}10^{-5} \\  \hline
+                                                  
+? 
+./Report.tex:126: Missing $ inserted.
+<inserted text> 
+                $
+l.126 ...math} \times \end{math}10^{-5} \\  \hline
+                                                  
+? 
+./Report.tex:126: Missing } inserted.
+<inserted text> 
+                }
+l.126 ...math} \times \end{math}10^{-5} \\  \hline
+                                                  
+? 
+./Report.tex:127: Missing $ inserted.
+<inserted text> 
+                $
+l.127 ...6668697 \begin{math} \times \end{math}10^
+                                                  {-5}  \\ [1ex] % [1ex] add...
+
+? 
+./Report.tex:127: Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
+l.127 ...{math} \times \end{math}10^{-5}  \\ [1ex]
+                                                   % [1ex] adds vertical space
+? 
+./Report.tex:127: Missing $ inserted.
+<inserted text> 
+                $
+l.127 ...{math} \times \end{math}10^{-5}  \\ [1ex]
+                                                   % [1ex] adds vertical space
+? 
+./Report.tex:127: Missing } inserted.
+<inserted text> 
+                }
+l.127 ...{math} \times \end{math}10^{-5}  \\ [1ex]
+                                                   % [1ex] adds vertical space
+? 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -757,300 +857,202 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.149 \FloatBarrier
-                   ]
-./Report.tex:164: Missing $ inserted.
-<inserted text> 
-                $
-l.164 ...6584922 \begin{math} \times \end{math}10^
-                                                  {-5} \\ \hline
-? 
-./Report.tex:164: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.164 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:164: Missing $ inserted.
-<inserted text> 
-                $
-l.164 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:164: Missing } inserted.
-<inserted text> 
-                }
-l.164 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:165: Missing $ inserted.
-<inserted text> 
-                $
-l.165 ...4959891 \begin{math} \times \end{math}10^
-                                                  {-5} \\ \hline
-? 
-./Report.tex:165: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.165 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:165: Missing $ inserted.
-<inserted text> 
-                $
-l.165 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:165: Missing } inserted.
-<inserted text> 
-                }
-l.165 ...{math} \times \end{math}10^{-5} \\ \hline
-                                                  
-? 
-./Report.tex:166: Missing $ inserted.
-<inserted text> 
-                $
-l.166 ...2526080 \begin{math} \times \end{math}10^
-                                                  {-5} \\  \hline
-? 
-./Report.tex:166: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.166 ...math} \times \end{math}10^{-5} \\  \hline
-                                                  
-? 
-./Report.tex:166: Missing $ inserted.
-<inserted text> 
-                $
-l.166 ...math} \times \end{math}10^{-5} \\  \hline
-                                                  
-? 
-./Report.tex:166: Missing } inserted.
-<inserted text> 
-                }
-l.166 ...math} \times \end{math}10^{-5} \\  \hline
-                                                  
-? 
-./Report.tex:167: Missing $ inserted.
-<inserted text> 
-                $
-l.167 ...6668697 \begin{math} \times \end{math}10^
-                                                  {-5}  \\ [1ex] % [1ex] add...
-
-? 
-./Report.tex:167: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.167 ...{math} \times \end{math}10^{-5}  \\ [1ex]
-                                                   % [1ex] adds vertical space
-? 
-./Report.tex:167: Missing $ inserted.
-<inserted text> 
-                $
-l.167 ...{math} \times \end{math}10^{-5}  \\ [1ex]
-                                                   % [1ex] adds vertical space
-? 
-./Report.tex:167: Missing } inserted.
-<inserted text> 
-                }
-l.167 ...{math} \times \end{math}10^{-5}  \\ [1ex]
-                                                   % [1ex] adds vertical space
-? 
-[4pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
-as been already used, duplicate ignored
+l.153 \FloatBarrier
+                   ] [4pdfTeX warning (ext4): destination with the same identif
+ier (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.206 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.3
-}) has been already used, duplicate ignored
+l.205 \end{equation}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{table.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.206 
-      ]
+l.205 \end{equation}
+                    ]
 
-./Report.tex:231: Package amsmath Error: \dot allowed only in math mode.
+./Report.tex:257: Package amsmath Error: \dot allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.231 ...s product of the {\bf r} and {\bf \dot{r}
+l.257 ...s product of the {\bf r} and {\bf \dot{r}
                                                   } vectors:
 ? 
-[5]
+[5pdfTeX warning (ext4): destination with the same identifier (name{table.4}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.266 \end{equation}
+                    ] [6] <figure3.png, id=117, 578.16pt x 433.62pt>
+File: figure3.png Graphic file (type png)
+
+<use figure3.png>
+Package pdftex.def Info: figure3.png used on input line 346.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] <figure3.png, id=116, 578.16pt x 433.62pt>
-File: figure3.png Graphic file (type png)
- <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 320.
-(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
- [7pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
+[7pdfTeX warning (ext4): destination with the same identifier (name{table.5}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.349 \FloatBarrier
+                   ] <figure4.png, id=126, 578.16pt x 216.81pt>
+File: figure4.png Graphic file (type png)
+
+<use figure4.png>
+Package pdftex.def Info: figure4.png used on input line 373.
+(pdftex.def)             Requested size: 404.70924pt x 151.76596pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.330 \end{equation}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{figure.1}) has been already used, duplicate ignored
+l.376 \FloatBarrier
+                    <./figure3.png>]
+./Report.tex:422: Missing $ inserted.
+<inserted text> 
+                $
+l.422 
+      
+? 
+./Report.tex:430: Missing $ inserted.
+<inserted text> 
+                $
+l.430 ... sensitive to the precision in the \alpha
+                                                   \end{math} and \begin{mat...
+
+? 
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.330 \end{equation}
-                     <./figure3.png>]
-<figure4.png, id=127, 578.16pt x 216.81pt>
-File: figure4.png Graphic file (type png)
- <use figure4.png>
-Package pdftex.def Info: figure4.png used on input line 347.
-(pdftex.def)             Requested size: 404.70924pt x 151.76596pt.
- [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.379 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.5
+l.431 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.379 
+l.431 
        <./figure4.png>]
-./Report.tex:400: Missing $ inserted.
-<inserted text> 
-                $
-l.400 ... sensitive to the precision in the \alpha
-                                                   \end{math} and \begin{mat...
 
-? 
-
-./Report.tex:400: LaTeX Error: \begin{document} ended by \end{math}.
+./Report.tex:441: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.400 ...to the precision in the \alpha \end{math}
-                                                   and \begin{math} \delta \...
-
-? 
-./Report.tex:400: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.400 ...to the precision in the \alpha \end{math}
-                                                   and \begin{math} \delta \...
-
-? 
-
-./Report.tex:411: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.411 \\*1
+l.441 \\*1
           - Lab # 4: Astrometric Orbit Determination handout
 ? 
-./Report.tex:411: You can't use `macro parameter character #' in horizontal mod
+./Report.tex:441: You can't use `macro parameter character #' in horizontal mod
 e.
-l.411 \\*1- Lab #
+l.441 \\*1- Lab #
                   4: Astrometric Orbit Determination handout
 ? 
-[9]
+[10]
 
-./Report.tex:426: LaTeX Error: There's no line here to end.
+./Report.tex:456: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.426 \\f
+l.456 \\f
          or plotting figure (...), I used the following code:
 ? 
-./Report.tex:427: Missing $ inserted.
+./Report.tex:457: Missing $ inserted.
 <inserted text> 
                 $
-l.427 \\circle_
+l.457 \\circle_
                x=a*(np.cos(theta))
 ? 
-./Report.tex:432: Missing $ inserted.
+./Report.tex:462: Missing $ inserted.
 <inserted text> 
                 $
-l.432 
+l.462 
       
 ? 
 
-./Report.tex:433: LaTeX Error: There's no line here to end.
+./Report.tex:463: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.433 \\f
+l.463 \\f
          or a circle with radius a and the orbit of Ceres, respectively.
 ? 
 
-./Report.tex:435: LaTeX Error: There's no line here to end.
+./Report.tex:465: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.435 \\T
+l.465 \\T
          hen I used a for loop to run for 20 times in order to find the \beg...
 
 ? 
 
-./Report.tex:437: LaTeX Error: There's no line here to end.
+./Report.tex:467: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 \\f
+l.467 \\f
          or i in range(20):
 ? 
-./Report.tex:438: Missing $ inserted.
+./Report.tex:468: Missing $ inserted.
 <inserted text> 
                 $
-l.438   \\  rho=((k**2)*((1./(R_
+l.468   \\  rho=((k**2)*((1./(R_
                                 length**3))-(1./(r1**3))))*denom
 ? 
-./Report.tex:439: You can't use `macro parameter character #' in math mode.
-l.439 ...(rho**2)+(R_length**2)+(2*rho*R_dot_s)) #
+./Report.tex:469: You can't use `macro parameter character #' in math mode.
+l.469 ...(rho**2)+(R_length**2)+(2*rho*R_dot_s)) #
                                                   Au
 ? 
-./Report.tex:440: Missing $ inserted.
+./Report.tex:470: Missing $ inserted.
 <inserted text> 
                 $
-l.440 
+l.470 
       
 ? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 453.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 453.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 453.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 453.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 6DABABCF5EF01F82F4E25376EBD36645;762.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 453.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
- 8076 strings out of 493315
- 115804 string characters out of 6137904
- 218523 words of memory out of 5000000
+ 8078 strings out of 493315
+ 115818 string characters out of 6137904
+ 219524 words of memory out of 5000000
  11359 multiletter control sequences out of 15000+600000
  10945 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,10n,28p,2331b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,28p,2331b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -1063,10 +1065,10 @@ l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report.pdf (10 pages, 227625 bytes).
+Output written on Report.pdf (11 pages, 229669 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 57 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

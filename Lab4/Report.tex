@@ -58,7 +58,7 @@ In order to have good images from the CCD we need to calibrate them. A good imag
 % Calculation and Modeling
 \section{Calculation and Modeling}
 \subsection{Asteroid Position}
-The coordinates of astronomical objects are usually measured by the angles right ascension,\begin{math}\alpha \end{math} and declination, \begin{math} \delta \end{math}, in the equatorial system defined by reference stars measured in International Celestial Reference System, taken at epoch 2000. Therefore, the cartesian coordinates are give by equation (...) below.
+The coordinates of astronomical objects are usually measured by the angles right ascension,\begin{math}\alpha \end{math} and declination, \begin{math} \delta \end{math}, in the equatorial system defined by reference stars measured in International Celestial Reference System, taken at epoch 2000. Therefore, the cartesian coordinates are give by equation 1 below.
 
 \begin{equation}
 x_{eq}=\cos\alpha \cos\delta, \\ 
@@ -66,7 +66,7 @@ y_{eq}=\sin\alpha \cos\delta , \\
 z_{eq}=\sin\delta
 \end{equation}
 
-We can convert the equatorial coordinate to ecliptic coordinate by a transformation along x-axis by the angle \begin{math} \epsilon \end{math} by equation(.....) given below.
+We can convert the equatorial coordinate to ecliptic coordinate by a transformation along x-axis by the angle \begin{math} \epsilon \end{math} by equation 2 given below.
 
 \begin{equation}
 s=
@@ -89,7 +89,7 @@ s=
 \end{equation}
 
 where \begin{math}\epsilon\end{math} = 23\begin{math} ^{\circ} \end{math}.43929111 is the tilt of the Earth for the equinox 2000. s is in the ecliptic Cartesian frame.
-In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin{math}s_{2}\end{math} and \begin{math}s_{3}\end{math} vectors and thereafter, we can calculate the first and second derivatives of \begin{math} s_{2} \end{math} vector by equation (...) given below:
+In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin{math}s_{2}\end{math} and \begin{math}s_{3}\end{math} vectors and thereafter, we can calculate the first and second derivatives of \begin{math} s_{2} \end{math} vector by equations 3 and 4 respectively, which are derived by Taylor series approximation method. \begin{math} \tau_{1} \end{math} is the time difference between the second and first observation and \begin{math} \tau_{3} \end{math} is the time difference between the third and second observation.
 
 
 % s2 dot equation
@@ -104,15 +104,41 @@ In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin
 \end{equation}
 
 The next step is to find the {\bf R} vector. We obtain the components of the {\bf R} vector from the JPL Horizons Ephemeris web interface for the desired date which is 24th, 25th and 26th of January 2012.
-The {\bf R} vector components are given in the table (....).
+The {\bf R} vector components are given in the table 1.
+
+
+
+
+
+
+%Table showing the R vector components 
+\FloatBarrier
+\begin{table}[h!]
+\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c |} % centered columns (4 columns)
+\hline %inserts double horizontal lines
+X & Y & Z \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+-0.4820742567460204  & 0.8578010618775774  &  -2.425231096584922 \begin{math} \times \end{math}10^{-5} \\ \hline
+-0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891 \begin{math} \times \end{math}10^{-5} \\ \hline
+-0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080 \begin{math} \times \end{math}10^{-5} \\  \hline
+-0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697 \begin{math} \times \end{math}10^{-5}  \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
 
 %Table showing right ascension and declination
 \FloatBarrier
 \begin{table}[h!]
-\caption{Date and position of asteroid 30 Urania in the sky} % title of Table
+\caption{Date and position of asteroid 30 Urania obtained by conversion from plate constants} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c |} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
+\hline %inserts double horizontal lines
 UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
@@ -134,7 +160,7 @@ UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) 
 \caption{Date and position of asteroid 30 Urania in the sky obtained from JPL} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c |} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
+\hline %inserts double horizontal lines
 UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
@@ -148,31 +174,7 @@ UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) 
 \end{table}
 \FloatBarrier
 
-
-
-
-%Table showing the R vector components 
-\FloatBarrier
-\begin{table}[h!]
-\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
-\centering % used for centering table
-\begin{tabular}{| c | c | c |} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-X & Y & Z \\ [0.5ex] % inserts table
-%heading
-\hline % inserts single horizontal line
--0.4820742567460204  & 0.8578010618775774  &  -2.425231096584922 \begin{math} \times \end{math}10^{-5} \\ \hline
--0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891 \begin{math} \times \end{math}10^{-5} \\ \hline
--0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080 \begin{math} \times \end{math}10^{-5} \\  \hline
--0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697 \begin{math} \times \end{math}10^{-5}  \\ [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
-\FloatBarrier
-
-
-
+Tables 2 and 3 show the position of the asteroid 30 Urania obtained by conversion from plate constants as it has been discussed in lab 3 and the position obtained from JPL HORIZONS, respectively.
 
 We also need to find the magnitude of the R vector for the second data(since the second night is the one we use to find the position of the asteroid as we need three sets of data for figuring out the position). {\bf R} vector magnitude can be calculated by squaring each of the components and taking the square root of their sum.
 
@@ -181,7 +183,7 @@ R=\sqrt{R_{x}^2+R_{y}^2+R_{z}^2}
 \end{equation}
 
 
-We now have all the values we need and should be able to calculate \begin{math} \rho \end{math} value by the equation (...):
+We now have all the values we need and should be able to calculate \begin{math} \rho \end{math} value by the equation 6:
 
 \begin{equation}
 \rho=k^2(\frac{1}{R^3}-\frac{1}{r^3})\frac{\dot{{\bf s}}.({\bf R}\times{\bf s})}{\dot{{\bf s}}.(\ddot{{\bf s}}\times{\bf s})}
@@ -190,14 +192,14 @@ We now have all the values we need and should be able to calculate \begin{math} 
 We do not have the value or r explicitly yet; however, we can guess an initial r value and write a for loop to calculate \begin{math} \rho \end{math} until it converges using the new values for r. This part of the code I used can be found in the appendix.(....)
 
 
-After finding the \begin{math} \rho \end{math} value, we can calculate the r value by equation (....):
+After finding the \begin{math} \rho \end{math} value, we can calculate the r value by equation 7:
 
 \begin{equation}
 r^2=\rho ^2 + R^2 + 2\rho {\bf R}. {\bf s}
 \end{equation}
 
-Note that this r is different from the one we just guessed in equation (.....). 
-We can also calculate derivative of \begin{math} \rho \end{math} using equation (....) :
+Note that this r is different from the one we just guessed in equation 6. 
+We can also calculate derivative of \begin{math} \rho \end{math} using equation 8 :
 \begin{equation}
 \dot{\rho}=\frac{k^2}{2}(\frac{1}{{\bf R}^3}-\frac{1}{r^3})\frac{\ddot{s}.({\bf R}\times {\bf s})}{\ddot{{\bf s}}.({\bf \dot{s}}\times {\bf s})}
 \end{equation}
@@ -207,21 +209,45 @@ We can now calculate the position vector of the asteroid with respect to sun usi
 \begin{equation}
 {\bf r}= {\bf R}+r{\bf s}
 \end{equation}
-We may also find the derivative of the {\bf R} vector using the same way we found the derivative of the vector {\bf s}, which can be written as equation (...):
+We may also find the derivative of the {\bf R} vector using the same way we found the derivative of the vector {\bf s}, which can be written as equation 10:
 
 \begin{equation}
 \dot{{\bf R_{2}}}=\frac{\tau_{3}({\bf R_{2}}-{\bf R_{1}})}{\tau_{1}(\tau_{1}+\tau_{3})}+\frac{\tau_{1}({\bf R_{3}}-{\bf R_{2}})}{\tau_{1}(\tau_{1}+\tau_{3})}
 \end{equation}
 
-In order to calculate the velocity of the asteroid relative to the sun we need to find the derivative of the {\bf r} vector we found in equation (...) and employ equation (....):
+In order to calculate the velocity of the asteroid relative to the sun we need to find the derivative of the {\bf r} vector we found in equation 9 and employ equation 11:
 
 \begin{equation}
 {\bf \dot{r}}={\bf \dot{R}} +\rho{\dot{\bf s}} + \dot{\rho} {\bf s}
 \end{equation}
 
+
+
+
+%Table showing r_vector and r_dot values 
+\FloatBarrier
+\begin{table}[h!]
+\caption{Derived Geocentric Sun-asteroid vector and its time derivative. The Cartesian components are given in the heliocentric ecliptic system.} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c |} % centered columns (4 columns)
+\hline %inserts double horizontal lines
+Vector & x & y & z \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+{\bf r}  & 0.58976309  &  2.0483579709 &  0.062989112\\ \hline
+\begin{math} {\bf \dot{r}} \end{math} & -0.01171778  &  0.00405553 &  -0.00024878 \\  [1ex] % [1ex] adds vertical space 
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
+
+
 % Orbital Elements Sub Section
 \subsection{Orbital Elements}
-We can now use the values we got from previous section to find the orbital elements of 30 Urania using Laplace's method. Since we know the magnitude of the radius vector, r, the asteroid velocity, \begin{math}V=|\dot{r}| \end{math} and k=0.017202098950, we can compute the semimajor axis by equation (....):
+We can now use the values we got from previous section to find the orbital elements of 30 Urania using Laplace's method. Since we know the magnitude of the radius vector, r, the asteroid velocity, \begin{math}V=|\dot{r}| \end{math} and k=0.017202098950, we can compute the semi-major axis by equation 12:
 
 % Semi Major Axis Equation
 \begin{equation}
@@ -232,7 +258,7 @@ Then we can compute the {\bf h} vector components by the cross product of the {\
 \begin{equation}
 {\bf h}= {\bf r} \times {\bf \dot{r}}
 \end{equation}
-Using the {\bf h} vector components, we can compute \begin{math} \Omega \end{math} and i by equations (....) and (...) respectively:
+Using the {\bf h} vector components, we can compute \begin{math} \Omega \end{math} and i by equations 14 and 15 respectively:
 
 % Omega orbital element
 \begin{equation}
@@ -244,14 +270,14 @@ Using the {\bf h} vector components, we can compute \begin{math} \Omega \end{mat
 \cos i = \frac{h_{z}}{h}
 \end{equation}
 
-In order to find the eccentricity, we use equation (...) given below:
+In order to find the eccentricity, we use equation 16 given below:
 
 % eccentricity orbital element
 \begin{equation}
 e=\sqrt{1-(\frac{h^2}{ak^2})}
 \end{equation}
 
-In order to compute the last two Keplerian orbital elements-the argument of perihelion,\begin{math} \omega \end{math}, and the epoch of perihelion, \begin{math} \tau \end{math}, we need to calculate the eccentric and true anomalies. Equation (....) and (...) give the eccentric and true anomalies, respectively.
+In order to compute the last two Keplerian orbital elements-the argument of perihelion,\begin{math} \omega \end{math}, and the epoch of perihelion, \begin{math} \tau \end{math}, we need to calculate the eccentric and true anomalies. Equation 17 and 18 give the eccentric and true anomalies, respectively.
 
 % eccentric anomaly orbital element
 \begin{equation}
@@ -277,7 +303,7 @@ For the true anomaly, \begin{math} \tau \end{math} we can use equation (....) :
 \begin{equation}
 M = n(t-\tau)
 \end{equation}
-where \begin{math} n=ka^-3/2 \end{math} is the mean motion and t is the epoch of the second observation. The calculated orbital elements are listed in table (...) along with their true values and the error in each. Since the error is small, we can be confident about our method and values. However, during this lab we found out that this method is very sensitive to the coordinates of the asteroid obtained via transformation by plate constants. At first, we were using values that were similar to the true values (JPL values) within two decimal places, but the values of {\bf r} and \begin{math} \rho \end{math} were converging to 0 and 1 respectively, which meant that the asteroid is somewhere on the surface of the Earth. After computing more accurate right ascension and declination of the asteroid using more precise plate constants with smaller \begin{math} \chi_{reduced}^2 \end{math}, the values of the RA and Dec of the asteroid matched with the JPL values within 4 decimal places and we were able to get good estimate of the position of the asteroid.
+where \begin{math} n=ka^-3/2 \end{math} is the mean motion and t is the epoch of the second observation. The calculated orbital elements of the asteroid Ceres are listed in table 5 along with their true values and the error in each. Since the error is small, we can be confident about our method and values. However, during this lab we found out that this method is very sensitive to the coordinates of the asteroid obtained via transformation by plate constants. At first, we were using values that were similar to the true values (JPL values) within two decimal places, but the values of {\bf r} and \begin{math} \rho \end{math} were converging to 0 and 1 respectively, which meant that the asteroid is somewhere on the surface of the Earth. After computing more accurate right ascension and declination of the asteroid using more precise plate constants with smaller \begin{math} \chi_{reduced}^2 \end{math}, the values of the RA and Dec of the asteroid matched with the JPL values within 4 decimal places and we were able to get good estimate of the position of the asteroid.
 In order to make sure that our method and equations are correct, we first applied the same method and equations to the asteroid Ceres and compared the orbital elements we got with the ones given in the lab handout and they matched with small residuals; therefore, we were confident about the method and the equations used to compute the orbital elements of 30 Urania.
 
 %Table showing the R vector components 
@@ -303,7 +329,7 @@ Error & -0.42 &  0.04 &    0.11 &   0.09 & & 82.03\\[1ex] % [1ex] adds vertical 
 % Orbital Motion of the Asteroid Ceres
 \subsection{Orbital Motion of Asteroid Ceres}
 In this sub section, we will be using Keplerian orbital elements provided in the lab handout to compute and plot some of the orbital elements such as true anomaly and the orbital separation, r, as a function of time. 
-We first need to compute the mean anomaly by equation (....). Then using Taylor series we are able to find the \begin{math} E_{n} \end{math} numerically by the following equation:
+We first need to compute the mean anomaly given by equation 21. Then using Taylor series we are able to find the \begin{math} E_{n} \end{math} numerically by the following equation:
 
 % Eccentric Anomaly 
 \begin{equation}
@@ -311,25 +337,25 @@ E_{n+1}=E_{n}+\frac{M-M(E_{n})}{1-e\cos(E_{n})}
 \end{equation}
 
 
-We can then plot the eccentric and true anomalies as a function of time in Julian Date. The result is shown in figure (...).
+We can then plot the eccentric and true anomalies as a function of time in Julian Date. The result is shown in figure 1.
 
 % Figure 3 in lab handout
 \FloatBarrier
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{figure3.png}
-\caption{This figure shows the mean anomaly, M, and eccentric anomaly, E, for the asteroid Ceres using the orbital elements tabulated in table (...). The eccentricity of Ceres is small(e=0.079) and the difference between these two angles is small.}
+\caption{This figure shows the mean anomaly, M, and eccentric anomaly, E, for the asteroid Ceres using the orbital elements tabulated in table 5. The eccentricity of Ceres is small(e=0.079) and the difference between these two angles is small.}
 \end{figure}
 \FloatBarrier
 
 
-We can then compute the true anomaly by equation (...) and since we have both v and w, we are able to calculate the polar angle by:
+We can then compute the true anomaly by equation 18 and since we have both \begin{math} v \end{math} and \begin{math} w \end{math} , we are able to calculate the polar angle by equation 22
 
 \begin{equation}
 \theta = v + \omega
 \end{equation}
 
-and the Cartesian components of the position of the asteroid are given by equation (...):
+and the Cartesian components of the position of the asteroid are given by equation 23:
 
 \begin{equation}
 r=
@@ -366,7 +392,7 @@ The same way we predicted the position of Ceres for future time, we can determin
 %heading
 \hline % inserts single horizontal line
   & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\ \hline 
-True & 2.365 &   &    &  &  & \\ \hline
+True & 2.365 & 307.93  &  2.099  & 0.127 &  86.277 & 2545800\\ \hline
 Estimated & 2.133 &   &  &   & & \\  \hline
 Error & 0.232 &   &     &    & & \\[1ex] % [1ex] adds vertical space
 \hline %inserts single line
@@ -391,6 +417,10 @@ s=
  \sin i \sin \theta
 \end{pmatrix}
 \end{equation}
+
+We need the values of true and eccentric anomalies at different times, so we must iteratively solve for E using Newton?s method given in equation (..E=. 21), where we used \begin{math} E_{0}=M
+
+
 
 
 
