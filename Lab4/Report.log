@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 FEB 2014 00:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 FEB 2014 02:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -920,139 +920,162 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.376 \FloatBarrier
                     <./figure3.png>]
-./Report.tex:422: Missing $ inserted.
-<inserted text> 
-                $
-l.422 
-      
-? 
-./Report.tex:430: Missing $ inserted.
-<inserted text> 
-                $
-l.430 ... sensitive to the precision in the \alpha
-                                                   \end{math} and \begin{mat...
+<figure5.png, id=135, 578.16pt x 511.6716pt>
+File: figure5.png Graphic file (type png)
+ <use figure5.png>
+Package pdftex.def Info: figure5.png used on input line 384.
+(pdftex.def)             Requested size: 289.07928pt x 255.83517pt.
 
-? 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.431 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.6
-}) has been already used, duplicate ignored
+l.413 \FloatBarrier
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.431 
-       <./figure4.png>]
+l.413 \FloatBarrier
+                    <./figure4.png> <./figure5.png>]
+./Report.tex:441: Missing $ inserted.
+<inserted text> 
+                $
+l.441 ... sensitive to the precision in the \alpha
+                                                   \end{math} and \begin{mat...
 
-./Report.tex:441: LaTeX Error: There's no line here to end.
+? 
+
+./Report.tex:441: LaTeX Error: \begin{document} ended by \end{math}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.441 \\*1
+l.441 ...to the precision in the \alpha \end{math}
+                                                   and \begin{math} \delta \...
+
+? 
+./Report.tex:441: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.441 ...to the precision in the \alpha \end{math}
+                                                   and \begin{math} \delta \...
+
+? 
+[10pdfTeX warning (ext4): destination with the same identifier (name{table.6}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.442 
+      ]
+
+./Report.tex:452: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.452 \\*1
           - Lab # 4: Astrometric Orbit Determination handout
 ? 
-./Report.tex:441: You can't use `macro parameter character #' in horizontal mod
+./Report.tex:452: You can't use `macro parameter character #' in horizontal mod
 e.
-l.441 \\*1- Lab #
+l.452 \\*1- Lab #
                   4: Astrometric Orbit Determination handout
 ? 
-[10]
 
-./Report.tex:456: LaTeX Error: There's no line here to end.
+./Report.tex:462: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.456 \\f
-         or plotting figure (...), I used the following code:
+l.462 \\       M
+                [q-1]=E[q-1]-e*(np.sin(E[q-1]))
 ? 
-./Report.tex:457: Missing $ inserted.
+[11]
+
+./Report.tex:468: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.468 \\f
+         or plotting figure 3, I used the following code, where \begin{math}...
+
+? 
+./Report.tex:469: Missing $ inserted.
 <inserted text> 
                 $
-l.457 \\circle_
+l.469 \\circle_
                x=a*(np.cos(theta))
 ? 
-./Report.tex:462: Missing $ inserted.
+./Report.tex:474: Missing $ inserted.
 <inserted text> 
                 $
-l.462 
+l.474 
       
 ? 
 
-./Report.tex:463: LaTeX Error: There's no line here to end.
+./Report.tex:476: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.463 \\f
-         or a circle with radius a and the orbit of Ceres, respectively.
-? 
-
-./Report.tex:465: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.465 \\T
+l.476 \\T
          hen I used a for loop to run for 20 times in order to find the \beg...
 
 ? 
-
-./Report.tex:467: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.467 \\f
-         or i in range(20):
-? 
-./Report.tex:468: Missing $ inserted.
+./Report.tex:482: Missing $ inserted.
 <inserted text> 
                 $
-l.468   \\  rho=((k**2)*((1./(R_
-                                length**3))-(1./(r1**3))))*denom
+l.482 ...sqrt((rho**2)+(R-length**2)+(2*rho*R-dot_
+                                                  -))
 ? 
-./Report.tex:469: You can't use `macro parameter character #' in math mode.
-l.469 ...(rho**2)+(R_length**2)+(2*rho*R_dot_s)) #
-                                                  Au
-? 
-./Report.tex:470: Missing $ inserted.
+./Report.tex:484: Missing $ inserted.
 <inserted text> 
                 $
-l.470 
+l.484 
       
 ? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
+
+Overfull \hbox (18.11688pt too wide) in paragraph at lines 482--484
+[]\OT1/cmr/m/n/12 r1=np.sqrt((rho**2)+(R-length**2)+(2*rho*R-dot$[]))\OML/cmm/m
+/it/12 Wheredenom \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 sdot \OMS/cmsy/m/n/12 ^^@
+ \OML/cmm/m/it/12 R \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OM
+L/cmm/m/it/12 =\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 sdot \OMS/cmsy/m/n/12 ^^@
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 504.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 504.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 504.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 504.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 6DABABCF5EF01F82F4E25376EBD36645;762.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
  ) 
 Here is how much of TeX's memory you used:
- 8078 strings out of 493315
- 115818 string characters out of 6137904
- 219524 words of memory out of 5000000
- 11359 multiletter control sequences out of 15000+600000
+ 8085 strings out of 493315
+ 115907 string characters out of 6137904
+ 220541 words of memory out of 5000000
+ 11363 multiletter control sequences out of 15000+600000
  10945 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,12n,28p,2331b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,28p,2319b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -1065,10 +1088,10 @@ l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report.pdf (11 pages, 229669 bytes).
+Output written on Report.pdf (12 pages, 270042 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 120 words of extra memory for PDF output out of 10000 (max. 10000000)
 

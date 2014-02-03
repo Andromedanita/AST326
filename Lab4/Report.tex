@@ -176,7 +176,7 @@ UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) 
 
 Tables 2 and 3 show the position of the asteroid 30 Urania obtained by conversion from plate constants as it has been discussed in lab 3 and the position obtained from JPL HORIZONS, respectively.
 
-We also need to find the magnitude of the R vector for the second data(since the second night is the one we use to find the position of the asteroid as we need three sets of data for figuring out the position). {\bf R} vector magnitude can be calculated by squaring each of the components and taking the square root of their sum.
+We also need to find the magnitude of the R vector for the second data(since the second night is the one we use to find the position of the asteroid as we need three sets of data for figuring out the position). {\bf R} vector magnitude can be calculated by squaring each of the components and taking the square root of their sum as shown in equation 5.
 
 \begin{equation}
 R=\sqrt{R_{x}^2+R_{y}^2+R_{z}^2}
@@ -309,7 +309,7 @@ In order to make sure that our method and equations are correct, we first applie
 %Table showing the R vector components 
 \FloatBarrier
 \begin{table}[h!]
-\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
+\caption{Orbital Elements of Ceres obtained by our calculations and JPL along with their errors} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
@@ -318,8 +318,8 @@ In order to make sure that our method and equations are correct, we first applie
 \hline % inserts single horizontal line
   & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\ \hline 
 True & 2.766 &  80.72 &   10.61 & 0.179 & 73.12 &2454785.970\\ \hline
-Estimated &3.186 &  80.68 & 10.50 &  0.079 & & 2454868\\  \hline
-Error & -0.42 &  0.04 &    0.11 &   0.09 & & 82.03\\[1ex] % [1ex] adds vertical space
+Estimated &3.186 &  80.68 & 10.50 &  0.079 & 62.51 & 2454868\\  \hline
+Error & -0.42 &  0.04 &    0.11 &   0.09 & 10.61 & 82.03\\[1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
@@ -366,7 +366,7 @@ r=
  \end{pmatrix} 
 \end{equation}
 
-The plot of the r as a function of time is shown in figure (...):
+The plot of the orbital separation, r, and the true anomaly, \begin{math} v \end{math}, as a function of time are shown in figure 2:
 \FloatBarrier
 \begin{figure}[h!]
 \centering
@@ -376,32 +376,43 @@ The plot of the r as a function of time is shown in figure (...):
 \FloatBarrier
 
 
+
+
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{figure5.png}
+\caption{This figure shows the x and y components of r vector for asteroid Ceres. The pink dashed line is a circle with radius equal to the semi-major axis of Ceres and the blue solid line is the orbit of Ceres. The position of perihelion is also pointed with a dot.}
+\end{figure}
+\FloatBarrier
+
+
 % Orbital Motion of the Asteroid 30 Urania
 \subsection{Orbital Motion of Asteroid 30 Urania}
-The same way we predicted the position of Ceres for future time, we can determine the orbit of motion of 30 Urania using the orbital elements we computed in the previous sections. Table (...) contains the orbital elements of 30 Urania computed, the elements obtained from JPL HORIZONS and the error in our values.
+The same way we predicted the position of Ceres for future time, we can determine the orbit of motion of 30 Urania using the orbital elements we computed in the previous sections. Table 6 contains the orbital elements of 30 Urania computed, the elements obtained from JPL HORIZONS and the error in our values.
 
 
 %Table showing the orbital elements of 30 Urania 
 \FloatBarrier
 \begin{table}[h!]
-\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
+\caption{Orbital Elements of 30 Urania obtained by our calculations and JPL along with their errors.} % title of Table
 \centering % used for centering table
 \begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
+\hline %inserts double horizontal lines
  & a & \begin{math} \Omega \end{math}  & i & e & \begin{math} \omega \end{math}  & \begin{math} \tau \end{math} \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
   & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\ \hline 
-True & 2.365 & 307.93  &  2.099  & 0.127 &  86.277 & 2545800\\ \hline
-Estimated & 2.133 &   &  &   & & \\  \hline
-Error & 0.232 &   &     &    & & \\[1ex] % [1ex] adds vertical space
+True & 2.365 & 307.93  &  2.099  & 0.127 &  86.277 & 2455833.107\\ \hline
+Estimated & 2.133 &  307.75 & 2.11 &  0.125 & 87.70 & 2455835.546 \\ \hline
+Error & 0.232 & 0.18  &  0.11   &  0.002  & -1.42 & -2.439\\[1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
 \end{table}
 \FloatBarrier
 
-We can then determine the orbit of 30 Urania using these orbital elements. The Cartesian components of r of this asteroid in ecliptic coordinate could be obtained by equation (...), where \begin{math} \theta = \nu + \omega \end{math}:
+We can then determine the orbit of 30 Urania using these orbital elements. The Cartesian components of r of this asteroid in ecliptic coordinate could be obtained by equation 24, where \begin{math} \theta = \nu + \omega \end{math}:
 
 \begin{equation}
 s=
@@ -418,7 +429,7 @@ s=
 \end{pmatrix}
 \end{equation}
 
-We need the values of true and eccentric anomalies at different times, so we must iteratively solve for E using Newton?s method given in equation (..E=. 21), where we used \begin{math} E_{0}=M
+We need the values of true and eccentric anomalies at different times, so we must iteratively solve for E using Newton?s method given in equation 21, where we used \begin{math} E_{0}=M \end{math}. We can also plot the mean and eccentric anomalies as a function of time for 30 Urania as it is shown in figure (....).
 
 
 
@@ -427,13 +438,13 @@ We need the values of true and eccentric anomalies at different times, so we mus
 % Discussion
 \section{Discussion}
 \label{sec:discussion}
-First of all, we tried to compute the geocentric position vector of the asteroid, \begin{math} \rho \end{math}s, and the relative position of the asteroid relative to the Sun,{\bf r}, using the equations (...) to (...). In computing the positions, we used the position vector of the Earth relative to the Sun, {\bf R}=\begin{math} (X_{eq},Y_{eq},Z_{eq})\end{math}, obtained from JPL HORIZONS ephemeris for the given date. Hence, we could determine the orbit of the asteroid using Laplace's method which is explained in section 4 in details. In order to determine the position of the asteroid relative to the Sun, we also needed the right ascension and declination of the asteroid in the course of the four epochs of the observations we had from the DIT files. As it has been mentioned in the report and has been mentioned in full details in my lab 3 report[...], we calculated the plate constants of the CCD used in order to correct for the non-ideal CCD and to obtain more accurate positions of the asteroid on the celestial sphere. However, we faced lots of problems and we were getting \begin{math} \rho \end{math} to be zero and {\bf r} to be almost 1, which meant that the asteroid is 1 Au away from the Sun and 0 Au away from the Earth which meant the asteroid is on the Earth! Therefore, we tried to fix the problem, so we used more accurate Julian dates (with more precision) and also used different epochs. For instance, we used the first, second and third epoch and then we used second, third and fourth epoch to compute \begin{math} \rho \end{math} and {\bf r}, but it did not solve the problem. The other thing we used was to use the coordinates (\begin{math} \alpha \end{math} and \begin{math} \delta \end{math})obtained from JPL to check if there is a problem with the code itself or with the coordinates we were using and we found out that the code works perfectly. The values we got for \begin{math} \rho \end{math} and {\bf r} were really close to the true values. The values we had from our conversion using the plate constants were very close to the true values obtained from JPL, they were the same to 4 decimal places; however, as we saw, the calculation of the position vectors is very sensitive to the precision in the \alpha \end{math} and \begin{math} \delta \end{math} values. 
+First of all, we tried to compute the geocentric position vector of the asteroid, \begin{math} \rho \end{math}s, and the relative position of the asteroid relative to the Sun,{\bf r}, using the equations 1 to 11. In computing the positions, we used the position vector of the Earth relative to the Sun, {\bf R}=\begin{math} (X_{eq},Y_{eq},Z_{eq})\end{math}, obtained from JPL HORIZONS ephemeris for the given date. Hence, we could determine the orbit of the asteroid using Laplace's method which is explained in section 4 in details. In order to determine the position of the asteroid relative to the Sun, we also needed the right ascension and declination of the asteroid in the course of the four epochs of the observations we had from the DIT files. As it has been mentioned in the report and has been mentioned in full details in my lab 3 report, we calculated the plate constants of the CCD used in order to correct for the non-ideal CCD and to obtain more accurate positions of the asteroid on the celestial sphere. However, we faced lots of problems and we were getting \begin{math} \rho \end{math} to be zero and {\bf r} to be almost 1, which meant that the asteroid is 1 Au away from the Sun and 0 Au away from the Earth which meant the asteroid is on the Earth! Therefore, we tried to fix the problem, so we used more accurate Julian dates (with more precision) and also used different epochs. For instance, we used the first, second and third epoch and then we used second, third and fourth epoch to compute \begin{math} \rho \end{math} and {\bf r}, but it did not solve the problem. The other thing we used was to use the coordinates (\begin{math} \alpha \end{math} and \begin{math} \delta \end{math})obtained from JPL to check if there is a problem with the code itself or with the coordinates we were using and we found out that the code works perfectly. The values we got for \begin{math} \rho \end{math} and {\bf r} were really close to the true values. The values we had from our conversion using the plate constants were very close to the true values obtained from JPL, they were the same to 4 decimal places; however, as we saw, the calculation of the position vectors is very sensitive to the precision in the \alpha \end{math} and \begin{math} \delta \end{math} values. 
 
 
 % Conclusion
 \section{Conclusion}
 \label{sec:conclusion}
-
+We used 2D images of 30 Urania to compute its orbital elements in order to predict its orbit for future dates. We used the coordinates obtained by conversion from CCD pixels to right ascension and declination using plate constants of the CCD for each night;however, since our values differed from the true values in 4th decimal place, we used values obtained from JPL HORIZONS web interface. Therefore, we observed that we need very accurate positions of the asteroid since only this small difference can make a huge difference in the orbital elements and as a result, in the prediction of the asteroid's orbit.
 
 % Reference
 \section{References}
@@ -444,32 +455,43 @@ First of all, we tried to compute the geocentric position vector of the asteroid
 
 \section{Appendix}
 \label{sec:appendix}
-Here is a it of my code to calculate the mean and eccentric anomaly using equations (...) and  (...):
-
+Here is a it of my code to calculate the mean and eccentric anomaly iteratively, using equations 20 and  21:
+M[q-1] and E[q-1] are the (q-1)th values of mean and eccentric anomalies. 
 for q in range(1,len(t)):
+
 \\       M[q-1]=E[q-1]-e*(np.sin(E[q-1]))
 \\       E[q]=E[q-1]+((mu[q-1]-M[q-1])/(1-e*np.cos(E[q-1]))) 
    
 This loops starts from one and continues until it is smaller than the number of elements in time array and calculates the mean anomaly for each time it goes into the loop and using that specific M value, it computes the E value. We should also note that the initial values of E[0]=mu[0] and M[0]=E[0], where mu=n*(t-tau) and t is the time array starting from tau=2454868; therefore, mu[0]=0.
     
 
-\\for plotting figure (...), I used the following code:
+\\for plotting figure 3, I used the following code, where \begin{math} circle_x \end{math} and \begin{math} circle_y \end{math}are the components of a circle with radius equal to semi-major axis of Ceres and \begin{math} r_x \end{math} and \begin{math} r_y  \end{math} are the components of Ceres's orbit:
 \\circle_x=a*(np.cos(theta))
 \\circle_y=a*(np.sin(theta))
  and 
 \\r_x=r*(np.cos(theta))
 \\r_y=r*(np.sin(theta))
- 
-\\for a circle with radius a and the orbit of Ceres, respectively.
 
-\\Then I used a for loop to run for 20 times in order to find the \begin{math} \rho \end{math} and r values close to the true values. This loop goes until the value of r and \begin{math} \rho \end{math} we have found, converges to its true value:
 
-\\for i in range(20):
-  \\  rho=((k**2)*((1./(R_length**3))-(1./(r1**3))))*denom
-    \\r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
+\\Then I used a for loop to run for 20 times in order to find the \begin{math} \rho \end{math} and r values close to the true values. This loop goes until the value of r and \begin{math} \rho \end{math} we have found, converge to their true values:
+
+for i in range(20):
+
+rho=((k**2)*((1./(R-length**3))-(1./(r1**3))))*denom
+
+r1=np.sqrt((rho**2)+(R-length**2)+(2*rho*R-dot_-))
     
-    
-    
+\\Where denom=(sdot-R-s)/(sdot-s-dotdot-s).
+
+Here are also calculation of some of the orbital elements:
+
+a-theory=((k**2)*r1)/((2*(k**2))-(r1*(V**2)))       ,        semi-major axis, a
+
+np.cross(r-vector,dr-dt)        ,       h vector which is the cross product of r vector and its derivative
+
+big-omega=((np.arctan(h[0]/h[1]))*180)/(np.pi)        ,     \begin{math} \Omega \end{math}
+
+
  
 
 %\FloatBarrier
