@@ -32,7 +32,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-Astrometry is used to measure properties of celestial objects such as their position on the sky, their movement, velocities and acceleration. In this experiment, we used a charged coupled device(CCD). The CCD mapped the sky on a 2D plane. Observations were made using the Dunlap Institute Telescope located in New Mexico, United States. The object of interest for this experiment is asteroid named 30 Urania.We measured the plate constants of the CCD in order to correct for the CCD, since the CCD is not an ideal one. Then we applied these plate constants to the data from 30 Urania over the course of four nights in January 2012 and measured the corresponding right ascension and declination of this asteroid in order to find the orbital elements and therefor, to predict its future positions of this asteroid. 
+Astrometry is used to measure properties of celestial objects such as their position on the sky, their movement, velocities and acceleration. In this experiment, we used a charged coupled device called CCD that mapped the sky on a 2D plane. Observations were made using the Dunlap Institute Telescope located in New Mexico, United States. The object of interest for this experiment is an asteroid named 30 Urania.We measured the plate constants of the CCD in order to correct for the non-ideal CCD. Then we applied these plate constants to the data from 30 Urania over the course of four nights in January 2012 and measured the corresponding right ascension and declination of this asteroid in order to determine the orbit of motion of the asteroid and to find its orbital elements such as the inclination, its true, mean and eccentric anomaly, its semi major axis and .
 
 
 
@@ -41,24 +41,22 @@ Astrometry is used to measure properties of celestial objects such as their posi
 %Introduction
 \section{Introduction}
 \label{sec:introduction}
-Nowadays, with the advancements of technology, we are able to use computers to do astrom- etry in order to obtain position and motion of celestial objects. We have used the stellar map of NGC7331 taken with DIT and found the centroid points to compared and match them with USNO-B1.0 catalogue in order to find the plate constants of the CCD using least square fitting technique. 
+Nowadays, with the advancements of technology, we are able to use computers to do astrometry in order to obtain position and motion of celestial objects. We have used the stellar map of NGC7331 taken with DIT and found the centroid points and compared and matched them with USNO-B1.0 catalogue in order to find the plate constants of the CCD using least square fitting technique. Here in this lab, we will be using the celestial coordinates(\begin{math} \alpha \end{math} and \begin{math} \delta \end{math}) obtained by the conversion from plate constants which is calculated separately for each night(for more precision) in order to find the orbital elements of the asteroid 30 Urania, calculate its distance relative to the Earth and the Sun and to determine its orbit for future time.
 
 
-%Experimental Procedure
-\section{Experimental Procedure}
-\label{sec:experimental procedure}
+%Observation and Data
+\section{Observation and Data}
+\label{sec:observationanddata}
 \subsection{Equipment}
 We used the Dunlap Institute Telescope(DIT) which is a 50-cm robotic telescope dedicated to search for optical counterparts of gamma-ray bursts. The telescope was located at New Mexico on Mt. Joy(32:54:10 N +105:31:46 W). The telescope is equipped with a 4096 \begin{math}\times\end{math} 4096 pixel CCD array and the resultant field of view is approximately 36 \begin{math}\times\end{math} 36 arc minutes. Pixel size of this CCD is 9?. This CCD operated in binning mode to collect the data we will be using through this experiment. Binning is useful since it reduces the size of the resultant FITS file and reduces the effect of read-out noise. For 2 \begin{math}\times\end{math} 2 binning the resultant array is 2048 \begin{math}\times\end{math} 2048 pixels.
 
-\section{Analysis}
-\label{sec:analysis}
 \subsection{CCD Calibration}
 In order to have good images from the CCD we need to calibrate them. A good image is one that is dark subtracted and divided by flat frames. Therefore, in order to use the data from the CCD, we subtracted the dark data from the actual data. Dark data was taken with the same exposure time as the actual data while the shutter was closed. Dark current is produced due to the noise in the CCD and it might come from the thermal energy of the electrons; therefore, CCDs are kept in cool places in order to reduce the noise. We also divided the dark subtracted data by the flat frames. Flats are morning and evening twilight sky images that are used to normalize the image. Another factor to consider are the bias frames, which are zero second exposures that provide a measure of digital offset when the signal is zero. Here, the bias is assumed to be zero for this long exposure with DIT.
 
 
 
-
-\section{Asteroid Orbital Elements and Position}
+% Calculation and Modeling
+\section{Calculation and Modeling}
 \subsection{Asteroid Position}
 The coordinates of astronomical objects are usually measured by the angles right ascension,\begin{math}\alpha \end{math} and declination, \begin{math} \delta \end{math}, in the equatorial system defined by reference stars measured in International Celestial Reference System, taken at epoch 2000. Therefore, the cartesian coordinates are give by equation (...) below.
 
@@ -68,7 +66,7 @@ y_{eq}=\sin\alpha \cos\delta , \\
 z_{eq}=\sin\delta
 \end{equation}
 
-We can convert the equatorial coordinate to ecliptic coordinate by a transformation along x-axis by the angle \begin{math} \epsilon \end{math} by equation(.....) given below:
+We can convert the equatorial coordinate to ecliptic coordinate by a transformation along x-axis by the angle \begin{math} \epsilon \end{math} by equation(.....) given below.
 
 \begin{equation}
 s=
@@ -90,7 +88,7 @@ s=
 \end{pmatrix} 
 \end{equation}
 
-where \begin{math}\epsilon\end{math} = 23\begin{math} ^{\circ} \end{math}.43929111 for the equinox 2000. s is in the ecliptic Cartesian frame.
+where \begin{math}\epsilon\end{math} = 23\begin{math} ^{\circ} \end{math}.43929111 is the tilt of the Earth for the equinox 2000. s is in the ecliptic Cartesian frame.
 In this manner, we are able to calculate the \begin{math}s_{1}\end{math}, \begin{math}s_{2}\end{math} and \begin{math}s_{3}\end{math} vectors and thereafter, we can calculate the first and second derivatives of \begin{math} s_{2} \end{math} vector by equation (...) given below:
 
 
@@ -113,15 +111,37 @@ The {\bf R} vector components are given in the table (....).
 \begin{table}[h!]
 \caption{Date and position of asteroid 30 Urania in the sky} % title of Table
 \centering % used for centering table
-\begin{tabular}{c c c c } % centered columns (4 columns)
+\begin{tabular}{| c | c | c | c |} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
 UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
-24   &   2455946.68646  & 0.77589496  &  0.33553406  \\
-25   &   2455947.69476  & 0.77991461  &  0.33640024  \\
-26   &   2455949.73866 &  0.78825718 &   0.33765579  \\ 
-27   &   2455950.68528  & 0.79249126 &   0.33851884  \\ [1ex] % [1ex] adds vertical space
+19   &   2455946.68646  & 0.77589496  &  0.33553406  \\ \hline
+20   &   2455947.69476  & 0.77991461  &  0.33640024  \\ \hline
+22   &   2455949.73866 &  0.78825718 &   0.33765579  \\  \hline
+23   &   2455950.68528  & 0.79249126 &   0.33851884  \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
+
+%Table showing right ascension and declination obtained from JPL
+\FloatBarrier
+\begin{table}[h!]
+\caption{Date and position of asteroid 30 Urania in the sky obtained from JPL} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c |} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+19   &   2455946.68646  & 0.775884664&   0.335833345 \\ \hline
+20   &   2455947.69476  & 0.779874196  & 0.33648493   \\ \hline
+22   &   2455949.73866 &  0.788401584 & 0.337913196    \\  \hline
+23   &   2455950.68528  &  &     \\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
@@ -136,15 +156,15 @@ UT Date 2012/01 & Julian Date & Right Ascension(radians) & Declination(radians) 
 \begin{table}[h!]
 \caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
 \centering % used for centering table
-\begin{tabular}{c c c } % centered columns (4 columns)
+\begin{tabular}{| c | c | c |} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
 X & Y & Z \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
--0.4820742567460204  & 0.8578010618775774  &  -2.425231096584922*(10^{(-05)})  \\
--0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891*(10^{(-05)}) \\
--0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080*(10^{(-05)}) \\ 
--0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697*(10^{(-05)})  \\ [1ex] % [1ex] adds vertical space
+-0.4820742567460204  & 0.8578010618775774  &  -2.425231096584922 \begin{math} \times \end{math}10^{-5} \\ \hline
+-0.4974148410812385  & 0.8490994851434150  &  -2.462584044959891 \begin{math} \times \end{math}10^{-5} \\ \hline
+-0.5280130493076013  & 0.8306420761670466  &  -2.515673232526080 \begin{math} \times \end{math}10^{-5} \\  \hline
+-0.5419538025371889  & 0.8217251214639645  &  -2.524538626668697 \begin{math} \times \end{math}10^{-5}  \\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
@@ -265,14 +285,14 @@ In order to make sure that our method and equations are correct, we first applie
 \begin{table}[h!]
 \caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
 \centering % used for centering table
-\begin{tabular}{c c c c c c c } % centered columns (4 columns)
+\begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
  & a & \begin{math} \Omega \end{math}  & i & e & \begin{math} \omega \end{math}  & \begin{math} \tau \end{math} \\ [0.5ex] % inserts table
 %heading
 \hline % inserts single horizontal line
-  & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\
-True & 2.766 &  80.72 &   10.61 & 0.179 & &2454785.970\\
-Estimated &3.186 &  80.68 & 10.50 &  0.079 & & 2454868\\ 
+  & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\ \hline 
+True & 2.766 &  80.72 &   10.61 & 0.179 & 73.12 &2454785.970\\ \hline
+Estimated &3.186 &  80.68 & 10.50 &  0.079 & & 2454868\\  \hline
 Error & -0.42 &  0.04 &    0.11 &   0.09 & & 82.03\\[1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
@@ -329,6 +349,51 @@ The plot of the r as a function of time is shown in figure (...):
 \end{figure}
 \FloatBarrier
 
+
+% Orbital Motion of the Asteroid 30 Urania
+\subsection{Orbital Motion of Asteroid 30 Urania}
+The same way we predicted the position of Ceres for future time, we can determine the orbit of motion of 30 Urania using the orbital elements we computed in the previous sections. Table (...) contains the orbital elements of 30 Urania computed, the elements obtained from JPL HORIZONS and the error in our values.
+
+
+%Table showing the orbital elements of 30 Urania 
+\FloatBarrier
+\begin{table}[h!]
+\caption{Sun-Earth vector Cartesian components of {\bf R} in ecliptic coordinates [Au]} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+ & a & \begin{math} \Omega \end{math}  & i & e & \begin{math} \omega \end{math}  & \begin{math} \tau \end{math} \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+  & [Au]  &  [deg] &[deg] & & [deg] & [Julian Date] \\ \hline 
+True & 2.365 &   &    &  &  & \\ \hline
+Estimated & 2.133 &   &  &   & & \\  \hline
+Error & 0.232 &   &     &    & & \\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+We can then determine the orbit of 30 Urania using these orbital elements. The Cartesian components of r of this asteroid in ecliptic coordinate could be obtained by equation (...), where \begin{math} \theta = \nu + \omega \end{math}:
+
+\begin{equation}
+s=
+\begin{pmatrix}
+  x \\
+  y \\
+  z
+ \end{pmatrix} 
+  =r
+\begin{pmatrix}
+\cos \Omega \cos \theta - \sin \Omega \cos i \sin \theta \\ 
+ \sin \Omega \cos \theta+ \cos \Omega \cos i \sin \theta \\ 
+ \sin i \sin \theta
+\end{pmatrix}
+\end{equation}
+
+
+
 % Discussion
 \section{Discussion}
 \label{sec:discussion}
@@ -343,15 +408,39 @@ First of all, we tried to compute the geocentric position vector of the asteroid
 % Reference
 \section{References}
 \label{sec:references}
-1- Lab # 4: Astrometric Orbit Determination handout
-2- Lab 3 Report written by Anita Bahmanyar
-3-JPL HORIZONS web interface ephemeris
+\\*1- Lab # 4: Astrometric Orbit Determination handout
+\\*2- Lab 3 Report written by Anita Bahmanyar
+\\*3-JPL HORIZONS web interface ephemeris
 
 \section{Appendix}
 \label{sec:appendix}
+Here is a it of my code to calculate the mean and eccentric anomaly using equations (...) and  (...):
 
+for q in range(1,len(t)):
+\\       M[q-1]=E[q-1]-e*(np.sin(E[q-1]))
+\\       E[q]=E[q-1]+((mu[q-1]-M[q-1])/(1-e*np.cos(E[q-1]))) 
+   
+This loops starts from one and continues until it is smaller than the number of elements in time array and calculates the mean anomaly for each time it goes into the loop and using that specific M value, it computes the E value. We should also note that the initial values of E[0]=mu[0] and M[0]=E[0], where mu=n*(t-tau) and t is the time array starting from tau=2454868; therefore, mu[0]=0.
+    
 
+\\for plotting figure (...), I used the following code:
+\\circle_x=a*(np.cos(theta))
+\\circle_y=a*(np.sin(theta))
+ and 
+\\r_x=r*(np.cos(theta))
+\\r_y=r*(np.sin(theta))
+ 
+\\for a circle with radius a and the orbit of Ceres, respectively.
 
+\\Then I used a for loop to run for 20 times in order to find the \begin{math} \rho \end{math} and r values close to the true values. This loop goes until the value of r and \begin{math} \rho \end{math} we have found, converges to its true value:
+
+\\for i in range(20):
+  \\  rho=((k**2)*((1./(R_length**3))-(1./(r1**3))))*denom
+    \\r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
+    
+    
+    
+ 
 
 %\FloatBarrier
 %\begin{figure}[h!]
