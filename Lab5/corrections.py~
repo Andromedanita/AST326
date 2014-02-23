@@ -1,0 +1,49 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pyfits as pf
+import matplotlib.cm as cm
+
+fits1='/Users/anita/Documents/University_Third_Year/AST326/Lab5/Lab5_ACAM_DATA/r1599579.fit'
+
+x=pf.getdata(fits1) 
+'''
+mean_x=np.mean(x)
+values=[]
+for i in range(2071):
+    for j in range(2148):
+        if x[i][j]>(1.1*mean_x):
+            values.append(x[i][j])
+            #plt.plot(x[i],x[j])
+'''
+
+stars='/Users/anita/Documents/University_Third_Year/AST326/Lab5/Lab5_ACAM_DATA/r1599580.fit'
+star=pf.getdata(stars)
+means=[]
+w=[72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]
+for q in w:
+    flatlist='/Users/anita/Documents/University_Third_Year/AST326/Lab5/Lab5_ACAM_DATA/r15980'+str(q)+'.fit'
+    flats=pf.getdata(flatlist)
+    mean_flat=np.mean(flats)
+    means.append(mean_flat)
+    flat_median=np.median(means)
+    #corrected=star/flat_median
+
+#y=pf.getdata(dark)   #dark data for NGC7331
+#z=pf.getdata(flat)   #flat data for NGC7331
+#g=z/np.median(z)     #flat  so that flat median is equal to one
+
+'''
+values=[]  # those values that are bigger than a limit (to find the circle)
+for i in range(1,2071): #and j in range(1,2071):
+    for j in range(1,2071):
+        if x[i][j]>20000:
+            values.append(x[i][j])
+            print x[i][j]
+            plt.scatter(x[i],x[j])
+
+plt.figure()
+'''
+plt.imshow(star,cmap=cm.gray_r,vmin=0,vmax=1000,origin= 'lower',interpolation='nearest')
+plt.colorbar() #showing the color bar
+
+plt.show()
