@@ -29,6 +29,8 @@ np.savetxt('output.txt',output,fmt='%.1i')
 
 
 ########### centroids #################
+theta=np.arange(0,(2.1*(np.pi)),0.1)
+
 centroid_x_list=[]
 centroid_y_list=[]
 
@@ -53,7 +55,18 @@ while m < len(max_x):
     centroids_y=np.sum(multi_y)/np.sum(denominator)
     centroid_x_list.append(centroids_x)
     centroid_y_list.append(centroids_y)
+    circle_x1=centroids_x+(6*(np.cos(theta)))
+    circle_y1=centroids_y+(6*(np.sin(theta)))
+    plt.plot(circle_x1,circle_y1,'r')
+    circle_x2=centroids_x+(11*(np.cos(theta)))
+    circle_y2=centroids_y+(11*(np.sin(theta)))
+    plt.plot(circle_x2,circle_y2,'g')
+    circle_x3=centroids_x+(15*(np.cos(theta)))
+    circle_y3=centroids_y+(15*(np.sin(theta)))
+    plt.plot(circle_x3,circle_y3,'k')
     m+=1
+
+
 
 ############## bias ##################
 '''
@@ -97,7 +110,10 @@ flat_array=flat_array/len(w)
 '''
 #corrected=(star-(702.0))/((master_flat)-(702.0)) # bias subtracted and flat divided star
 plt.imshow(star,origin= 'lower',interpolation='nearest')
-plt.plot(centroid_x_list,centroid_y_list,'r.')
+plt.plot(centroid_x_list,centroid_y_list,'y*')
+plt.xlim(0,2150)
+plt.ylim(0,2090)
+plt.title("Centroid of the star and the sky annulus")
 plt.colorbar() #showing the color bar
 
 
