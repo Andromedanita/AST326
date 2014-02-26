@@ -9,9 +9,7 @@ star=pf.getdata(stars)
 
 w=[72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]  # suffixes for  flat files
 #t=[43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63] # suffixes for bias files
-#t=[1599995,1599996,1599997,1599998,1599999,1600000,1600001,1600002,1600003,1600004,1600005,1600006,1600007,1600008,1600009,1600010,1600011,1600012,1600013,1600014,1600015,1600016,1600017,1600018,1600019,1600020]
-w=[72,73]
-t=[1599995,1599996]
+t=[1599995,1599996,1599997,1599998,1599999,1600000,1600001,1600002,1600003,1600004,1600005,1600006,1600007,1600008,1600009,1600010,1600011,1600012,1600013,1600014,1600015,1600016,1600017,1600018,1600019,1600020]
 
 ############## bias ##################
 '''
@@ -32,7 +30,7 @@ for e in t:
     bias_array_final=bias_array/(np.size(t))
     print "bias number is:", e
 '''
-
+'''
 bias_array=np.zeros((2071,2148))
 
 for e in t:
@@ -40,7 +38,7 @@ for e in t:
     bias=pf.getdata(biaslist)
     bias_array+=bias
 bias_array_final=bias_array/(np.size(t))
-
+pf.writeto('bias.fit',bias_array_final)
 
 ############### flats ###################
 
@@ -61,12 +59,17 @@ for q in w:
     flat_array+=single_flat
 flat_array=flat_array/len(w)
 
+pf.writeto('flat.fit',flat_array)
+'''
+bias1='/Users/anita/Documents/University_Third_Year/AST326/Lab5/bias.fit'
+bias_array_final=pf.getdata(bias1)
 
-corrected=-(star-bias_array_final)/((flat_array)-(bias_array_final))
+flat1='/Users/anita/Documents/University_Third_Year/AST326/Lab5/flat.fit'
+flat_array=pf.getdata(flat1)
 
+corrected=(star-bias_array_final)/((flat_array))
 
-
-
+'''
 ############### maximas ##########
 max_x=np.array([])
 max_y=np.array([])
@@ -89,6 +92,7 @@ theta=np.arange(0,(2.1*(np.pi)),0.1)
 centroid_x_list=[]
 centroid_y_list=[]
 
+flux_list=[]
 m=0
 while m < len(max_x):
     x=max_x[m]
@@ -110,24 +114,85 @@ while m < len(max_x):
     centroids_y=np.sum(multi_y)/np.sum(denominator)
     centroid_x_list.append(centroids_x)
     centroid_y_list.append(centroids_y)
-    circle_x1=centroids_x+(6*(np.cos(theta)))
-    circle_y1=centroids_y+(6*(np.sin(theta)))
-    plt.plot(circle_x1,circle_y1,'r')
-    circle_x2=centroids_x+(11*(np.cos(theta)))
-    circle_y2=centroids_y+(11*(np.sin(theta)))
-    plt.plot(circle_x2,circle_y2,'g')
-    circle_x3=centroids_x+(15*(np.cos(theta)))
-    circle_y3=centroids_y+(15*(np.sin(theta)))
-    plt.plot(circle_x3,circle_y3,'k')
+    #final_centroids=np.column_stack((centroid_x_list,centroid_y_list))
+    #np.savetxt('centroids.txt',final_centroids)
+    
+    for l in range(0,2071):
+        for p in range(0,2148):
+            #distance_x=corrected[l][p]-centroids_x
+            #distance_y=corrected[l][p]-centroids_y
+            distance=np.sqrt(((corrected[l][p]-centroids_x)**2)+((corrected[l][p]-centroids_y)**2))
+            if distance<15:
+                flux_list.append(corrected[l][p])
+    
     m+=1
+'''
+
+flux_list=[]
+background_list=[]
+distances=[]
+
+centroid_x_list=np.loadtxt('/Users/anita/Documents/University_Third_Year/AST326/Lab5/cent.txt',usecols=(0,))
+centroid_y_list=np.loadtxt('/Users/anita/Documents/University_Third_Year/AST326/Lab5/cent.txt',usecols=(1,))
+
+for r in centroid_x_list:
+    for u in centroid_y_list:
+        box_x=np.arange(-15,15,1)  #box in x direction
+        box_y=np.arange(-15,15,1)  #box in y direction
+        for l in (box_x+r):
+            for p in (box_y+u):
+                distance=np.sqrt(((l-r)**2)+((p-u)**2))
+                distances.append(distance)
+                print "distance is:", distance
+                if distance <15:
+                    flux_list.append(corrected[l][p])
+                    #plt.plot(l,p,'g.')
+                elif distance<25 and distance>22:
+                    background_list.append(corrected[l][p])
+                    #plt.plot(l,p,'m.')
+flux=np.sum(flux_list)
+print "flux is:", flux
+background=np.sum(background_list)
+
+#circle_x1=centroids_x+(10*(np.cos(theta)))
+#   circle_y1=centroids_y+(10*(np.sin(theta)))
+#   plt.plot(circle_x1,circle_y1,'r')
+#   circle_x2=centroids_x+(15*(np.cos(theta)))
+#   circle_y2=centroids_y+(15*(np.sin(theta)))
+#   plt.plot(circle_x2,circle_y2,'g')
+#   circle_x3=centroids_x+(20*(np.cos(theta)))
+#   circle_y3=centroids_y+(20*(np.sin(theta)))
+#   plt.plot(circle_x3,circle_y3,'k')
+# m+=1
+
+
+
+############# signa; to noise ratio ###########
+
+
+r1=15
+r2=22
+r3=25
+readout_noise=6.0/1.9
+N1=(np.pi)*(r1**2)
+N23=(np.pi)*((r3**2)-(r2**2))
+B=background/(np.size(background_list))
+#Signal_noise=
+
+
+
+'''
+xx=[5,10,15,20,25]
+yy=[9567.1173956363182,37588.853678160653,86018.21664802068,152341.47112340882,237798.29647247944]
+plt.plot(xx,yy)
+'''
 
 ########### plots ################hb u
-
 plt.imshow(corrected,origin= 'lower',interpolation='nearest')
 plt.plot(centroid_x_list,centroid_y_list,'y*')
-#plt.xlim(0,2150)
-#plt.ylim(0,2090)
-#plt.title("Centroid of the star and the sky annulus")
-
+plt.xlim(0,2150)
+plt.ylim(0,2090)
+plt.title("Centroid of the star and the sky annulus")
 plt.colorbar() #showing the color bar
+
 plt.show()
