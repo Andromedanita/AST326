@@ -1,0 +1,63 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{rotating}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage{setspace}
+\usepackage[cdot,mediumqspace,]{SIunits}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{authblk}
+\usepackage{placeins}
+\usepackage{float}
+
+\onehalfspacing
+\title{Detecting Exoplanet Transits}
+\author{Anita Bahmanyar \qquad Ayushi Singh \qquad Morten Nyborg Stostad \\Department of Astronomy and Astrophysics, University of Toronto}
+\affil{\small {Written by: Anita Bahmanyar}}
+\affil{\small {anita.bahmanyar@mail.utoronto.ca}}
+\affil{\small {Student Number: 998909098}}
+\date{March 5, 2014}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+%Abstract
+\begin{abstract}
+\label{abstract}
+one of the methods to detect exoplanets is monitoring the transit of the planet in front of the star by measuring the change in the  brightness of the system. In this lab, we used the CCD images from the ACAM instrument on the William Herschel Telescope to detect transit of exoplanet in front of G1412 star. We used differential aperture photometry to produce light curve of the star that is obtained by the transit of the exoplanet and measured some properties of the planet such as ...... to be ...... respectively.
+
+
+% Introduction
+\section{Introduction}
+\label{sec:introduction}
+There are many ways to detect existence of exopanets such as measuring the radial velocity, microlensing and direct imaging. Detection by transit is an indirect method that we will be using throughout this lab. In this method, we monitor the brightness of the target star and measure any drop in the brightness. This drop in the brightness could be due to the exoplanet passing in front of the target star. This change in brightness is really small, in the order of 0.01 (????) percent, so we need precise measurements in order to detect the exoplanet. Detection of the exoplanet depends on the orientation of the exoplanet relative to the target star. The goal of this lab is to find the centroid of the stars, do aperture photometry on each star, generate growth curve, plot the light curve and obtain properties of the exoplanet using the depth of the change in brightness of the target star. The analysis of starlight by adding up the flux within a certain radius on an image is known as aperture photometry.  The target of interest in this lab is GJ 1214, which is a M type red dwarf.
+
+
+%
+\section{Observation and Data}
+\label{sec:observationanddata}
+
+\subsection{Equipment}
+We used the data taken from  Auxillary-port CAMera (ACAM) on William Herschel  Telescope (WHT), operated by the Isaac NewtonGroup of Telescope. The data is in optical wavelength. ACAM has a field of view  ~8 arcminutes (0.25 arcsec/pixel)in diameter. Pixel size of ACAM is 15 microns.
+
+
+
+\section{Data Reduction}
+\label{sec:datareduction}
+
+\subsection{Systematic Corrections}
+
+\textbf {Bias:}
+\\*A bias frame is a zero second exposure that measures the number of counts detector reads with no signal.  These frames show which parts of the detector is affected by significant electronic defects. we had frames of bias with the shape (2071,2148). Since the telescope aperture is circular, we need to account only for the pixels that were actually exposed during the observation. In order to do so, I chose a pixel close to the edge of the circle and set its intensity as a threshold for the pixel value check. So my code checks all the pixel values and if its value is bigger than the threshold value, it appends it to a list. Then I converted this list to array and add all the arrays together and finally take the mean of the big array to obtain a master bias array. \\*
+\textbf {Flat Field:} 
+\\*Flat frames are images taken with the telescope pointing at a blank wall or at a region of the sky with no stars, often during the twilight. Flat frames show the pixel to pixel variation of the detector. Since the detectors are very sensitive to light, there might be a few stars in the field sometimes. in order to remove them, we take the median of the frames. What I did was that I only considered the pixels inside the circular aperture (the same way I did it with bias frames) and divided each flat frame by its median. Then I added all of these single corrected frames together and divided the resulting array by the number of the flat frames to get a master flat frame.
+
+
+\end{document}
