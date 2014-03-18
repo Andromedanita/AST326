@@ -48,8 +48,6 @@ r=a*(1-(e*np.cos(E)))
 r_x=r*(np.cos(theta))
 r_y=r*(np.sin(theta))
 r_z=0
-r2=[r_x,r_y,r_z]
-r_magnitude=np.sqrt(((r_x)**2)+((r_y)**2)+((r_z)**2))
 
 
 circle_x=a*(np.cos(theta))
@@ -135,7 +133,7 @@ sdot_s_dotdot_s=(s2_dot[0]*s_dotdot_s[0])+(s2_dot[1]*s_dotdot_s[1])+(s2_dot[2]*s
 
 ################ computing rho and r (step 6) ####################
 
-r_0=2.766 # Au
+r_0=2.66 # Au
 
 #while (np.abs(r_0-r_original)>0.001):
     
@@ -144,7 +142,7 @@ rho=((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom
 R_dot_s=(R2[0]*s2[0])+(R2[1]*s2[1])+(R2[2]*s2[2])
 
 ### equation 48
-r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au (This is the r value in equation 48)
+r1=np.sqrt((rho**2)+(R_length**2)+(2*rho*R_dot_s)) #Au
 
 
 #### rho_dot #####
@@ -157,38 +155,15 @@ denom2=(s_dotdot_R_s)/(s_dotdot_s_dot_s)
 
 rho_dot=0.5*((k**2)*((1./(R_length**3))-(1./(r_0**3))))*denom2
 
+
+
 ########## dr/dt ########
 
-dr_dt_x=R2_dot_x+(rho*s2_dot[0])+(rho_dot*s2[0])
-dr_dt_y=R2_dot_y+(rho*s2_dot[1])+(rho_dot*s2[1])
-dr_dt_z=R2_dot_z+(rho*s2_dot[2])+(rho_dot*s2[2])
-dr_dt=[dr_dt_x,dr_dt_y,dr_dt_z]
-
-########## r vector from equation 41 ###########
-
-r_vector_x=R2[0]+(rho*s2[0])
-r_vector_y=R2[1]+(rho*s2[1])
-r_vector_z=R2[2]+(rho*s2[2])
-r_vector=[r_vector_x,r_vector_y,r_vector_z]
+dr_dt_x=R2_dot_x+(rho*s2[0])+(rho_dot*s2[0])
+dr_dt_y=R2_dot_y+(rho*s2[1])+(rho_dot*s2[1])
+dr_dt_z=R2_dot_z+(rho*s2[2])+(rho_dot*s2[2])
 
 
-###### orbital elements ##########
-V=np.sqrt(((dr_dt_x)**2)+((dr_dt_y)**2)+((dr_dt_z)**2))
-a=((k**2)*r1)/((2*(k**2))-(r1*(V**2)))   # major axis in Au 
-
-h=np.cross(r_vector,dr_dt) # by equation 5 (h value), specific angular momentum
-h_magnitude=np.sqrt((h[0]**2)+(h[1]**2)+(h[2]**2))
-
-big_omega=((np.arctan(-h[0]/h[1]))*180)/(np.pi)
-i_theory=(np.arccos(h[2]/h_magnitude)*180)/(np.pi) # inclination in degrees
-
-
-eccentricity=((np.sqrt(1-((h_magnitude**2)/(a*(k**2)))))*180)/(np.pi) # estimated eccentricity in degrees
-E_theory=np.arccos((a-r1)/(a*eccentricity))
-
-v_theory=((2*np.arctan((np.sqrt(1+eccentricity/1-eccentricity))*(np.tan(E_theory/2))))*180)/(np.pi)
-
-w_theory=((((np.arccos((r_vector_x*(np.cos(big_omega)))+(r_vector_y*(np.sin(big_omega)))/r1)))*180)/(np.pi))-v_theory
 
 ################## plots ######################
 plt.plot(t,mu,'-b',t,E,'r')
