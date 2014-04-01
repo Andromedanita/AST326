@@ -37,6 +37,8 @@ In this lab our goal is to measure the 1 AU in meters by measuring the earth-sun
 
 \section{Introduction}
 \label{sec:introduction}
+Astronomical distances and scales are large enough that is gets bothersome to use usual distance units such as meters and kilometers. Therefore, astronomers defined a new unit for length measurements called Astronomical Unit(AU), which is defined as the distance between the Sun and the Earth. In this lab we will use simple geometry, circular motion and properties of light to measure this unit. In order to do so, we found the wavelength solution of the Charged Coupled Device(CCD) that related the pixel numbers to wavelengths as explained in section [...], obtained the solar spectra along its diameter and by taking advantage of cross-correlation method as discussed in section [...], we figured out the pixel shift and therefore the Doppler Shift in the solar spectra with respect to the starting point( in order to determine the radial velocity of the Sun. From this, we can compute the radius of the sun by knowing the period of the Sun. Then finally we can compute AU using geometry as will be explained more in section [...]. The goal of this lab is to learn to find the wavelength solution for CCDs, cross-correlate data sets with each other and find the rotational velocity of the sun in order to find its radius and finally to measure AU using simple geometry as described later.
+
 
  
 \section{Observation and Data Acquisition}
@@ -113,11 +115,86 @@ $I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in th
 
 
 
+\section{Determining Doppler Shift}
+\label{sec:determiningdopplershift}
+As we were collecting the solar data, the sun was rotating. We need to account this rotation since it affects the wavelength of the light that we observe. As the sun rotates, one edge is turning toward us, making the light to appear blue-shifted(light has shorter wavelength) and the other edge is turning away from us, making it to appear red-shifted(light has longer wavelength). This is known as Doppler Shift and it is given by equation [...]:
+
+\begin{equation}
+\frac{\Delta \lambda}{\lambda}=\frac{\Delta v}{c}=\frac{2 v_{rad}}{c}
+\end{equation}
+Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength, $\lambda$ and $c$ is the speed of light in vacuum. The spectrometer we used has a 
+velocity resolution of 33 km/s. Figure [...] shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
+
+
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{Sun_Spectrum.png}
+\caption{$Top:$Two spectra of the two edges of the sun over-plotted. As it can be seen, the two spectra are very close to each other. $Bottom:$ The two spectra are zoomed so the features are better shown.}
+\end{figure}
+\FloatBarrier
+
+
+\subsection{Cross-Correlation}
+Cross-correlation is a method used in this lab in order to show how similar the different spectra are with respect to a reference spectrum of the sun. Covariance is a statistical parameter that shows how correlated two variable are. Covariance can be computed by Eq. [...]:
+
+\begin{equation}
+s_{j}^2=\frac{1}{N-1}\Sigma (x_{i}-\bar x)(y_{i}-\bar y)
+\end{equation}
+Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values of the two data sets. In theory, the maximum value of the covariance shows where the two data sets are most similar. In order to find the shift in the pixel values of the two data sets, we considered an array from -10 to 10 and iterated it by 1 pixel each time, and computed the covariance. Then we plotted covariance vs. the array we formed. Then we should find the centroid of the cross-correlation in order to find the pixel shift. This can be computed by Eq. [...]:
+\begin{equation}
+<j>=\frac{\Sigma_{j}jX_{j}}{\Sigma_{j}X_{j}}
+\end{equation}
+
+\subsection{Window Function}
+In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from [-inf] to [inf], causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. [...] below:
+
+\begin{equation}
+w(n)=0.5(1-\cos (\frac{2\pi n}{M-1}))  %  0\<n\<(M-1)
+\end{equation}
+It is used for smoothing and it is also known as apodization which means that it "removes the foot", i.e.smoothing discontinuities at the beginning and end of the sampled signal) or tapering function.
 
 
 \section{Discussion}
 \label{discussion}
+Using the methods discussed in section 4, we computed the pixel shift from the two end spectra using the one that starts earlier as the reference spectrum. Then we used the wavelength solution we found for the spectrometer to convert this pixel shift into wavelength shift so that we could use Doppler Shift equation given by Eq. [..] to compute the radial velocity of the Sun. The pixel shift found is -0.511 which corresponds to approximately -0.008 nm shift in the wavelength. The radial velocity then would be -2.30 km/s .
 
+Figures [..] and [...] show the spectrum of the beginning of the sun and the plot of the window function applied to the same data, respectively.
+
+% window functions
+\begin{figure}[ht]
+\centering
+\begin{minipage}[b]{0.5\linewidth}
+  \includegraphics[scale=0.4]{file1.png}
+  \caption{This figure shows the intensity vs. wavelength of beginning of the solar spectrum. This is dark subtracted and divided by flat.}
+  \label{fig:minipage1}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.4\linewidth}
+  \includegraphics[scale=0.4]{windofile1_windowed.png}
+  \caption{This figure shows the beginning spectrum of the sun which hanning window function is applied on.}
+\label{fig:minipage2}
+\end{minipage}
+\end{figure}
+
+After applying the window function to the spectra, I recalculated the pixel shift and it was 0.508, so there is a small change int he pixel shift when window function was applied.
+
+
+Using simple geometry, we can finally find the distance D, which is the distance between the Sun and the Earth. Fig. [...] shows the sketch of the geometry and the math is shown in Eq. [..].
+
+\begin{equation}
+D=\frac{R_{sun}}{\tan (\theta/2)}
+\end{equation}
+
+
+% simple geometry sketch
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{diagram.png}
+\caption{This is a sketch of the simple geometry for calculating the AU using the computed values of angular size of the sun and its radius.}
+\end{figure}
+\FloatBarrier
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -131,7 +208,43 @@ $I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in th
 \section{Appendix}
 \label{sec:appendix}
 
+We first discuss how we found the peaks of the spectrum of neon and mercury using centroid method. Below is the code I used to find the centroids. It goes through all of the pixels and checks the intensity value of each pixel with its neighbour pixel intensity value. If it is higher than both its left and right pixels it points as a peak.
+\begin{verbatim}
+for i in range(0,3652,1):
+    if values[i+1]>values[i]:
+        i+=1
+        if values[i+1]<values[i]:
+            if values[i]>70:
+                Pixellist.append(i)
+                centroidintensity = 0.5*(values[i]+values[i+1])
+                centroidintensitylist.append(centroidintensity)
+\end{verbatim}
+Here is how fitting wavlength vs. pixel values work using linear sqaures.
+\begin{verbatim}
+ma =np.array([[np.sum(Pixels**2),np.sum(Pixels)],[np.sum(Pixels),len(Pixels)]])
+mc =np.array([[np.sum(Pixels*Wavelengths)],[np.sum(Wavelengths)]])  #matrices
+mai = np.linalg.inv(ma)
+md = np.dot(mai,mc)
+\end{verbatim}
 
+Next, we will discuss how the times of the solar observations were extracted from the file names.
+\begin{verbatim}
+times=[]
+for k in range(0,66,1):
+    names=np.loadtxt('sun170ms-filenames.txt',dtype='str')
+    minutes=names[k][17:19]      # taking minute parts of the file name
+    minutes=float(minutes)*60    # converting str to int and converting to seconds
+    seconds=names[k][19:21]     # taking second parts of the file name
+    seconds=float(seconds)        # converting str to int
+    miliseconds=names[k][21:24] # taking mili second parts of the file name
+    miliseconds=float(miliseconds)/1000 #converting str to int and to seconds
+    time=minutes+seconds+miliseconds
+    times.append(time)
+t_center=times[5]+(times[59]-times[5])
+Delta_t=(times[59]-times[5])/2
+I_o=7550  #central intensity
+I=I_o*((2./5)+((3./5)*(np.sqrt(1-(((times-t_center)**2)/(Delta_t**2))))))    
+\end{verbatim}
 
 
 
