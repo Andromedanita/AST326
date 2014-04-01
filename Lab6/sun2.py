@@ -117,6 +117,8 @@ plt.legend(('Dark Subtracted Data','Limb Darkening'),loc='best')
 
 
 #### finding lag #######
+file1=file1*(np.hanning(3652))
+file2=file2*(np.hanning(3652))
 mean=np.mean(file1)
 mean2=np.mean(file2)
 n=np.size(file1)
@@ -142,16 +144,19 @@ for p in range(-10,10,1):
 
 #### finding centroid of cross-correlation #####
 cents=[]
-nums=[]
-denoms=[]
-for n in p_list:
-    num=(n*covariance_list[n])
-    denom=(covariance_list[n])
-    nums.append(num)
-    denoms.append(denom)
-numerator=np.sum(nums)
-denominator=np.sum(denoms)
-cent=numerator/denominator
+
+for g in range(6,82,1):
+    nums=[]
+    denoms=[]
+    for n in p_list:
+        num=(n*covariance_list[n])
+        denom=(covariance_list[n])
+        nums.append(num)
+        denoms.append(denom)
+    numerator=np.sum(nums)
+    denominator=np.sum(denoms)
+    cent=numerator/denominator
+    cents.append(cent)
 
 c=3*1e8  # speed of light
 
@@ -170,6 +175,20 @@ plt.plot(p_list,gaussian_distribution*55000000)
 
 index=covariance_list.index(max(covariance_list))  # finding the index of the minimum covariance values
 print "lag is:", p_list[index]   #printing index of minimum covariance
+
+##### angular size of the sun ########
+theta=(360*(times[82]-times[6]))/(3600*24)
+'''
+##### blackbody fitting ######    
+b=[]
+for o in wavelength:
+    v=c/(wavelength*(10**(-10)))
+    B=(2*h*(v))/((c**2)*0.36787944117144233)
+b.append(B)
+
+f=file1/blah
+f2=file2/b
+'''
 
 plt.plot(p_list,covariance_list)
 plt.plot(p_list[index],(np.max(covariance_list)),'o')
