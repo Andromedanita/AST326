@@ -20,7 +20,7 @@
 \affil{\small {Written by: Anita Bahmanyar}}
 \affil{\small {anita.bahmanyar@mail.utoronto.ca}}
 \affil{\small {Student Number: 998909098}}
-\date{April 2, 2014}
+\date{April 4 2014}
 
 \usepackage{graphicx}
 
@@ -31,9 +31,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-In this lab our goal is to measure the 1 AU in meters by measuring the earth-sun distance with geometry, circular motion and properties of light. We will measure the rotational velocity of the sun using the Doppler shift between each side of the solar limb. We used two methods of finding the covariance and also taking Fourier Transform of the spectrums for this purpose.
-
-
+In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be [...] $\pm$ [...] km which is ... \% of the known value.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -44,7 +42,7 @@ Astronomical distances and scales are large enough that is gets bothersome to us
 \section{Observation and Data Acquisition}
 \label{sec:observationanddataacquisition}
 \subsection{Neon and Mercury Lamps}
-We used HR1 spectrometer which consists of Toshiba 1 $\times$ 3648 CCD. Size of each pixel is 8 $\mu$ $\times$ 200 $\mu$.  The wavelength range of this spectrometer is 523-573 nm. We used Neon and Mercury lamps to find the wavelength solution for this spectrometer. We set the integration times such that the pixels are not saturated. Therefore, we used 200 ms and 400 ms integration time for neon lamp and 10 ms and 50 ms integration times for the mercury lamp. We also took data of dark counts with the same exposure times for each lamp. 
+We used HR1 spectrometer which consists of Toshiba 1 $\times$ 3652 CCD. Size of each pixel is 8 $\mu$ $\times$ 200 $\mu$.  The wavelength range of this spectrometer is 523-573 nm. We used Neon and Mercury lamps to find the wavelength solution for this spectrometer. We set the integration times such that the pixels are not saturated. Therefore, we used 200 ms and 400 ms integration time for neon lamp and 10 ms and 50 ms integration times for the mercury lamp. We also took data of dark counts with the same exposure times for each lamp. 
 \subsection{Solar Observing}
 We went up to 16th floor of Burton Tower to use the 8-inch refractor telescope for our purpose. We mounted another telescope cap in front of the telescope aperture in order to reduce the amount of light coming into telescope from the Sun so that we do not hurt our eyes. Then we mounted the projection screen as it can be seen in Figure 1 so that we get the Sun on the screen. Next step was to line up the shadow of the finder scope until it became circle as in Figure 2 and then focused the the telescope to get a sharp image(We did this by looking at the sharpness of the sun spots). The next thing we need to consider is the temperature of the spectrometer since the spectral resolution and dispersion of the the spectograph or in general, the wavelength solution changes with temperature and for this mean we placed the spectrometer inside a box to keep the temperature approximately as it was in the astronomy lab, where we collected Neon and Mercury data to solve for the wavelength solution. The box consisted of a resistor that heats up the box. Then we connected the fibre coupler to collimate [....] 
 
@@ -111,8 +109,26 @@ We collected 170ms and 200ms data sets on March 13, 2014 and three sets of data 
 I=\frac{2}{5}I_{0}(\frac{3}{5}+\sqrt{\frac{(t-t_{0})^2}{\Delta t^2}})
 \end{equation}
 
-$I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in the time of the two start and end point data$ and $t_{0}$ is the time of the center data
+$I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in the time of the two start and end point data and $t_{0}$ is the time of the central data.
 
+
+\subsection{Velocity Resolution of Spectrometer}
+Each spectrometer has a specific velocity resolution which corresponds to its wavelength and therefore, its pixel resolving power. We used Mercury peak in the wavelength range of 523nm-573nm (since t only has one peak in this wavelength range) in order to compute this velocity resolution. The method we used is that we fitted a gaussian function on the peak and calculated the Full Width half Maximum(FWHM) which is given by Eq. [...]:
+
+\begin{equation}
+FWHM=2\sqrt{n\ln 2}  \sigma
+\end{equation}
+where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for the gaussian fit to be 2.816 pixels which corresponds to FWHM of 3.315 pixels and by Eq. [...] this gives the velocity resolution of about 29.885 km/s, which is close to the 33 km/s value given in the lecture slides. The percentage difference is 9.44 \% which is good enough. Figure [...] shows the mercury 50ms peak and the gaussian fit on it.
+
+
+% Gaussian fit image
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.48]{velocity_resolution.png}
+\caption{This figure shows the mercury 50ms peak in blue and the gaussian fit on to of it in red. We then computed the $\sigma$ of the gaussian function and used it to calculate FWHM of it in order to find the velocity resolution of the spectrometer using Doppler Shift Equation.}
+\end{figure}
+\FloatBarrier
 
 
 \section{Determining Doppler Shift}
@@ -122,6 +138,12 @@ As we were collecting the solar data, the sun was rotating. We need to account t
 \begin{equation}
 \frac{\Delta \lambda}{\lambda}=\frac{\Delta v}{c}=\frac{2 v_{rad}}{c}
 \end{equation}
+
+\begin{equation}
+v_{rad}=\frac{c\Delta \lambda}{2\lambda}
+\end{equation}
+
+
 Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength, $\lambda$ and $c$ is the speed of light in vacuum. The spectrometer we used has a 
 velocity resolution of 33 km/s. Figure [...] shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
 
@@ -145,6 +167,10 @@ Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values o
 \begin{equation}
 <j>=\frac{\Sigma_{j}jX_{j}}{\Sigma_{j}X_{j}}
 \end{equation}
+
+\subsection{Fourier Transform}
+
+
 
 \subsection{Window Function}
 In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from [-inf] to [inf], causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. [...] below, where M is the number of points we want the window function to return:
@@ -172,12 +198,12 @@ Figures [..] and [...] show the spectrum of the beginning of the sun and the plo
 \quad
 \begin{minipage}[b]{0.4\linewidth}
   \includegraphics[scale=0.4]{windofile1_windowed.png}
-  \caption{This figure shows the beginning spectrum of the sun which hanning window function is applied on.}
+  \caption{This figure shows the beginning spectrum of the sun which Hanning window function is applied on.}
 \label{fig:minipage2}
 \end{minipage}
 \end{figure}
 
-After applying the window function to the spectra, I recalculated the pixel shift and it was 0.508, so there is a small change int he pixel shift when window function was applied.
+After applying the window function to the spectra, I recalculated the pixel shift and it was 0.508, so there is a small change in the pixel shift when window function was applied.
 
 In order to find AU, we also need to find the angular size and radius of the Sun that are given by Eq. [..] and Eq. [...], respectively.
 %angular size equation
@@ -185,6 +211,11 @@ In order to find AU, we also need to find the angular size and radius of the Sun
 \frac{\Delta t}{24 h}=\frac{\theta}{360^{o}}
 \end{equation}
 
+
+% v real
+\begin{equation}
+v_{real}=\frac{v_{rad}}{\cos(\eta) \cos(\xi)}
+\end{equation}
 
 % R sun equation
 \begin{equation}
@@ -197,16 +228,19 @@ Using simple geometry, we can finally find the distance D, which is the distance
 D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{equation}
 
-Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.52557 degrees. The true angular size of the sun is approximately 0.5266 degrees as given on Wikipedia [... reference], so the percentage difference with my value and the value on Wikipedia is 0.196 \%, which is very good.
+Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.5334 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS [... reference] for the day of our observation, so the percentage difference with my value and the value on JPL is  0.06 \%, which is very accurate.
 
 % simple geometry sketch
 \FloatBarrier
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{diagram.png}
-\caption{This is a sketch of the simple geometry for calculating the AU using the computed values of angular size of the sun and its radius.}
+\includegraphics[scale=0.1]{transformation.png}
+\caption{$Left:$Shows coordinate transformation for solar axis since it is not perpendicular to the ecliptic, meaning that the center of the sun as viewed from Earth is not b=0. Therefor, we should rotate it about y-axis by the angle $\xi$ and about x-axis by the angle $\eta$ .$Right:$This is a sketch of the simple geometry for calculating the AU using the computed values of angular size of the sun and its radius.}
 \end{figure}
 \FloatBarrier
+
+
+\subsection{Error Analysis}
 
 
 
