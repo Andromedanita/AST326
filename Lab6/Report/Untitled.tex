@@ -147,7 +147,7 @@ Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values o
 \end{equation}
 
 \subsection{Window Function}
-In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from [-inf] to [inf], causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. [...] below:
+In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from [-inf] to [inf], causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. [...] below, where M is the number of points we want the window function to return:
 
 \begin{equation}
 w(n)=0.5(1-\cos (\frac{2\pi n}{M-1}))  %  0\<n\<(M-1)
@@ -179,6 +179,17 @@ Figures [..] and [...] show the spectrum of the beginning of the sun and the plo
 
 After applying the window function to the spectra, I recalculated the pixel shift and it was 0.508, so there is a small change int he pixel shift when window function was applied.
 
+In order to find AU, we also need to find the angular size and radius of the Sun that are given by Eq. [..] and Eq. [...], respectively.
+%angular size equation
+\begin{equation}
+\frac{\Delta t}{24 h}=\frac{\theta}{360^{o}}
+\end{equation}
+
+
+% R sun equation
+\begin{equation}
+R_{sun}=\frac{v_{real} T}{2 \pi}
+\end{equation}
 
 Using simple geometry, we can finally find the distance D, which is the distance between the Sun and the Earth. Fig. [...] shows the sketch of the geometry and the math is shown in Eq. [..].
 
@@ -186,6 +197,7 @@ Using simple geometry, we can finally find the distance D, which is the distance
 D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{equation}
 
+Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.52557 degrees. The true angular size of the sun is approximately 0.5266 degrees as given on Wikipedia [... reference], so the percentage difference with my value and the value on Wikipedia is 0.196 \%, which is very good.
 
 % simple geometry sketch
 \FloatBarrier
@@ -196,13 +208,18 @@ D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{figure}
 \FloatBarrier
 
+
+
+
 \section{Conclusion}
 \label{sec:conclusion}
+
 
 \section{References}
 \label{sec:references}
 1-http://www.aseq-instruments.com/HR1.html
-2-The lecture slides
+\\*2-http://en.wikipedia.org/wiki/Angular\_diameter
+\\*3-The lecture slides
 
 
 \section{Appendix}
