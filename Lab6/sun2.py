@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pylab as plt
 import os
-
+from savitzky_golay import * #savitzky_golay
+from fix_sun import *
+from scipy.optimize import leastsq
 
 filenames=os.listdir("sun2")
 darknames=os.listdir("march18-dark")
@@ -84,6 +86,10 @@ for k in range(0,92,1):
     times.append(time)
 
 times = np.array(times)
+times= np.delete(times,54)
+nice_values=files-dark_value/flat_correct
+nice_values= np.delete(nice_values,54, axis=0)
+
 #times -= times[0]
 
 t_center=1716.7909999999999#times[6]+(times[82]-times[6])#1812.8965 #78.1875#np.median(times)
@@ -92,10 +98,17 @@ I_o=  5200#5089.0822103348455
 I=I_o*((2./5)+((3./5)*(np.sqrt(1-(((times-t_center)**2)/(Delta_t**2))))))
 
 ##### plotting wavelength of two ending points ########
-file1=(files[6]-dark_value)/flat_correct
-file2=(files[82]-dark_value)/flat_correct
+file1=nice_values[6]#(files[6]-dark_value)/flat_correct
+file2=nice_values[82]#(files[82]-dark_value)/flat_correct
 
 wavelength=(pixel*(0.014))+524.61
+
+smoothed=savitzky_golay(file1,window_size=601, order=1)
+smoothed1=savitzky_golay(file2,window_size=601, order=1)
+
+flat_curve1=file1/smoothed
+flat_curve2=file2/smoothed1
+
 '''
 plt.plot(wavelength,file1,'b')
 plt.plot(wavelength,file2,'r')
@@ -106,7 +119,7 @@ plt.legend(('First Spectrum','Second Spectrum'),loc='best')
 '''
 '''
 #### plotting limb darkening#######
-plt.plot(times,corrected,'o')
+plt.plot(times,nice_values,'o')
 plt.plot(times,I,'r')
 plt.title('Relative flux vs. Time -Sun 170ms')
 plt.xlabel('Time(seconds)')
@@ -114,23 +127,25 @@ plt.ylabel('Relative Flux')
 plt.legend(('Dark Subtracted Data','Limb Darkening'),loc='best')
 '''
 
-
+z=smooth(nice_values,10)
 
 #### finding lag #######
+'''
 file1=file1*(np.hanning(3652))
 file2=file2*(np.hanning(3652))
-mean=np.mean(file1)
-mean2=np.mean(file2)
-n=np.size(file1)
+'''
+mean=np.mean(z[6])
+mean2=np.mean(z[81])
+n=np.size(z[6])
 covariance_list=[]
 p_list=[]
 for p in range(-10,10,1):
-    tester=np.roll(file2,p)
+    tester=np.roll(z[81],p)
     p_list.append(p)
     numbers=[]
     for h in range(0,3652,1):
         #multiplications=((file1[h]*tester[h])-((n/(n-1))*((mean)**2)))
-        multiplications=(file1[h]-mean)*(tester[h]-mean2)
+        multiplications=(z[6][h]-mean)*(tester[h]-mean2)
         numbers.append(multiplications)
     sums=np.sum(numbers)
     sums=np.array(sums)
@@ -160,11 +175,33 @@ for g in range(6,82,1):
 
 c=3*1e8  # speed of light
 
-blah = np.array([0.,cent])
+blah = np.array([0.,cent/2])
 w=(5.22780795e+02+ (1.57108757e-02*blah) -(4.52128794e-07*blah**2))
 v = c*(w[1]-w[0])/w[0] # 2 * radial velocity
 v_rad=v/2 # in meters
 
+##### solar plane angles in radians
+eta=(335.0652*(np.pi))/180
+wiggle=(-7.09*(np.pi))/180
+
+##### converted radial velocity to real velocity
+v_real=v_rad/((np.cos(eta))*(np.cos(wiggle)))
+
+###### Period of rotation of the sun
+Period=25.3*24*3600  #seconds
+
+##### Radisu of Sun
+R_sun=((v_real)*(Period))/(2*(np.pi))
+True_R_sun=695500000 #meters
+
+##### Angular size of the sun
+theta=(360*(times[82]-times[6]))/(3600*24)
+theta_rad=(theta*(np.pi))/180
+
+####### AU calculation
+AU=R_sun/(np.tan(theta_rad/2)) #meters
+True_AU=1.496*1e11 #meters
+ratio=AU/True_AU
 
 '''
 p_list=np.array(p_list)
@@ -177,18 +214,32 @@ index=covariance_list.index(max(covariance_list))  # finding the index of the mi
 print "lag is:", p_list[index]   #printing index of minimum covariance
 
 ##### angular size of the sun ########
-theta=(360*(times[82]-times[6]))/(3600*24)
-'''
-##### blackbody fitting ######    
-b=[]
-for o in wavelength:
-    v=c/(wavelength*(10**(-10)))
-    B=(2*h*(v))/((c**2)*0.36787944117144233)
-b.append(B)
 
+
+
+######## Morten's flatting solution ########
+#flat_sun=
+
+
+##### blackbody fitting ######
+'''
+b=[]
+k=1.38*1e-23
+T=3695
+H=6.62*1e-34
+for o in wavelength:
+    one=(2*H*(c**2))/((wavelength*(1e-9))**5)
+    expo=np.exp(H*c/wavelength*k*T*(1e-9))
+    two=1./(expo)
+    B=one*two
+    #v=c/(wavelength*(10**(-9)))
+    #B=(2*h*(v))/((c**2)*0.36787944117144233)
+b.append(B)
+'''
+'''
 f=file1/blah
 f2=file2/b
-'''
+
 
 plt.plot(p_list,covariance_list)
 plt.plot(p_list[index],(np.max(covariance_list)),'o')
@@ -196,4 +247,74 @@ plt.title("covariance vs. pixel values")
 plt.xlabel("Pixel")
 plt.ylabel("Covariance")
 plt.grid()
+'''
+
+
+
+print "ratio is:", ratio
+print "centroid is:", cent/2
+print "v_rad is:", v_rad
+print "AU value is:", AU
+
+
+
+################ limb darkening fitting ########
+x = times[6:82]
+y = corrected[6:82]
+
+#dy = 0.5
+p0 = [5200.,1716.,64.]
+#fit function
+def peval(x, p):
+    I_o,t_center,Delta_t = p
+    return I_o*((2./5)+((3./5)*(np.sqrt(1-(((x-t_center)**2)/(Delta_t**2))))))
+
+def residuals (p,y,x, peval):
+    return (y) - peval(x,p)
+
+p_final = leastsq(residuals,p0,args=(y,x, peval), full_output= True,maxfev=2000)
+
+plt.figure()
+plt.plot(x,peval(x,p_final[0]),'r')
+plt.plot(x,y)
+
+y_final = peval(x,p_final[0])
+chi2 = np.sum((y - y_final)**2)#
+resi = (residuals(p_final[0],y,x,peval))
+dof = len(y)-len(p0)
+chi_re2 = chi2/dof #
+cov = p_final[1] * chi_re2
+
+
+print "The inital parameter (p0) we used is:\n", p0
+print "What we get as a parameter:", p_final[0]
+
+if p_final[4] == 1: # change p_final[1] to success
+    print "It converges."
+else:
+    print "It does not converge."
+
+print "The Chi square is: \t\t\t",round(chi2,2)
+print "The Chi-reduced square is: \t\t", round(chi_re2,2)
+print
+
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+
+
+################################################
+'''
+
+plt.subplot(211)
+plt.plot(np.mean(z[5:81],axis=0))
+#plt.plot(np.mean(z[5],axis=0))
+plt.title("Smoother and Flattened using Gaussian")
+plt.ylabel("Normalized Intensity")
+plt.subplot(212)
+plt.plot(pixel,flat_curve1)
+plt.title("Smoothed and Flattened using Smoothing Function")
+plt.xlabel("Pixel")
+plt.ylabel("Normalized Intensity")
+'''
+
 plt.show()
