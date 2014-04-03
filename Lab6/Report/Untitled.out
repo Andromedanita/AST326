@@ -5,13 +5,14 @@
 \BOOKMARK [1][-]{section.3}{Analysis}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Wavelength Solution}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Solar Data}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.3}{Velocity Resolution of Spectrometer}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Determining Doppler Shift}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{Cross-Correlation}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.2}{Fourier Transform}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.3}{Window Function}{section.4}% 12
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 13
-\BOOKMARK [2][-]{subsection.5.1}{Error Analysis}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 15
-\BOOKMARK [1][-]{section.7}{References}{}% 16
-\BOOKMARK [1][-]{section.8}{Appendix}{}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Flattening and Smoothing}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Velocity Resolution of Spectrometer}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Determining Doppler Shift}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Cross-Correlation}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Fourier Transform}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Window Function}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Error Analysis}{section.5}% 15
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 16
+\BOOKMARK [1][-]{section.7}{References}{}% 17
+\BOOKMARK [1][-]{section.8}{Appendix}{}% 18

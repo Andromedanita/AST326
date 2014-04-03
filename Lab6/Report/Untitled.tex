@@ -112,13 +112,55 @@ I=\frac{2}{5}I_{0}(\frac{3}{5}+\sqrt{\frac{(t-t_{0})^2}{\Delta t^2}})
 $I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in the time of the two start and end point data and $t_{0}$ is the time of the central data.
 
 
+% table showing the t and delta values with their errors
+\FloatBarrier
+\begin{table}[h!]
+\caption{Limb Darkening Parameters} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | } % centered columns (4 columns)
+\hline %inserts double horizontal lines
+  & $I_{0}$& $t_{center} [s]$ &  $\Delta t$ [s]\\ [0.5ex] % inserts table
+
+%heading
+\hline % inserts single horizontal line
+                   
+Calculated &   5087.608  &  1718.079 &  64.693 \\ \hline
+Error          & 8.927e+02            &   1.355e-01        &       1.723e-01      \\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
+% Limb Darkening
+\begin{figure}[ht]
+\centering
+\begin{minipage}[b]{0.5\linewidth}
+  \includegraphics[scale=0.4]{11.png}
+  \caption{This figure shows the intensity vs. time of sun with integration time of 125ms. The blue dots show the averaged spectra across the sun and the red curve shows the fit to the data. There is one dot really off from the other points which has been removed from the data for correlations that come later in the sections.}
+  \label{fig:minipage1}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.4\linewidth}
+  \includegraphics[scale=0.4]{sun170ms.png}
+  \caption{This figure shows the intensity vs. time of sun with integration time of 170ms. Similar to the left picture, the blue dots show the averaged spectra and the red curve is the fit to these data points. We did not remove any of the points from the data.}
+\label{fig:minipage2}
+\end{minipage}
+\end{figure}
+
+
+\subsection{Flattening and Smoothing}
+We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods which some worked and some did not. Here I will go over the methods. First of all, I tried fitting a blackbody curve to it with considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I used was using  smoothing Python code found online called savitzky\_golay.py . This code generated a function that had a similar overall shape of our data. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. The code explanation can be found in Appendix.
+
+
 \subsection{Velocity Resolution of Spectrometer}
 Each spectrometer has a specific velocity resolution which corresponds to its wavelength and therefore, its pixel resolving power. We used Mercury peak in the wavelength range of 523nm-573nm (since t only has one peak in this wavelength range) in order to compute this velocity resolution. The method we used is that we fitted a gaussian function on the peak and calculated the Full Width half Maximum(FWHM) which is given by Eq. [...]:
 
 \begin{equation}
 FWHM=2\sqrt{n\ln 2}  \sigma
 \end{equation}
-where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for the gaussian fit to be 2.816 pixels which corresponds to FWHM of 3.315 pixels and by Eq. [...] this gives the velocity resolution of about 29.885 km/s, which is close to the 33 km/s value given in the lecture slides. The percentage difference is 9.44 \% which is good enough. Figure [...] shows the mercury 50ms peak and the gaussian fit on it.
+where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for the gaussian fit to be 2.816 $\pm$7.0532e-05 pixels which corresponds to FWHM of 3.315 $\pm$ 7.0532e-05pixels and by Eq. [...] this gives the velocity resolution of about 29.885 km/s, which is close to the 33 km/s value given in the lecture slides. The percentage difference is 9.44 \% which is good enough. Figure [...] shows the mercury 50ms peak and the gaussian fit on it.
 
 
 % Gaussian fit image
@@ -151,7 +193,7 @@ velocity resolution of 33 km/s. Figure [...] shows the spectrums of the two edge
 \FloatBarrier
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{Sun_Spectrum.png}
+\includegraphics[scale=0.4]{limbs.png}
 \caption{$Top:$Two spectra of the two edges of the sun over-plotted. As it can be seen, the two spectra are very close to each other. $Bottom:$ The two spectra are zoomed so the features are better shown.}
 \end{figure}
 \FloatBarrier
@@ -168,8 +210,9 @@ Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values o
 <j>=\frac{\Sigma_{j}jX_{j}}{\Sigma_{j}X_{j}}
 \end{equation}
 
+% Fourier Transorm
 \subsection{Fourier Transform}
-
+A Fourier Series is where any function expressed as the sum of sines and cosines.
 
 
 \subsection{Window Function}
@@ -179,6 +222,7 @@ In applying cross-correlation we shift the spectra relative to one another. In d
 w(n)=0.5(1-\cos (\frac{2\pi n}{M-1}))  %  0\<n\<(M-1)
 \end{equation}
 It is used for smoothing and it is also known as apodization which means that it "removes the foot", i.e.smoothing discontinuities at the beginning and end of the sampled signal) or tapering function.
+
 
 
 \section{Discussion}
