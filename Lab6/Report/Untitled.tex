@@ -31,7 +31,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be [...] $\pm$ [...] km which is ... \% of the known value.
+In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be 1.5506 $\times$ $10^{8}$$\pm$ [...] km which is ... \% of the known value.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -154,6 +154,18 @@ Error          & 8.927e+02            &   1.355e-01        &       1.723e-01    
 We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods which some worked and some did not. Here I will go over the methods. First of all, I tried fitting a blackbody curve to it with considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I used was using  smoothing Python code found online called savitzky\_golay.py . This code generated a function that had a similar overall shape of our data. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. The code explanation can be found in Appendix.
 
 
+% two methods of smoothing
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{subplot_flattened.png}
+\caption{This figure shows flattened and smoothed spectra of the sun with two different methods. $Up:$ Smoothed and flattened using the gaussian function. $Down:$ Smoothed and flattened using savitzky golay.py code. As it is obvious using gaussian function have better results in that its end parts are less noisy and it is because in the second method we had less information about the end parts so it became more noisy at these parts.}
+\end{figure}
+\FloatBarrier
+
+
+
+
 \subsection{Velocity Resolution of Spectrometer}
 Each spectrometer has a specific velocity resolution which corresponds to its wavelength and therefore, its pixel resolving power. We used Mercury peak in the wavelength range of 523nm-573nm (since t only has one peak in this wavelength range) in order to compute this velocity resolution. The method we used is that we fitted a gaussian function on the peak and calculated the Full Width half Maximum(FWHM) which is given by Eq. [...]:
 
@@ -194,13 +206,13 @@ velocity resolution of 33 km/s. Figure [...] shows the spectrums of the two edge
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{limbs.png}
-\caption{$Top:$Two spectra of the two edges of the sun over-plotted. As it can be seen, the two spectra are very close to each other. $Bottom:$ The two spectra are zoomed so the features are better shown.}
+\caption{$Top:$ Zoomed view of two spectra of the two edges of the sun over-plotted. As it can be seen, the two spectra are very close to each other. $Bottom:$ The two spectra are zoomed so the features are better shown.}
 \end{figure}
 \FloatBarrier
 
 
 \subsection{Cross-Correlation}
-Cross-correlation is a method used in this lab in order to show how similar the different spectra are with respect to a reference spectrum of the sun. Covariance is a statistical parameter that shows how correlated two variable are. Covariance can be computed by Eq. [...]:
+Cross-correlation is a method used in this lab in order to show how similar the different spectra are with respect to a reference spectrum of the sun. Covariance is a statistical parameter that shows how correlated two variables are. Covariance can be computed by Eq. [...]:
 
 \begin{equation}
 s_{j}^2=\frac{1}{N-1}\Sigma (x_{i}-\bar x)(y_{i}-\bar y)
@@ -212,7 +224,19 @@ Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values o
 
 % Fourier Transorm
 \subsection{Fourier Transform}
-A Fourier Series is where any function expressed as the sum of sines and cosines.
+A Fourier Series is where any function expressed as the sum of sines and cosines. Fourier Transform also transforms a function that depends on time to a function that depends on the frequency. The way we correlated our function is given by Eq. [...]. 
+
+
+% fourier transform image
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.1]{fourier.png}
+\caption{Fourier Transform of data. $Up:$ }
+\end{figure}
+\FloatBarrier
+
+
 
 
 \subsection{Window Function}
@@ -222,6 +246,16 @@ In applying cross-correlation we shift the spectra relative to one another. In d
 w(n)=0.5(1-\cos (\frac{2\pi n}{M-1}))  %  0\<n\<(M-1)
 \end{equation}
 It is used for smoothing and it is also known as apodization which means that it "removes the foot", i.e.smoothing discontinuities at the beginning and end of the sampled signal) or tapering function.
+
+
+% window function image
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.35]{window_functions.png}
+\caption{Different window functions shown. The blue curve is the Hanning window function.}
+\end{figure}
+\FloatBarrier
 
 
 
@@ -272,7 +306,7 @@ Using simple geometry, we can finally find the distance D, which is the distance
 D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{equation}
 
-Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.5334 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS [... reference] for the day of our observation, so the percentage difference with my value and the value on JPL is  0.06 \%, which is very accurate.
+Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.5334 $\pm$ 0.0007 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS [... reference] for the day of our observation, so the percentage difference with my value and the value on JPL is  0.06 \%, which is very accurate.
 
 % simple geometry sketch
 \FloatBarrier
@@ -291,7 +325,7 @@ Here, $\Delta t$ is the time between the two limbs of the sun which is twice the
 
 \section{Conclusion}
 \label{sec:conclusion}
-
+We can use simple geometry and some data analysis to measure the distance between Sun and the Earth. 
 
 \section{References}
 \label{sec:references}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 APR 2014 00:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 APR 2014 17:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -755,13 +755,13 @@ LaTeX Info: Redefining \nameref on input line 27.
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <projec
-tion.jpg, id=87, 1943.26pt x 2601.72pt>
+tion.jpg, id=88, 1943.26pt x 2601.72pt>
 File: projection.jpg Graphic file (type jpg)
 
 <use projection.jpg>
 Package pdftex.def Info: projection.jpg used on input line 53.
 (pdftex.def)             Requested size: 174.88585pt x 234.1447pt.
- <finder-lineup.jpg, id=88, 1943.26pt x 2601.72pt>
+ <finder-lineup.jpg, id=89, 1943.26pt x 2601.72pt>
 File: finder-lineup.jpg Graphic file (type jpg)
 
 <use finder-lineup.jpg>
@@ -772,7 +772,7 @@ Underfull \hbox (badness 1205) in paragraph at lines 60--60
 []\OT1/cmr/m/n/12 Figure 2: []This fig-ure shows the
  []
 
-[2] <wavelengh_solution.jpg, id=94, 903.375pt x 602.25pt>
+[2] <wavelengh_solution.jpg, id=95, 903.375pt x 602.25pt>
 File: wavelengh_solution.jpg Graphic file (type jpg)
 
 <use wavelengh_solution.jpg>
@@ -795,14 +795,14 @@ name{figure.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.82 \FloatBarrier
                    <./projection.jpg> <./finder-lineup.jpg>]
-<wavelength_neon200ms.png, id=101, 578.16pt x 433.62pt>
+<wavelength_neon200ms.png, id=102, 578.16pt x 433.62pt>
 File: wavelength_neon200ms.png Graphic file (type png)
 
 <use wavelength_neon200ms.png>
 Package pdftex.def Info: wavelength_neon200ms.png used on input line 89.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<wavelength_merc10ms.png, id=103, 578.16pt x 433.62pt>
+<wavelength_merc10ms.png, id=104, 578.16pt x 433.62pt>
 File: wavelength_merc10ms.png Graphic file (type png)
 
 <use wavelength_merc10ms.png>
@@ -832,13 +832,13 @@ l.107
                                                   \fi \fi 
 l.107 
        <./wavelengh_solution.jpg> <./wavelength_neon200ms.png> <./wavelength_me
-rc10ms.png>] <11.png, id=113, 578.16pt x 433.62pt>
+rc10ms.png>] <11.png, id=114, 578.16pt x 433.62pt>
 File: 11.png Graphic file (type png)
  <use 11.png>
 Package pdftex.def Info: 11.png used on input line 140.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<sun170ms.png, id=114, 578.16pt x 433.62pt>
+<sun170ms.png, id=115, 578.16pt x 433.62pt>
 File: sun170ms.png Graphic file (type png)
  <use sun170ms.png>
 Package pdftex.def Info: sun170ms.png used on input line 146.
@@ -867,175 +867,196 @@ l.155
                                                   \fi \fi 
 l.155 
        <./11.png> <./sun170ms.png>]
-<velocity_resolution.png, id=129, 759.5577pt x 304.2567pt>
+<subplot_flattened.png, id=129, 1143.3114pt x 366.4089pt>
+File: subplot_flattened.png Graphic file (type png)
+
+<use subplot_flattened.png>
+Package pdftex.def Info: subplot_flattened.png used on input line 161.
+(pdftex.def)             Requested size: 457.31645pt x 146.56096pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.171 
+       <./subplot_flattened.png>]
+<velocity_resolution.png, id=136, 759.5577pt x 304.2567pt>
 File: velocity_resolution.png Graphic file (type png)
 
 <use velocity_resolution.png>
-Package pdftex.def Info: velocity_resolution.png used on input line 170.
+Package pdftex.def Info: velocity_resolution.png used on input line 182.
 (pdftex.def)             Requested size: 364.58356pt x 146.04155pt.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6] <limbs.png, id=136, 1129.5801pt x 359.1819pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.194 \end{equation}
+                     <./velocity_resolution.png>]
+<limbs.png, id=145, 1129.5801pt x 359.1819pt>
 File: limbs.png Graphic file (type png)
  <use limbs.png>
-Package pdftex.def Info: limbs.png used on input line 196.
+Package pdftex.def Info: limbs.png used on input line 208.
 (pdftex.def)             Requested size: 451.82404pt x 143.67021pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
-has been already used, duplicate ignored
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.199 \FloatBarrier
-                    <./velocity_resolution.png>] [8pdfTeX warning (ext4): desti
-nation with the same identifier (name{figure.9}) has been already used, duplica
-te ignored
+l.221 \begin{equation}
+                       <./limbs.png>]
+<fourier.png, id=155, 3613.5pt x 2710.125pt>
+File: fourier.png Graphic file (type png)
+ <use fourier.png>
+Package pdftex.def Info: fourier.png used on input line 234.
+(pdftex.def)             Requested size: 361.37117pt x 271.02838pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.220 
-       <./limbs.png>] <file1.png, id=154, 582.4962pt x 401.0985pt>
+l.244 
+       <./fourier.png (PNG copy)>]
+<window_functions.png, id=162, 587.5551pt x 432.1746pt>
+File: window_functions.png Graphic file (type png)
+
+<use window_functions.png>
+Package pdftex.def Info: window_functions.png used on input line 255.
+(pdftex.def)             Requested size: 205.64735pt x 151.26337pt.
+ <file1.png, id=163, 582.4962pt x 401.0985pt>
 File: file1.png Graphic file (type png)
 
 <use file1.png>
-Package pdftex.def Info: file1.png used on input line 238.
+Package pdftex.def Info: file1.png used on input line 272.
 (pdftex.def)             Requested size: 232.99435pt x 160.43654pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 [][]
  []
 
-<windofile1_windowed.png, id=155, 569.4876pt x 388.0899pt>
+<windofile1_windowed.png, id=164, 569.4876pt x 388.0899pt>
 File: windofile1_windowed.png Graphic file (type png)
 
 <use windofile1_windowed.png>
-Package pdftex.def Info: windofile1_windowed.png used on input line 244.
+Package pdftex.def Info: windofile1_windowed.png used on input line 278.
 (pdftex.def)             Requested size: 227.791pt x 155.2332pt.
 
-Overfull \hbox (39.89186pt too wide) in paragraph at lines 244--245
+Overfull \hbox (39.89186pt too wide) in paragraph at lines 278--279
 [][]
  []
 
-[9] <transformation.png, id=164, 3613.5pt x 2710.125pt>
-File: transformation.png Graphic file (type png)
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+) has been already used, duplicate ignored
 
-<use transformation.png>
-Package pdftex.def Info: transformation.png used on input line 281.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.290 \end{equation}
+                     <./window_functions.png>]
+<transformation.png, id=173, 3613.5pt x 2710.125pt>
+File: transformation.png Graphic file (type png)
+ <use transformation.png>
+Package pdftex.def Info: transformation.png used on input line 315.
 (pdftex.def)             Requested size: 361.37117pt x 271.02838pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.284 \FloatBarrier
+l.318 \FloatBarrier
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.11}) has been already used, duplicate ignored
+(name{figure.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.284 \FloatBarrier
-                    <./file1.png> <./windofile1_windowed.png>] [11pdfTeX warnin
-g (ext4): destination with the same identifier (name{figure.12}) has been alrea
+l.318 \FloatBarrier
+                    <./file1.png> <./windofile1_windowed.png>] [12pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.15}) has been alrea
 dy used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.316 \end{verbatim}
-                     <./transformation.png (PNG copy)>]
-Overfull \hbox (13.766pt too wide) in paragraph at lines 323--323
+l.341 \begin{verbatim}
+                       <./transformation.png (PNG copy)>]
+Overfull \hbox (13.766pt too wide) in paragraph at lines 357--357
  []\OT1/cmtt/m/n/10.95 ma =np.array([[np.sum(Pixels**2),np.sum(Pixels)],[np.sum
 (Pixels),len(Pixels)]])[] 
  []
 
 
-Overfull \hbox (2.26863pt too wide) in paragraph at lines 323--323
+Overfull \hbox (2.26863pt too wide) in paragraph at lines 357--357
  []\OT1/cmtt/m/n/10.95 mc =np.array([[np.sum(Pixels*Wavelengths)],[np.sum(Wavel
 engths)]])  #matrices[] 
  []
 
 
-Overfull \hbox (31.01207pt too wide) in paragraph at lines 342--342
+Overfull \hbox (31.01207pt too wide) in paragraph at lines 376--376
  []    \OT1/cmtt/m/n/10.95 minutes=float(minutes)*60    # converting str to int
  and converting to seconds[] 
  []
 
 
-Overfull \hbox (2.26863pt too wide) in paragraph at lines 342--342
+Overfull \hbox (2.26863pt too wide) in paragraph at lines 376--376
  []    \OT1/cmtt/m/n/10.95 miliseconds=float(miliseconds)/1000 #converting str 
 to int and to seconds[] 
  []
 
 
-./Untitled.tex:348: LaTeX Error: \begin{abstract} on input line 32 ended by \en
+./Untitled.tex:382: LaTeX Error: \begin{abstract} on input line 32 ended by \en
 d{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 \end{document}
+l.382 \end{document}
                     
 ? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
-[12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 382.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 382.
  (./Untitled.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 348.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 382.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 382.
+Package rerunfilecheck Info: File `Untitled.out' has not changed.
+(rerunfilecheck)             Checksum: A06F44738D2FDB3F11ACEA2EF84FD0F9;1082.
 
-
-Package rerunfilecheck Warning: File `Untitled.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Untitled.out':
-(rerunfilecheck)             Before: 45606EEF082441C07F4FFF626E6D27BD;1082
-(rerunfilecheck)             After:  A06F44738D2FDB3F11ACEA2EF84FD0F9;1082.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 348.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 382.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 32 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8139 strings out of 493315
- 117108 string characters out of 6137904
- 216834 words of memory out of 5000000
- 11411 multiletter control sequences out of 15000+600000
+ 8157 strings out of 493315
+ 117445 string characters out of 6137904
+ 216837 words of memory out of 5000000
+ 11423 multiletter control sequences out of 15000+600000
  11308 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,10n,28p,1480b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.4.4} has been referenced
- but does not exist, replaced by a fixed one
-
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Untitled.pdf (12 pages, 3909175 bytes).
+ 34i,10n,28p,1480b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Untitled.pdf (13 pages, 4804372 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
