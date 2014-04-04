@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 APR 2014 17:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 APR 2014 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -643,10 +643,19 @@ LaTeX Warning: Label `fig:minipage1' multiply defined.
 LaTeX Warning: Label `fig:minipage2' multiply defined.
 
 
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
+
 LaTeX Warning: Label `fig:minipage1' multiply defined.
 
 
 LaTeX Warning: Label `fig:minipage2' multiply defined.
+
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
+
+
+LaTeX Warning: Label `table:nonlin' multiply defined.
 
 )
 \openout1 = `Untitled.aux'.
@@ -908,135 +917,165 @@ l.221 \begin{equation}
 <fourier.png, id=155, 3613.5pt x 2710.125pt>
 File: fourier.png Graphic file (type png)
  <use fourier.png>
-Package pdftex.def Info: fourier.png used on input line 234.
-(pdftex.def)             Requested size: 361.37117pt x 271.02838pt.
- [9pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.244 
-       <./fourier.png (PNG copy)>]
-<window_functions.png, id=162, 587.5551pt x 432.1746pt>
-File: window_functions.png Graphic file (type png)
-
-<use window_functions.png>
-Package pdftex.def Info: window_functions.png used on input line 255.
-(pdftex.def)             Requested size: 205.64735pt x 151.26337pt.
- <file1.png, id=163, 582.4962pt x 401.0985pt>
-File: file1.png Graphic file (type png)
-
-<use file1.png>
-Package pdftex.def Info: file1.png used on input line 272.
-(pdftex.def)             Requested size: 232.99435pt x 160.43654pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-[][]
- []
-
-<windofile1_windowed.png, id=164, 569.4876pt x 388.0899pt>
-File: windofile1_windowed.png Graphic file (type png)
-
-<use windofile1_windowed.png>
-Package pdftex.def Info: windofile1_windowed.png used on input line 278.
-(pdftex.def)             Requested size: 227.791pt x 155.2332pt.
-
-Overfull \hbox (39.89186pt too wide) in paragraph at lines 278--279
-[][]
- []
-
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.290 \end{equation}
-                     <./window_functions.png>]
-<transformation.png, id=173, 3613.5pt x 2710.125pt>
-File: transformation.png Graphic file (type png)
- <use transformation.png>
-Package pdftex.def Info: transformation.png used on input line 315.
+Package pdftex.def Info: fourier.png used on input line 237.
 (pdftex.def)             Requested size: 361.37117pt x 271.02838pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.11})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.264 \FloatBarrier
+                    <./fourier.png (PNG copy)>]
+<window_functions.png, id=164, 587.5551pt x 432.1746pt>
+File: window_functions.png Graphic file (type png)
+
+<use window_functions.png>
+Package pdftex.def Info: window_functions.png used on input line 281.
+(pdftex.def)             Requested size: 205.64735pt x 151.26337pt.
+ [10pdfTeX warning (ext4): destination with the same identifier (name{table.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.291 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.291 
+       <./window_functions.png>] <file1.png, id=174, 582.4962pt x 401.0985pt>
+File: file1.png Graphic file (type png)
+
+<use file1.png>
+Package pdftex.def Info: file1.png used on input line 298.
+(pdftex.def)             Requested size: 232.99435pt x 160.43654pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+[][]
+ []
+
+<windofile1_windowed.png, id=175, 569.4876pt x 388.0899pt>
+File: windofile1_windowed.png Graphic file (type png)
+
+<use windofile1_windowed.png>
+Package pdftex.def Info: windofile1_windowed.png used on input line 304.
+(pdftex.def)             Requested size: 227.791pt x 155.2332pt.
+
+Overfull \hbox (39.89186pt too wide) in paragraph at lines 304--305
+[][]
+ []
 
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.318 \FloatBarrier
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.14}) has been already used, duplicate ignored
+l.330 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.318 \FloatBarrier
-                    <./file1.png> <./windofile1_windowed.png>] [12pdfTeX warnin
-g (ext4): destination with the same identifier (name{figure.15}) has been alrea
-dy used, duplicate ignored
+l.330 
+       <./file1.png> <./windofile1_windowed.png>]
+<transformation.png, id=187, 3613.5pt x 2710.125pt>
+File: transformation.png Graphic file (type png)
+ <use transformation.png>
+Package pdftex.def Info: transformation.png used on input line 341.
+(pdftex.def)             Requested size: 361.37117pt x 271.02838pt.
+
+Overfull \hbox (17.93665pt too wide) in paragraph at lines 352--366
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.341 \begin{verbatim}
-                       <./transformation.png (PNG copy)>]
-Overfull \hbox (13.766pt too wide) in paragraph at lines 357--357
+l.367 \FloatBarrier
+                    <./transformation.png (PNG copy)>]
+Overfull \hbox (35.45631pt too wide) in paragraph at lines 377--391
+ [][] 
+ []
+
+[13pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.415 \begin{verbatim}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{table.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.415 \begin{verbatim}
+                      ]
+Overfull \hbox (13.766pt too wide) in paragraph at lines 431--431
  []\OT1/cmtt/m/n/10.95 ma =np.array([[np.sum(Pixels**2),np.sum(Pixels)],[np.sum
 (Pixels),len(Pixels)]])[] 
  []
 
 
-Overfull \hbox (2.26863pt too wide) in paragraph at lines 357--357
+Overfull \hbox (2.26863pt too wide) in paragraph at lines 431--431
  []\OT1/cmtt/m/n/10.95 mc =np.array([[np.sum(Pixels*Wavelengths)],[np.sum(Wavel
 engths)]])  #matrices[] 
  []
 
 
-Overfull \hbox (31.01207pt too wide) in paragraph at lines 376--376
+Overfull \hbox (31.01207pt too wide) in paragraph at lines 450--450
  []    \OT1/cmtt/m/n/10.95 minutes=float(minutes)*60    # converting str to int
  and converting to seconds[] 
  []
 
 
-Overfull \hbox (2.26863pt too wide) in paragraph at lines 376--376
+Overfull \hbox (2.26863pt too wide) in paragraph at lines 450--450
  []    \OT1/cmtt/m/n/10.95 miliseconds=float(miliseconds)/1000 #converting str 
 to int and to seconds[] 
  []
 
 
-./Untitled.tex:382: LaTeX Error: \begin{abstract} on input line 32 ended by \en
+./Untitled.tex:456: LaTeX Error: \begin{abstract} on input line 32 ended by \en
 d{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.382 \end{document}
+l.456 \end{document}
                     
 ? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 382.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 382.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
  (./Untitled.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 382.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 382.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 456.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
 Package rerunfilecheck Info: File `Untitled.out' has not changed.
 (rerunfilecheck)             Checksum: A06F44738D2FDB3F11ACEA2EF84FD0F9;1082.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 382.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 32 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8157 strings out of 493315
- 117445 string characters out of 6137904
- 216837 words of memory out of 5000000
+ 8162 strings out of 493315
+ 117486 string characters out of 6137904
+ 217897 words of memory out of 5000000
  11423 multiletter control sequences out of 15000+600000
  11308 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1052,11 +1091,12 @@ mmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 .pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Untitled.pdf (13 pages, 4804372 bytes).
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Untitled.pdf (14 pages, 4811080 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
  220 words of extra memory for PDF output out of 10000 (max. 10000000)
 

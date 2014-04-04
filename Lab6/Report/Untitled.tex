@@ -31,7 +31,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be 1.5506 $\times$ $10^{8}$$\pm$ [...] km which is ... \% of the known value.
+In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be 1.5506 $\times$ $10^{8}$ $\pm$ 3.656 $\times$ $10^6$ km which makes the true value to be 96.176 \% of the obtained value.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -81,7 +81,7 @@ We then found the peaks of the graph using centroid method as discussed in Appen
 \end{figure}
 \FloatBarrier
 
-Figurea [...] and [...] show the intensity vs. wavelength for neon 200ms and mercury 10ms.
+Figures [...] and [...] show the intensity vs. wavelength for neon 200ms and mercury 10ms.
 
 \begin{figure}[ht]
 \centering
@@ -226,6 +226,9 @@ Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values o
 \subsection{Fourier Transform}
 A Fourier Series is where any function expressed as the sum of sines and cosines. Fourier Transform also transforms a function that depends on time to a function that depends on the frequency. The way we correlated our function is given by Eq. [...]. 
 
+\begin{equation}
+shjhscv
+\end{equation}
 
 % fourier transform image
 \FloatBarrier
@@ -237,8 +240,31 @@ A Fourier Series is where any function expressed as the sum of sines and cosines
 \FloatBarrier
 
 
+We had to roll the Fourier transformed data so that we get the peak at the center. We rolled it by half the size of the data. We then fitted a parabolic function $ax^2+bx+c$ and the values we got from are as follows: $a$=0.0131, $b$=0.0078 and c=5.3726. For finding the pixel shift, we need to find the peak of the parabola which also shows the maximum point of the Fourier transformed data. We can find this point by setting derivative of parabolic equation to zero; therefore, the point would be at $x=\frac{-b}{2a}$.
+Table [...] shows these values along with their errors.
+
+% table showing parabolic fit for fourier transformed data
+\FloatBarrier
+\begin{table}[h!]
+\caption{Parabolic Fitting to Fourier Transformed Data Parameters} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | } % centered columns (4 columns)
+\hline %inserts double horizontal lines
+  & $a$ & $b$ &  $c$ \\ [0.5ex] % inserts table
+
+%heading
+\hline % inserts single horizontal line
+                   
+Calculated &   0.0131  & 0.0078  &  5.3726 \\ \hline
+Error          &   6.156 $10^{-5}$        &       1.097  $10^{-3}$    &     4.938 $10^{-2}$       \\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
 
 
+% Window function subsection
 \subsection{Window Function}
 In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from [-inf] to [inf], causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. [...] below, where M is the number of points we want the window function to return:
 
@@ -261,7 +287,7 @@ It is used for smoothing and it is also known as apodization which means that it
 
 \section{Discussion}
 \label{discussion}
-Using the methods discussed in section 4, we computed the pixel shift from the two end spectra using the one that starts earlier as the reference spectrum. Then we used the wavelength solution we found for the spectrometer to convert this pixel shift into wavelength shift so that we could use Doppler Shift equation given by Eq. [..] to compute the radial velocity of the Sun. The pixel shift found is -0.511 which corresponds to approximately -0.008 nm shift in the wavelength. The radial velocity then would be -2.30 km/s .
+Using the methods discussed in section 4, we computed the pixel shift from the two end spectra using the one that starts earlier as the reference spectrum. Then we used the wavelength solution we found for the spectrometer to convert this pixel shift into wavelength shift so that we could use Doppler Shift equation given by Eq. [..] to compute the radial velocity of the Sun. The pixel shift found is 0.408 which corresponds to approximately 0.0064 nm shift in the wavelength. The radial velocity then would be 1.839 km/s .
 
 Figures [..] and [...] show the spectrum of the beginning of the sun and the plot of the window function applied to the same data, respectively.
 
@@ -318,8 +344,56 @@ Here, $\Delta t$ is the time between the two limbs of the sun which is twice the
 \FloatBarrier
 
 
-\subsection{Error Analysis}
+% table showing all calculated values and AU
+\FloatBarrier
+\begin{table}[h!]
+\caption{Values computed by two methods of covariance and Fourier Transforms and their errors} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | c | c |} % centered columns (4 columns)
+\hline %inserts double horizontal lines
+  & pixel shift &  $\Delta \lambda$ (nm) &  $\lambda$ (nm) & $v_{rad}$ (km/s) & $v_{real}$ km/s \\ [0.5ex] % inserts table
 
+%heading
+\hline % inserts single horizontal line
+                   
+Calculated(Covariance Method) &   0.408  & 0.0064  & 522.7807  & 1.839 &2.044 \\ \hline
+Error          &              &              &   -   & 0.0432 &  0.0480  \\  \hline
+Calculated(Fourier Method) &   0.408  & 0.0064  & 522.7807  & 1.839 &2.044 \\ \hline
+Error          &              &              &   -   & 0.0432 &  0.0480  \\[1ex]
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
+
+
+% table showing all calculated values and AU
+\FloatBarrier
+\begin{table}[h!]
+\caption{Values computed by two methods of covariance and Fourier Transforms and their errors} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | c | c | c |} % centered columns (4 columns)
+\hline %inserts double horizontal lines
+  & $\theta$ (degrees)& T (days) & $\eta$(deg.) & $\xi$(deg.) & $R_{sun}$ (km) & AU (km)\\ [0.5ex] % inserts table
+
+%heading
+\hline % inserts single horizontal line
+                   
+Calculated(Covariance) &  0.5256   &  25.38 & 335.0652  & -7.09 & 713424.68 &155547492.76\\ \hline
+Error          &   0.0007  &   -        &     -            &   -      & 16767.97      &   3655909.1 \\ \hline
+Calculated(Fourier) &  0.5256   &  25.38 & 335.0652  & -7.09 & 713424.68 &155547492.76\\ \hline
+Error          &   0.0007  &   -        &     -            &   -      & 16767.97      &   3655909.1 \\[1ex]
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
+\subsection{Error Analysis}
+In order for the results to be valuable we need to show the error in the values measured as well. Here in this section I will explain how I got the errors and what are some sources of the errors that could be improved to make better results.
 
 
 
