@@ -31,7 +31,7 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-In this lab our goal is to measure the Astronomical Unit (AU) which is the distance between Sun and the Earth in meters using simple geometry. The solar data was taken on March 13, 2014 as well as March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges of the sun. Using our calculated rotational velocity of the sun to be 2.044 $\pm$ 0.0480, we estimated AU to be 1.5506 $\times$ $10^{8}$ $\pm$ 3.656 $\times$ $10^6$ km which makes the true value to be 96.176 \% of the obtained value.
+In this lab our goal is to measure the Astronomical Unit (AU) which is the distance between Sun and the Earth in meters using simple geometry. The solar data was taken on March 13, 2014 as well as March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges of the sun. Using our calculated rotational velocity of the sun to be 2.044 $\pm$ 0.0480, we estimated AU to be (1.5506 $\times$ $10^{8}$) $\pm$ (3.656 $\times$ $10^6$) km which makes the true value to be 96.176 \% of the obtained value.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -169,8 +169,8 @@ Error          & 8.927 $\pm$ $10^{2}$            &   1.355e $\times$ $10^{-1}$  
 
 
 \subsection{Flattening and Smoothing}
-We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods and some worked and some did not. First of all, I tried fitting a blackbody curve ($B(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{\frac{hc}{\lambda k_{B}T}}-1}$
-) to data by considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I tried was using a smoothing Python code found online called savitzky\_golay.py .This code generated a function that had a similar overall shape of our data. Fig. 8 shows the corrected solar data along with its smoothed function using this code. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. This method convolved the data with a gaussian function using $numpy.convolve$ and then divided by the mean of these convolved data. The code explanation can be found in Appendix.
+We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods and some worked and some did not. First of all, I tried fitting a blackbody curve ($B(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{\frac{hc}{\lambda k_{B}T}}-1}$)$^{[5]}$
+ to data by considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I tried was using a smoothing Python code found online called savitzky\_golay.py .This code generated a function that had a similar overall shape of our data. Fig. 8 shows the corrected solar data along with its smoothed function using this code. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. This method convolved the data with a gaussian function using $numpy.convolve$ and then divided by the mean of these convolved data. The code explanation can be found in Appendix.
 
 \FloatBarrier
 \begin{figure}[h!]
@@ -224,7 +224,7 @@ As we were collecting the solar data, the sun was rotating. We need to account f
 \begin{equation}
 v_{rad}=\frac{c\Delta \lambda}{2\lambda}
 \end{equation}
-Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength $\lambda$ and $c$ is the speed of light in vacuum. Figure 10 shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
+Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength $\lambda$ and $c$ is the speed of light in vacuum. Figure 11 shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
 
 
 \FloatBarrier
@@ -237,12 +237,12 @@ Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wa
 
 
 \subsection{Cross-Correlation}
-Cross-correlation is a method used in this lab in order to show how similar the different spectra are with respect to a reference spectrum of the sun. Covariance is a statistical parameter that shows how correlated two variables are. Covariance can be computed by Eq. 5:
+Cross-correlation is a method used in this lab in order to show how similar or in other words, how correlated the different spectra are with respect to a reference spectrum of the sun. Covariance is a statistical parameter that shows the correlation between two variables(in this case two spectra). Covariance can be computed by Eq. 5:
 
 \begin{equation}
 s_{j}^2=\frac{1}{N-1}\Sigma (x_{i}-\bar x)(y_{i}-\bar y)
 \end{equation}
-Where N is the size of the data set, $\bar x$ and $\bar y$ are the mean values of the two data sets. In theory, the maximum value of the covariance shows where the two data sets are most similar. In order to find the shift in the pixel values of the two data sets, we considered an array from -10 to 10 and iterated it by 1 pixel each time, and computed the covariance. Then we plotted covariance vs. the array we formed. Then we should find the centroid of the cross-correlation in order to find the pixel shift. This can be computed by Eq. 6:
+Where N is the size of the data set and $\bar x$ and $\bar y$ are the mean values of the two data sets. In theory, the maximum value of the covariance shows where the two data sets are most similar. In order to find the shift in the pixel values of the two data sets, we considered an array from -10 to 10 and iterated it by 1 pixel each time, and computed the covariance. Then we plotted covariance vs. the array we formed. Then we found the centroid of the cross-correlation in order to find the pixel shift. This can be computed by Eq. 6:
 \begin{equation}
 <j>=\frac{\Sigma_{j}jX_{j}}{\Sigma_{j}X_{j}}
 \end{equation}
@@ -265,7 +265,7 @@ Corr(g,h)=FFT(G(f)*H(f))
 \FloatBarrier
 
 
-We had to roll the Fourier transformed data so that we get the peak at the center. We rolled it by half the size of the data. We then fitted a parabolic function $ax^2+bx+c$ and the values we got from are as follows: $a$=0.0131 $\pm$ 6.156 $\times$ $10^{-5}$, $b$=0.0078 $\pm$ 1.097 $\times$ $10^{-3}$ and c=5.3726 $\pm$ 4.938 $\times$ $10^{-2}$. For finding the pixel shift, we need to find the peak of the parabola which also shows the maximum point of the Fourier transformed data. We can find this point by setting derivative of parabolic equation to zero; therefore, the point would be at $x=\frac{-b}{2a}$.
+We had to roll the Fourier transformed data so that we get the peak at the center. We rolled it by half the size of the data. We then fitted a parabolic function $ax^2+bx+c$ and the values we got are as follows: $a$=0.0131 $\pm$ (6.156 $\times$ $10^{-5}$), $b$=0.0078 $\pm$ (1.097 $\times$ $10^{-3}$) and c=5.3726 $\pm$ (4.938 $\times$ $10^{-2}$). For finding the pixel shift, we need to find the peak of the parabola which also shows the maximum point of the Fourier transformed data. We can find this point by setting derivative of parabolic equation to zero; therefore, the maximum point would be at $x=\frac{-b}{2a}$.
 Table 3 shows these values along with their errors.
 
 % table showing parabolic fit for fourier transformed data
@@ -291,12 +291,12 @@ Error          &   6.156 $\times$ $10^{-5}$        &       1.097 $\times$ $10^{-
 
 % Window function subsection
 \subsection{Window Function}
-In applying cross-correlation we shift the spectra relative to one another. In doing so, we beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from $-\infty$ to $\infty$, causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. 8 below, where M is the number of points we want the window function to return:
+In applying cross-correlation, we shift the spectra relative to one another. In doing so, the beginning and the tail of the spectra would not match and line up with other spectra since our data set is finite. Since our data is discrete (we cannot integrate from $-\infty$ to $\infty$), it causes the energy from the true frequency to "leak" into adjacent frequencies. Leakage is one of the most common digital signal processing errors and it cannot be eliminated completely, it can only be minimized. Therefore, we could use the window functioning method that weights the beginning and end values of the data set to zero and it also minimizes edge effects and leakage of frequencies and amplitude of the signal. In this lab we used the Hanning window function which is given by Eq. 8 below, where M is the number of points we want the window function to return:
 
 \begin{equation}
 w(n)=0.5(1-\cos (\frac{2\pi n}{M-1}))  %  0\<n\<(M-1)
 \end{equation}
-It is used for smoothing and it is also known as apodization which means that it "removes the foot", i.e.smoothing discontinuities at the beginning and end of the sampled signal) or tapering function. Figures 12 and 13 show different window functions and data which the Hanning window function is applied on, respectively.
+Window function is used for smoothing and it is also known as apodization which means that it "removes the foot", (i.e. smoothing discontinuities at the beginning and end of the sampled signal) or tapering function. Figures 13 and 14 show different window functions and data which the Hanning window function is applied on, respectively.
 
 
 % window functions
@@ -319,11 +319,13 @@ It is used for smoothing and it is also known as apodization which means that it
 
 \section{Discussion}
 \label{discussion}
-Using the methods discussed in section 4, we computed the pixel shift from the two end spectra using the one that starts earlier as the reference spectrum. Then we used the wavelength solution we found for the spectrometer to convert this pixel shift into wavelength shift so that we could use Doppler Shift equation given by Eq. 3 to compute the radial velocity of the Sun. The pixel shift found is 0.408 $\pm$ 0.032 which corresponds to approximately 0.0064 $\pm$ 3.767 $\times$ $10^{-5}$ nm shift in the wavelength. The radial velocity then would be 1.839 $\pm$ 0.0432 km/s .
+Using the methods discussed in section 4, we computed the pixel shift from the two limb spectra using the one that starts earlier as the reference spectrum. Then we used the wavelength solution we found for the spectrometer to convert this pixel shift into wavelength shift so that we could use Doppler Shift equation given by Eq. 3 to compute the rotational velocity of the Sun. The pixel shift using covariance method was found to be 0.408 $\pm$ 0.032 which corresponds to approximately 0.0064 $\pm$ 3.767 $\times$ $10^{-5}$ nm shift in the wavelength. The real velocity then would be 2.044 $\pm$ 0.0480 km/s .
 
 After applying the window function to the spectra, I recalculated the pixel shift and it was 0.411 $\pm$ 0.036, so there is a small change in the pixel shift when window function was applied.
 
-In order to find AU, we also need to find the angular size and radius of the Sun that are given by Eq. 9 and Eq. 10, respectively. We need to find the real value of the rotational velocity of the sun in order to calculate $R_{sun}$ and this is given in Eq. 11.
+The pixel shift using Fourier transform method found to be 0.3027 $\pm$ 0.057 which corresponds to wavelength shift of 0.0047 $\pm$ (3.767 $\times$ $10^{-5}$) and as a result real velocity of 1.517$\pm$ 0.0480 km/s.
+
+In order to find AU value, we also need to find the angular size and radius of the Sun that are given by Eq. 9 and Eq. 10, respectively. We need to find the real value of the rotational velocity of the sun in order to calculate $R_{sun}$ and this is given in Eq. 11.
 %angular size equation
 \begin{equation}
 \frac{\Delta t}{24 h}=\frac{\theta}{360^{o}}
@@ -343,13 +345,13 @@ R_{sun}=\frac{v_{real} T}{2 \pi}
 v_{real}=\frac{v_{rad}}{\cos(\eta) \cos(\xi)}
 \end{equation}
 
-Using simple geometry, we can finally find value of 1 AU -D- which is the distance between the Sun and the Earth. Fig. 14 shows the sketch of the geometry and the math is shown by Eq. 12.
+Using simple geometry, we can finally find value of 1 AU, the distance between the Sun and the Earth by Eq. 12.. Fig. 15 shows the sketch of the geometry.
 
 \begin{equation}
 D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{equation}
 
-Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening in Eq. 1; therefore, $\Delta t$ is 126.138 $\pm$ 1.723 $\times$ $10^{-1}$. Using Eq. 9 $\theta$ has a value of 0.5256 $\pm$ 0.0007 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS$^{[1]}$ for the day of our observation, March 18, 2014; therefore, the percentage difference with the measured value and the value on JPL is  0.06 \%, which is very accurate. Tables 4 and 5 show the computed values including AU value with both methods mentioned above- covariance and Fourier transforms- along with their errors.
+Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening function in Eq. 1; therefore, $\Delta t$ is 126.138 $\pm$ (1.723 $\times$ $10^{-1}$). Using Eq. 9, $\theta$ has a value of 0.5256 $\pm$ 0.0007 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS$^{[6]}$ for the day of our observation, March 18, 2014; therefore, the percentage difference with the measured value and the value on JPL is  0.06 \%, which is very accurate. Table 4 and Table 5 show the computed values including AU using both methods mentioned above- covariance and Fourier transforms- along with their errors.
 
 % simple geometry sketch
 \FloatBarrier
@@ -408,17 +410,17 @@ Error          &   0.0007  &      -    &             -    &    -     & 16767.97 
 \end{table}
 \FloatBarrier
 
-The value for period, observed longitude and latitude were obtained from JPL website [reference]. The pixel shift was obtained in two ways and as it is visible from the table, the covariance method had better results in terms of accuracy. The change in wavelength ($\Delta \lambda$) was also obtained from conversion of pixel shift using the wavelength solution we found. The other values were computed by the equations explained in previous sections and have small errors. In the first case that we used covariance method, the ratio of the measured AU value to the known AU value was 1.039, whereas this ratio was 0.771 using the Fourier method, so the first method was more accurate in this case.
+The value for period, observed longitude and latitude were obtained from JPL website$^{[6]}$. The pixel shift was obtained in two ways and as it is visible from the table, the covariance method had better results in terms of accuracy. The change in wavelength ($\Delta \lambda$) was also obtained from conversion of pixel shift using the wavelength solution we found. The other values were computed by the equations explained in previous sections and have relatively small errors. In the first case that we used covariance method, the ratio of the measured AU value to the known AU value was 1.039, whereas this ratio was 0.771 using the Fourier method, so the first method was more accurate in this case.
 
 
 \subsection{Error Analysis}
-In order for the results to be valuable we need to show the error in the values measured as well. Here in this section I will explain how I got the errors and what are some sources of the errors that could be improved to make better results. One source of error could be the temperature of the spectrometer, since it is very temperature sensitive and the wavelength solution could change due to differences in temperatures while taking data. For this matter, people have provided a box around the spectrometer to keep it to the same temperature but it is still not completely ideal. Another source of error could be coming from the fact that we are not taking earth's rotation into account. This should not be a big deal since it is a short amount of time, but still could be taken into account for more accurate measurements. One last source of error could be fixed by finding more precise wavelength solution and it can be done by having larger range of wavelength so that we get more peaks to compare and find the wavelength solution based on.
+In order for the results to be valuable we need to show the error in the values measured as well. Here in this section I will explain how I got the errors and what are some sources of the errors that could be improved to make better results. One source of error could be the temperature of the spectrometer, since it is very temperature sensitive and the wavelength solution could change due to differences in temperatures while taking data. For this matter, the spectrometer was placed inside a box to keep it to the same temperature but it is still not completely ideal. Another source of error could be coming from the fact that we are not taking earth's rotation into account. This should not be a big deal since it is a short amount of time in our observation($\sim$1 minute), but still it could be taken into account for more accurate and precise measurements. One last source of error could be fixed by finding more precise wavelength solution and it can be done by having larger range of wavelength so that we get more peaks to compare and find the wavelength solution based on.
 
 
 
 \section{Conclusion}
 \label{sec:conclusion}
-I started by correcting the data by subtracting the darks and dividing by flats and found the wavelength solution of the spectrometer by comparing the pixels with wavelength as explained in section 3. Then I averaged the solar data across its surface and fitted the limb darkening function to it and got the time between two solar limbs. Then I flattened and smoothed the solar spectra using gaussian function as explained in previous sections. I choose the first limb as a reference spectrum and compared each of the other ones with it. I found the covariance for each correlation pair and plotted it.  Then we found the pixel offset by finding the centroid of these points. The other method I tried was Fourier transform and fitted a parabola to its peak to find the pixel shift and this method gave less accurate pixel offset in this case. Finally, using simple geometry discussed above, we measured value of 1 AU which is one of the standard units to measure distances in astronomy since distances between astronomical objects are large and it is hard to state them with typical distance units such as meters and kilometers.
+We started by correcting the data by subtracting the darks and dividing by flats and found the wavelength solution of the spectrometer by comparing the pixels with wavelength as explained in section 3. Then we averaged the solar data across its surface and fitted the limb darkening function to it and got the time between two solar limbs. Then we flattened and smoothed the solar spectra using gaussian function as explained in previous sections. We choose the first limb as a reference spectrum and compared each of the other ones with it. We found the covariance for each correlation pair and plotted it vs. the lags.  Then we found the pixel offset by finding the centroid of these points. The other method we tried was Fourier transform and fitted a parabola to its peak to find the pixel shift and this method gave less accurate pixel offset in this case. Finally, using simple geometry discussed above, we measured value of 1 AU to be (1.5506 $\times$ $10^{8}$) $\pm$ (3.656 $\times$ $10^6$) km, which is one of the standard units to measure distances in astronomy since distances between astronomical objects are large and it is hard to state them with typical distance units such as meters and kilometers.
 
 
 
@@ -427,8 +429,9 @@ I started by correcting the data by subtracting the darks and dividing by flats 
 1-http://www.aseq-instruments.com/HR1.html
 \\*2-http://en.wikipedia.org/wiki/Angular\_diameter
 \\*3-http://www.astro.utoronto.ca/~astrolab/
-\\*4-http://physics.nist.gov/PhysRefData/ASD/lines_form.html
-
+\\*4-http://physics.nist.gov/PhysRefData/ASD/lines\_form.html
+\\*5-http://en.wikipedia.org/wiki/Planck's\_law
+\\*6-http://ssd.jpl.nasa.gov/horizons.cgi#results
 
 \section{Appendix}
 \label{sec:appendix}
