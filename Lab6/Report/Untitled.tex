@@ -15,7 +15,7 @@
 \usepackage{float}
 
 \onehalfspacing
-\title{Measuring AU Using Solar Observation}
+\title{Measuring Astronomical Unit Using Solar Observation}
 \author{Anita Bahmanyar \qquad Ayushi Singh \qquad Morten Nyborg Stostad \\Department of Astronomy and Astrophysics, University of Toronto}
 \affil{\small {Written by: Anita Bahmanyar}}
 \affil{\small {anita.bahmanyar@mail.utoronto.ca}}
@@ -31,20 +31,45 @@
 %Abstract
 \begin{abstract}
 \label{abstract}
-In this lab our goal is to measure the distance between Sun and the Earth (AU) in meters using simple geometry. The solar data was taken on March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges f the sun. Using our calculated rotational velocity of the sun, we estimated AU to be 1.5506 $\times$ $10^{8}$ $\pm$ 3.656 $\times$ $10^6$ km which makes the true value to be 96.176 \% of the obtained value.
+In this lab our goal is to measure the Astronomical Unit (AU) which is the distance between Sun and the Earth in meters using simple geometry. The solar data was taken on March 13, 2014 as well as March 18, 2014 using the 8 inch refractor telescope located on top of the Burton Tower at University of Toronto. Using Toshiba CCD and spectrometer, we measure the rotational velocity of the sun by computing the Doppler shift between spectra of the limbs of the sun. We used two methods of covariance and Fourier Transform in order to find the wavelength shift between two edges of the sun. Using our calculated rotational velocity of the sun to be 2.044 $\pm$ 0.0480, we estimated AU to be 1.5506 $\times$ $10^{8}$ $\pm$ 3.656 $\times$ $10^6$ km which makes the true value to be 96.176 \% of the obtained value.
 
 \section{Introduction}
 \label{sec:introduction}
-Astronomical distances and scales are large enough that is gets bothersome to use usual distance units such as meters and kilometers. Therefore, astronomers defined a new unit for length measurements called Astronomical Unit(AU), which is defined as the distance between the Sun and the Earth. In this lab we will use simple geometry, circular motion and properties of light to measure this unit. In order to do so, we found the wavelength solution of the Charged Coupled Device(CCD) that related the pixel numbers to wavelengths as explained in section 3, obtained the solar spectra along its diameter and by taking advantage of cross-correlation method as discussed in section 4, we figured out the pixel shift and therefore the Doppler Shift in the solar spectra with respect to the starting point( in order to determine the radial velocity of the Sun. From this, we can compute the radius of the sun by knowing the period of the Sun. Then finally we can compute AU using geometry as will be explained more in sections 4 and 5. The goal of this lab is to learn to find the wavelength solution for CCDs, cross-correlate data sets with each other and find the rotational velocity of the sun in order to find its radius and finally to measure AU using simple geometry as described later.
+Astronomical distances and scales are large enough that is gets bothersome to use usual distance units such as meters and kilometers in astronomy. Therefore, astronomers have defined a new unit for distance measurements called Astronomical Unit(AU), which is defined as the distance between the Sun and the Earth. In this lab we will use simple geometry, circular motion and properties of light to measure this unit. In order to do so, we found the wavelength solution of the Charged Coupled Device(CCD) that related the pixel numbers to wavelength as explained in section 3, obtained the solar spectra along its diameter and by taking advantage of cross-correlation method as discussed in section 4, we figured out the pixel shift and from that, the Doppler Shift in the solar spectra with respect to the starting point in order to determine the radial velocity of the Sun. From this, we can compute the radius of the sun by considering the period of the Sun as known. Finally, we have all the values to compute AU using geometry as will be explained more in sections 4 and 5. The goal of this lab is to learn to find the wavelength solution for CCDs, cross-correlate data sets with each other and find the rotational velocity of the sun in order to find its radius and finally to measure AU using simple geometry as described later.
 
 
  
 \section{Observation and Data Acquisition}
 \label{sec:observationanddataacquisition}
 \subsection{Neon and Mercury Lamps}
-We used HR1 spectrometer which consists of Toshiba 1 $\times$ 3652 CCD. Size of each pixel is 8 $\mu$ $\times$ 200 $\mu$.  The wavelength range of this spectrometer is 523-573 nm. We used Neon and Mercury lamps to find the wavelength solution for this spectrometer. We set the integration times such that the pixels are not saturated. Therefore, we used 200 ms and 400 ms integration time for neon lamp and 10 ms and 50 ms integration times for the mercury lamp. We also took data of dark counts with the same exposure times for each lamp. 
+We used HR1 spectrometer which consists of Toshiba 1 $\times$ 3652 CCD. Size of each pixel is 8 $\mu$ $\times$ 200 $\mu$.  The wavelength range of this spectrometer is 523-573 nm. We used Neon and Mercury lamps to find the wavelength solution for this spectrometer. We set the integration times such that the pixels are not saturated. Therefore, we used 200 ms and 400 ms integration time for neon lamp and 10 ms and 50 ms integration times for the mercury lamp. We also took data of dark counts with the same exposure times for each lamp. We also took flat and dark flat data during solar observing.Table 1 shows the summery of data acquisition.
+
+
+\FloatBarrier
+\begin{table}[h!]
+\caption{Data Summery} % title of Table
+\centering % used for centering table
+\begin{tabular}{| c | c | c | c | } % centered columns (4 columns)
+\hline %inserts double horizontal lines
+  &  Date &  Start Time [UTC] & Integration Time  \\ [0.5ex] % inserts table
+
+%heading
+\hline % inserts single horizontal line
+                   
+Neon &  March 5, 2014   &  22:27:03 &  199.500 \\ \hline
+Neon &  March 5, 2014  & 22:38:41  &  399.000 \\ \hline
+Mercury &   March 5, 2014 &  23:00:20 &  49.875 \\ \hline
+Mercury &   March 5, 2014  & 23:19:44 &  9.500 \\ \hline
+Sun        &  March 18, 2014  &  15:27:24      &    159.125     \\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\FloatBarrier
+
+
 \subsection{Solar Observing}
-We went up to 16th floor of Burton Tower to use the 8-inch refractor telescope for our purpose. We mounted another telescope cap in front of the telescope aperture in order to reduce the amount of light coming into telescope from the Sun so that we do not hurt our eyes. Then we mounted the projection screen as it can be seen in Figure 1 so that we get the Sun on the screen. Next step was to line up the shadow of the finder scope until it became circle as in Figure 2 and then focused the the telescope to get a sharp image(We did this by looking at the sharpness of the sun spots). The next thing we need to consider is the temperature of the spectrometer since the spectral resolution and dispersion of the the spectograph or in general, the wavelength solution changes with temperature and for this mean we placed the spectrometer inside a box to keep the temperature approximately as it was in the astronomy lab, where we collected Neon and Mercury data to solve for the wavelength solution. The box consisted of a resistor that heats it up. Then we connected the fibre coupler to collimate.
+We went up to 16th floor of Burton Tower to use the 8-inch refractor telescope for our solar observation. We mounted another telescope cap in front of the telescope aperture in order to reduce the amount of light coming into telescope from the Sun so that the spectrum was not saturated. Then we mounted the projection screen as it can be seen in Figure 1 so that we get the Sun on the screen. Next step was to line up the shadow of the finder scope until it became circlular as in Figure 2 and then focused the the telescope to get a sharp image(We did this by looking at the sharpness of the sun spots). The next thing we considered was the temperature of the spectrometer since the spectral resolution and dispersion of the the spectrometer or in general, the wavelength solution changes with temperature and for this mean we placed the spectrometer inside a box to keep the temperature approximately as it was in the astronomy lab, where we collected Neon and Mercury data to solve for the wavelength solution. The box consisted of a resistor that heats it up. Then we connected the fibre coupler to collimate.
 
 % images a and 2 (flat and centroids)
 \begin{figure}[ht]
@@ -68,8 +93,8 @@ We went up to 16th floor of Burton Tower to use the 8-inch refractor telescope f
 \section{Analysis}
 \label{sec:analysis}
 \subsection{Wavelength Solution}
-We calibrated the wavelength of the spectrometer since we need to figure out how wavelength is related to the pixel numbers to the wavelength. We used neon and mercury lamps for this purpose. We took 200, 400 and 1000 ms integration times for neon and 10 and 50 ms integration times of data for mercury as well as dark data sets for all of these integration times. We then subtracted dark from the data sets. Figures 4 and 5 show the the intensity vs. pixel number of 10ms mercury and 200ms neon lamp graphs.
-We then found the peaks of the graph using centroid method as discussed in Appendix section. Then we compared these peaks with a reference peak wavelength for neon and mercury in the spectrometer wavelength range and plotted the wavelengths vs. pixel numbers in order to find the wavelength solution. We used linear least squares to fit the graph. This was done manually in Python as explained in Appendix, so it means we did not use the built-in package of Python. Fig. 3 shows the wavelength solution, which is $y= (2.82 \times 10^{-7})x^2+ 0.015 x +523.793$, where $y$ is the wavelength and $x$ is the pixel number. 
+We calibrated the wavelength of the spectrometer since we need to figure out how wavelength and pixel numbers are related. We used neon and mercury lamps for this purpose with the integration times tabulated in table 1. Figures 4 and 5 show the the intensity vs. pixel number of 10ms mercury and 200ms neon lamp graphs.
+We then found the peaks of the graph using centroid method as discussed in Appendix section. Then we compared these peaks with a reference peak$^{[4]}$ wavelength for neon and mercury in the spectrometer wavelength range and plotted the wavelengths vs. pixel numbers in order to find the wavelength solution. We used linear least squares to fit the graph. This was done manually in Python as explained in Appendix, so it means we did not use the built-in package in Python. Fig. 3 shows the wavelength solution, which is $y= (-2.82 \times 10^{-7})x^2+ 0.015 x +523.793$, where $y$ is the wavelength and $x$ is the pixel number. 
 
 
 
@@ -77,7 +102,7 @@ We then found the peaks of the graph using centroid method as discussed in Appen
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{wavelengh_solution2.jpg}
-\caption{The upper image shows the wavelengths vs. pixel numbers of neon and mercury peaks as compared with their reference spectrum. The wavelength solution is written in the graph. The lower image shows the error in the data and as it is visible it is very small and the variance is also very small that is negligible.}
+\caption{$Up:$ Shows the wavelengths vs. pixel numbers of neon and mercury peaks as compared with their reference spectrum. The wavelength solution is written in the graph. The lower image shows the error in the data and as it is visible it is very small and the variance is also very small that is negligible.}
 \end{figure}
 \FloatBarrier
 
@@ -97,13 +122,12 @@ We then found the peaks of the graph using centroid method as discussed in Appen
 \end{figure}
 
 \subsection{Solar Data}
-After finding the wavelength solution of the spectrometer, we should work with solar data. We collected 170ms and 200ms data sets on March 13, 2014 and three sets of data with 125ms integration time on March 18, 2014. We found the mean of each data file and plotted these mean values vs. time. The times where extracted from the file names as it will be discussed in details in Appendix. Figures 6 and 7 show this averaged value of each file vs. time, one from first observation and the other from the second observation. Then we considered the limb darkening which is given by equation 1:
+After finding the wavelength solution of the spectrometer, we should work with solar data. We collected 170ms and 200ms data sets on March 13, 2014 and three sets of data with 160ms integration time on March 18, 2014 and I used the second set of data taken on March 18, 2014. We computed the mean of each data file and plotted these mean values vs. time. The times where extracted from the file names as it will be discussed in details in Appendix. Figures 6 and 7 show this averaged value of each file vs. time, one from first observation and the other from the second observation. Then we considered the limb darkening which is given by equation 1:
 
 \begin{equation}
 I=\frac{2}{5}I_{0}(\frac{3}{5}+\sqrt{\frac{(t-t_{0})^2}{\Delta t^2}})
 \end{equation}
-
-where $I_{0}$ is the intensity of the center value, $\Delta t$ is the difference in the time of the two start and end point data and $t_{0}$ is the time of the central data. Table 1 shows the values obtained from plotting averaged solar data versus time and the errors come from the fitting function.
+where $I_{0}$ is the intensity of the central value of the data array, $\Delta t$ is the difference between the  time of the two limbs of the sun and $t_{0}$ is the time of the central data. Table 2 shows the values obtained from plotting averaged solar data versus time and the errors come from the fitting function. The errors from the fitting function can be obtained by computing the covariance matrix and considering the diagonal values as the errors.
 
 
 % table showing the t and delta values with their errors
@@ -145,7 +169,17 @@ Error          & 8.927 $\pm$ $10^{2}$            &   1.355e $\times$ $10^{-1}$  
 
 
 \subsection{Flattening and Smoothing}
-We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods which some worked and some did not. Here I will go over the methods. First of all, I tried fitting a blackbody curve to it with considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I used was using  smoothing Python code found online called savitzky\_golay.py .This code generated a function that had a similar overall shape of our data. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. The code explanation can be found in Appendix.
+We  wanted to make the solar spectrum to look flat rather than having a blackbody shape since it is easier to see the features such as the shift and also the absorption lines. In order to do so, I tried different methods and some worked and some did not. First of all, I tried fitting a blackbody curve ($B(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{\frac{hc}{\lambda k_{B}T}}-1}$
+) to data by considering the surface temperature of the sun (5777 K), but since the spectrum is covering only a small range of the wavelength, the blackbody values did not change much and therefore division of the spectrum by the black body basically did nothing. The second method I tried was using a smoothing Python code found online called savitzky\_golay.py .This code generated a function that had a similar overall shape of our data. Fig. 8 shows the corrected solar data along with its smoothed function using this code. We should note that we should use large window sizes so that by smoothing we do not loose spectral features. Then by dividing our data by this smoother function we can get rid of the slope in the spectrum and still preserve the spectral features. However, this generated huge amount of noise at the end of the spectrum since we did not have much information on the end parts of the spectrum so the noise(uncertainty) on the end points got big. Therefore, I used a third method using gaussian functions, and it worked better than the others in that it flattened the spectrum and reduced the amount of noise at the end parts. This method convolved the data with a gaussian function using $numpy.convolve$ and then divided by the mean of these convolved data. The code explanation can be found in Appendix.
+
+\FloatBarrier
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{savitzky.png}
+\caption{This figure shows the dark subtracted and flat divided data in magenta along with the smoothed data using savitzky\_golay code. Its window size is assumed big(601) so that we do not loose the overall shape.}
+\end{figure}
+\FloatBarrier
+
 
 
 % two methods of smoothing
@@ -161,12 +195,12 @@ We  wanted to make the solar spectrum to look flat rather than having a blackbod
 
 
 \subsection{Velocity Resolution of Spectrometer}
-Each spectrometer has a specific velocity resolution which corresponds to its wavelength and therefore, its pixel resolving power. We used Mercury peak in the wavelength range of 523nm-573nm (since t only has one peak in this wavelength range) in order to compute this velocity resolution. The method we used is that we fitted a gaussian function on the peak and calculated the Full Width half Maximum(FWHM) which is given by Eq. 2:
+Each spectrometer has a specific velocity resolution which corresponds to its wavelength and therefore, its pixel resolving power. We used Mercury peak in the wavelength range of 523nm-573nm (since it only has one peak in this wavelength range) in order to find this velocity resolution. The method consisted of fitting a gaussian function on the peak and calculating the Full Width half Maximum(FWHM) which is given by Eq. 2:
 
 \begin{equation}
 FWHM=2\sqrt{n\ln 2}  \sigma
 \end{equation}
-where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for the gaussian fit to be 2.816 $\pm$ 7.0532 $10^{-5}$ pixels which corresponds to FWHM of 3.315 $\pm$ 7.0532 $10^{-5}$pixels and by Eq. 3 this gives the velocity resolution of about 29.885 km/s, which is close to the 33 km/s value given in the lecture slides.$^{[3]}$ The percentage difference is 9.44 \% which is good enough. Figure 9 shows the mercury 50ms peak and the gaussian fit on it.
+where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for the gaussian fit to be 2.816 $\pm$ 7.0532 $10^{-5}$ pixels which corresponds to FWHM of 3.315 $\pm$ 7.0532 $10^{-5}$pixels and by Eq. 3 this gives the velocity resolution of about 29.885 km/s, which is close to the 33 km/s value given in the lecture slides.$^{[3]}$ This is 90.6\% of the known value. Figure 10 shows the mercury 50ms peak and the gaussian fit on it.
 
 
 % Gaussian fit image
@@ -181,7 +215,7 @@ where $\sigma$ is the standard deviation of the data. We found the $\sigma$ for 
 
 \section{Determining Doppler Shift}
 \label{sec:determiningdopplershift}
-As we were collecting the solar data, the sun was rotating. We need to account this rotation since it affects the wavelength of the light that we observe. As the sun rotates, one edge is turning toward us, making the light to appear blue-shifted(light has shorter wavelength) and the other edge is turning away from us, making it to appear red-shifted(light has longer wavelength). This is known as Doppler Shift and it is given by equation 3:
+As we were collecting the solar data, the sun was rotating. We need to account for this rotation since it affects the wavelength of the light that we observe. As the sun rotates, one edge is turning toward us, making the light to appear blue-shifted(light has shorter wavelength) and the other edge is turning away from us, making it to appear red-shifted(light has longer wavelength). This is known as Doppler Shift and it is given by equation 3:
 
 \begin{equation}
 \frac{\Delta \lambda}{\lambda}=\frac{\Delta v}{c}=\frac{2 v_{rad}}{c}
@@ -190,9 +224,7 @@ As we were collecting the solar data, the sun was rotating. We need to account t
 \begin{equation}
 v_{rad}=\frac{c\Delta \lambda}{2\lambda}
 \end{equation}
-
-
-Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength, $\lambda$ and $c$ is the speed of light in vacuum. Figure 10 shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
+Where $\Delta v$ is the change in velocity, $\Delta \lambda$ is the change in wavelength given some reference wavelength $\lambda$ and $c$ is the speed of light in vacuum. Figure 10 shows the spectrums of the two edges of the sun. As it can be seen in the image, even the two furthest spectrums are very close to each other.
 
 
 \FloatBarrier
@@ -234,7 +266,7 @@ Corr(g,h)=FFT(G(f)*H(f))
 
 
 We had to roll the Fourier transformed data so that we get the peak at the center. We rolled it by half the size of the data. We then fitted a parabolic function $ax^2+bx+c$ and the values we got from are as follows: $a$=0.0131 $\pm$ 6.156 $\times$ $10^{-5}$, $b$=0.0078 $\pm$ 1.097 $\times$ $10^{-3}$ and c=5.3726 $\pm$ 4.938 $\times$ $10^{-2}$. For finding the pixel shift, we need to find the peak of the parabola which also shows the maximum point of the Fourier transformed data. We can find this point by setting derivative of parabolic equation to zero; therefore, the point would be at $x=\frac{-b}{2a}$.
-Table 2 shows these values along with their errors.
+Table 3 shows these values along with their errors.
 
 % table showing parabolic fit for fourier transformed data
 \FloatBarrier
@@ -291,10 +323,18 @@ Using the methods discussed in section 4, we computed the pixel shift from the t
 
 After applying the window function to the spectra, I recalculated the pixel shift and it was 0.411 $\pm$ 0.036, so there is a small change in the pixel shift when window function was applied.
 
-In order to find AU, we also need to find the angular size and radius of the Sun that are given by Eq. 9 and Eq. 11, respectively.
+In order to find AU, we also need to find the angular size and radius of the Sun that are given by Eq. 9 and Eq. 10, respectively. We need to find the real value of the rotational velocity of the sun in order to calculate $R_{sun}$ and this is given in Eq. 11.
 %angular size equation
 \begin{equation}
 \frac{\Delta t}{24 h}=\frac{\theta}{360^{o}}
+\end{equation}
+
+
+
+
+% R sun equation
+\begin{equation}
+R_{sun}=\frac{v_{real} T}{2 \pi}
 \end{equation}
 
 
@@ -303,18 +343,13 @@ In order to find AU, we also need to find the angular size and radius of the Sun
 v_{real}=\frac{v_{rad}}{\cos(\eta) \cos(\xi)}
 \end{equation}
 
-% R sun equation
-\begin{equation}
-R_{sun}=\frac{v_{real} T}{2 \pi}
-\end{equation}
-
-Using simple geometry, we can finally find the distance D, which is the distance between the Sun and the Earth. Fig. [...] shows the sketch of the geometry and the math is shown in Eq. [..].
+Using simple geometry, we can finally find value of 1 AU -D- which is the distance between the Sun and the Earth. Fig. 14 shows the sketch of the geometry and the math is shown by Eq. 12.
 
 \begin{equation}
 D=\frac{R_{sun}}{\tan (\theta/2)}
 \end{equation}
 
-Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening, therefore, $\Delta t$ is 126.138 s, which is equal to 2.1023 minutes. Using Eq. [...] $\theta$ has a value of 0.5256 $\pm$ 0.0007 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS [... reference] for the day of our observation, so the percentage difference with my value and the value on JPL is  0.06 \%, which is very accurate. Tables [...] and [...] show the computed values including AU value with both methods mentioned above- covariance and Fourier transforms- along with their errors.
+Here, $\Delta t$ is the time between the two limbs of the sun which is twice the $\Delta t$ we used to plot the limb darkening in Eq. 1; therefore, $\Delta t$ is 126.138 $\pm$ 1.723 $\times$ $10^{-1}$. Using Eq. 9 $\theta$ has a value of 0.5256 $\pm$ 0.0007 degrees. The true angular size of the sun is approximately 0.5331 degrees as given on JPL HORIZONS$^{[1]}$ for the day of our observation, March 18, 2014; therefore, the percentage difference with the measured value and the value on JPL is  0.06 \%, which is very accurate. Tables 4 and 5 show the computed values including AU value with both methods mentioned above- covariance and Fourier transforms- along with their errors.
 
 % simple geometry sketch
 \FloatBarrier
@@ -391,13 +426,15 @@ I started by correcting the data by subtracting the darks and dividing by flats 
 \label{sec:references}
 1-http://www.aseq-instruments.com/HR1.html
 \\*2-http://en.wikipedia.org/wiki/Angular\_diameter
-\\*3-The lecture slides
+\\*3-http://www.astro.utoronto.ca/~astrolab/
+\\*4-http://physics.nist.gov/PhysRefData/ASD/lines_form.html
 
 
 \section{Appendix}
 \label{sec:appendix}
+\begin{enumerate}
 
-We first discuss how we found the peaks of the spectrum of neon and mercury using centroid method. Below is the code I used to find the centroids. It goes through all of the pixels and checks the intensity value of each pixel with its neighbour pixel intensity value. If it is higher than both its left and right pixels it points as a peak.
+\item We first discuss how we found the peaks of the spectrum of neon and mercury using centroid method. Below is the code I used to find the centroids. It goes through all of the pixels and checks the intensity value of each pixel with its neighbour pixel intensity value. If it is higher than both its left and right pixels it points as a peak.
 \begin{verbatim}
 for i in range(0,3652,1):
     if values[i+1]>values[i]:
@@ -408,7 +445,9 @@ for i in range(0,3652,1):
                 centroidintensity = 0.5*(values[i]+values[i+1])
                 centroidintensitylist.append(centroidintensity)
 \end{verbatim}
-Here is how fitting wavlength vs. pixel values work using linear sqaures.
+
+\item Fitting wavelength vs. pixel values using linear squares.
+
 \begin{verbatim}
 ma =np.array([[np.sum(Pixels**2),np.sum(Pixels)],[np.sum(Pixels),len(Pixels)]])
 mc =np.array([[np.sum(Pixels*Wavelengths)],[np.sum(Wavelengths)]])  #matrices
@@ -416,7 +455,7 @@ mai = np.linalg.inv(ma)
 md = np.dot(mai,mc)
 \end{verbatim}
 
-Next, we will discuss how the times of the solar observations were extracted from the file names.
+\item  Extracting times of the solar observations from the file names.
 \begin{verbatim}
 times=[]
 for k in range(0,66,1):
@@ -435,7 +474,7 @@ I_o=7550  #central intensity
 I=I_o*((2./5)+((3./5)*(np.sqrt(1-(((times-t_center)**2)/(Delta_t**2))))))    
 \end{verbatim}
 
-Here is part of my code that finds the covariances:
+\item Finding covariances("lags") using $numpy.roll$:
 \begin{verbatim}
 for p in range(-10,10,1):
     tester=np.roll(z[82],p)
@@ -450,7 +489,7 @@ for p in range(-10,10,1):
     covariance_list.append(covariance)
 \end{verbatim}
 
-And this is for finding the centroid of the covariance plot for each spectrum:
+\item Fnding the centroid of the covariance plot for each spectrum:
 \begin{verbatim}
 for g in range(6,82,1):
     nums=[]
@@ -465,7 +504,7 @@ for g in range(6,82,1):
     cent=numerator/denominator
 \end{verbatim}
 
-Here is the Fourier transform method (I rolled the daat by half of the data array size so that we get the peak at the center):
+\item Fourier transform method (I rolled the data by half of the data array size so that we get the peak at the center):
 \begin{verbatim}
 gh=(np.mean(z[5:81],axis=0))
 fourier=np.fft.ifft(((np.fft.fft(gh))*(np.ma.conjugate(z[81]))))
@@ -473,7 +512,7 @@ freq=np.arange(-3652./2,3652./2,1)
 rolled=np.roll(fourier,1826)
 \end{verbatim}
 
-And here is how I fitted the parabolic function to it:
+\item Fitting parabolic function to Fourier transformed data:
 \begin{verbatim}
 x = freq[1819:1834]
 y = rolled[1819:1834]
@@ -497,7 +536,7 @@ chi_re2 = chi2/dof # residual variance
 cov = p_final[1] * chi_re2
 \end{verbatim}
 
-And finally the smoothing using gaussian function code:
+\item Smoothing using gaussian function code. It convolves the data with a gaussian function using $numpy.convolve$ and dividing the obtained values by the mean of these values.
 \begin{verbatim}
 def gauss_function(x, offset, a, x0, sigma):
     return offset+a*np.exp(-(x-x0)**2/(2*sigma**2))
